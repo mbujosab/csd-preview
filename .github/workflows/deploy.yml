@@ -1,0 +1,55 @@
+name: Deploy to production (FTP)
+
+# Solo se ejecuta cuando exista la variable de repo ENABLE_FTP_DEPLOY=true.
+# Crear la variable en: Settings → Secrets and variables → Actions → Variables.
+# Crear los secrets en : Settings → Secrets and variables → Actions → Secrets.
+#
+# Secrets necesarios:
+#   FTP_SERVER         p.ej. ftp.miservidor.com
+#   FTP_USERNAME       usuario FTP
+#   FTP_PASSWORD       contraseña
+#   FTP_REMOTE_PATH    ruta remota raíz del sitio, p.ej. /public_html/
+#
+# Mientras la variable ENABLE_FTP_DEPLOY no esté en 'true' este workflow
+# pasa a "skipped" automáticamente y no consume minutos de Actions.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ftp-deploy:
+    if: ${{ vars.ENABLE_FTP_DEPLOY == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Emacs
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends emacs-nox
+
+      - name: Build site (production: BASE_URL vacío, sirve en raíz)
+        env:
+          CSD_BASE_URL: ""
+        run: make build
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:     ${{ secrets.FTP_SERVER }}
+          username:   ${{ secrets.FTP_USERNAME }}
+          password:   ${{ secrets.FTP_PASSWORD }}
+          local-dir:  ./public/
+          server-dir: ${{ secrets.FTP_REMOTE_PATH }}
+          # Sube solo los ficheros que han cambiado (más rápido y respetuoso
+          # con el ancho de banda). state-name guarda el "estado" remoto.
+          state-name: .ftp-deploy-sync-state.json
+          # Excluir basura
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store

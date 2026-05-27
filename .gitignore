@@ -1,0 +1,11 @@
+# public/ se regenera en cada push por el workflow .github/workflows/preview.yml,
+# así que NO se commitea (queda fuera del repo).
+public/
+
+# Cachés y autosaves locales
+*~
+\#*\#
+.\#*
+*.elc
+.DS_Store
+Thumbs.db

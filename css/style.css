@@ -1,0 +1,404 @@
+/* Ciudad Santo Domingo — réplica visual cercana a la web original (Divi).
+   Paleta: verde corporativo #159938.
+   Tipografías: Open Sans (cuerpo) + Philosopher (titulares). */
+
+:root {
+  --color-fg:           #2a2a2a;
+  --color-muted:        #6b7280;
+  --color-bg:           #ffffff;
+  --color-bg-soft:      #f6f7f8;
+  --color-accent:       #159938;
+  --color-accent-dark:  #0e6d28;
+  --color-accent-soft:  #e3f3e9;
+  --color-border:       #e1e3e5;
+  --color-footer-bg:    #2a2f33;
+  --color-footer-fg:    #d6d9dc;
+  --color-footer-fg-soft:#9aa0a6;
+  --max-width:          1100px;
+  --content-width:      820px;
+  --font-body:          'Open Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display:       'Philosopher', Georgia, "Times New Roman", serif;
+  --line:               1.7;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: var(--line);
+  color: var(--color-fg);
+  background: var(--color-bg);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------------------------------------------------------------- header */
+
+/* Org-export envuelve la cabecera en <div id="preamble">. El sticky tiene
+   que aplicarse al div envoltorio, no al <header> (cuya altura coincide
+   con la del envoltorio y por eso nunca llega a "engancharse"). */
+#preamble {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.3rem 1.25rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; flex-wrap: wrap;
+}
+.brand {
+  display: flex; align-items: center; gap: 0.6rem;
+  text-decoration: none; color: var(--color-muted);
+}
+.brand img { width: 34px; height: 34px; }
+.brand span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-accent-dark);
+  letter-spacing: 0.01em;
+}
+.site-nav {
+  display: flex; flex-wrap: wrap; gap: 0.1rem 0.4rem;
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-muted);
+  padding: 0.35rem 0.8rem;
+  border-radius: 3px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover {
+  color: var(--color-fg);
+}
+.site-nav a.active {
+  color: var(--color-accent-dark);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------- content */
+
+#content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+#content > header h1.title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  margin: 0.3rem 0 1.6rem;
+  text-align: center;
+}
+#content h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  margin-top: 2.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-accent-soft);
+}
+#content h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 1.8rem;
+  color: var(--color-accent-dark);
+}
+#content h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1.4rem;
+  color: var(--color-fg);
+}
+
+p, ul, ol { margin: 0.7rem 0; }
+
+a { color: var(--color-accent-dark); }
+a:hover { text-decoration: underline; }
+
+blockquote {
+  border-left: 4px solid var(--color-accent);
+  background: var(--color-accent-soft);
+  margin: 1.4rem 0;
+  padding: 0.8rem 1.2rem;
+  color: var(--color-fg);
+  font-style: italic;
+}
+
+/* Lead paragraph */
+.lead, p.lead, div.lead p {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  text-align: center;
+  margin: 0.5rem auto 2rem;
+  max-width: 720px;
+}
+
+/* ---------------------------------------------------------------- standalone images */
+
+#content > div > p > img,
+#content .outline-text-2 > p > img,
+#content .outline-text-3 > p > img {
+  margin: 1.4rem auto;
+  border-radius: 4px;
+  max-height: 480px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Phone numbers (originally tel: links): bold green, NOT clickable. */
+.phone {
+  color: var(--color-accent-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Logo or icon shown at its natural pixel size, centered. */
+.img-natural {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  height: auto;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* ---------------------------------------------------------------- lightbox (CSS-only via :target) */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 25, 0.94);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: 1.5rem;
+}
+.lightbox:target { display: flex; }
+.lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+}
+.lightbox-caption {
+  position: absolute;
+  bottom: 1.2rem; left: 0; right: 0;
+  text-align: center;
+  color: #f0f1f3;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem; right: 1.5rem;
+  color: #fff;
+  font-size: 2.5rem;
+  line-height: 1;
+  text-decoration: none;
+  font-weight: 300;
+}
+.lightbox-close:hover { color: #fff; text-decoration: none; }
+
+/* ---------------------------------------------------------------- gallery */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.7rem;
+  margin: 1.8rem 0 2rem;
+}
+.gallery figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.gallery a {
+  display: block;
+  cursor: zoom-in;
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.gallery a:hover img { transform: scale(1.05); }
+.gallery figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------- two-column rows (foto + texto, patrón Divi) */
+
+.row-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 2.2rem 0;
+}
+.row-section.reverse .row-img  { order: 2; }
+.row-section.reverse .row-text { order: 1; }
+.row-section .row-img {
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+.row-section .row-img > p { margin: 0; }
+.row-section .row-img img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  box-shadow: none;
+  border-radius: 0;
+  max-height: none;
+  margin: 0;
+  transition: transform 0.4s ease;
+}
+.row-section .row-img:hover img { transform: scale(1.04); }
+.row-section .row-text > :first-child { margin-top: 0; }
+.row-section .row-text > :last-child  { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------- tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4rem 0;
+  font-size: 0.95rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+thead th {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  font-weight: 700;
+}
+tbody tr:nth-child(even) td { background: var(--color-bg-soft); }
+
+/* ---------------------------------------------------------------- buttons / CTA */
+
+.cta, a.cta {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: var(--color-accent);
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  transition: background 0.18s ease;
+}
+.cta:hover, a.cta:hover {
+  background: var(--color-accent-dark);
+  text-decoration: none;
+}
+
+a.pdf {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  text-decoration: none;
+  margin: 0.4rem 0;
+  font-size: 0.93rem;
+  color: var(--color-fg);
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+a.pdf::before {
+  content: "PDF · ";
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+a.pdf:hover {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.site-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-fg);
+  font-size: 0.93rem;
+  margin-top: 3rem;
+}
+.site-footer > * {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+.site-footer .contact { padding-top: 2rem; }
+.site-footer .contact strong { color: #fff; font-weight: 700; }
+.site-footer a { color: var(--color-footer-fg); }
+.site-footer a:hover { color: #fff; }
+.site-footer .footer-nav {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.site-footer .footer-nav a { margin-right: 0.6rem; }
+.site-footer .copy {
+  color: var(--color-footer-fg-soft);
+  font-size: 0.85rem;
+  padding-top: 0.2rem;
+  padding-bottom: 1.6rem;
+}
+
+/* ---------------------------------------------------------------- responsive */
+
+@media (max-width: 760px) {
+  .row-section { grid-template-columns: 1fr; gap: 1rem; }
+  .row-section.reverse { direction: ltr; }
+  #content > header h1.title { font-size: 1.9rem; }
+  #content h2 { font-size: 1.4rem; }
+}
+@media (max-width: 540px) {
+  .site-header-inner { padding: 0.5rem 0.9rem; }
+  .brand span { display: none; }
+  .site-nav a { padding: 0.45rem 0.6rem; font-size: 0.85rem; }
+}
