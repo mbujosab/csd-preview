@@ -152,22 +152,21 @@ an empty value, the default.")
 (defun csd-rewrite-paths-filter (output backend _info)
   "Prepend `csd-base-url' to every root-absolute URL in OUTPUT.
 Only runs for HTML export and when `csd-base-url' is non-empty.
-Does NOT touch protocol-relative URLs (\"//cdn…\") or other prefixes."
+Does NOT touch protocol-relative URLs (\"//cdn…\") or other prefixes.
+
+Implemented as a single pass: the regex matches \"/X\" where X is any
+character that is NOT another slash. That covers both \"/\" (home link,
+X is the closing quote) and \"/foo\" (any path, X is a letter). It
+avoids matching protocol-relative \"//host/…\". Running in one pass is
+critical: a second pass would also match the freshly inserted prefix
+and double it (e.g. /csd-preview/csd-preview/)."
   (if (and (eq backend 'html)
            (stringp csd-base-url)
            (not (string-empty-p csd-base-url)))
-      (let ((s output))
-        ;; src=\"/\" / href=\"/\"  (home link)
-        (setq s (replace-regexp-in-string
-                 "\\(\\(?:src\\|href\\)=\"\\)/\""
-                 (concat "\\1" csd-base-url "/\"")
-                 s))
-        ;; src=\"/foo\" / href=\"/foo\"  (exclude protocol-relative //…)
-        (setq s (replace-regexp-in-string
-                 "\\(\\(?:src\\|href\\)=\"\\)/\\([^/\"]\\)"
-                 (concat "\\1" csd-base-url "/\\2")
-                 s))
-        s)
+      (replace-regexp-in-string
+       "\\(\\(?:src\\|href\\)=\"\\)/\\([^/]\\)"
+       (concat "\\1" csd-base-url "/\\2")
+       output)
     output))
 
 (add-to-list 'org-export-filter-final-output-functions
