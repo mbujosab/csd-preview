@@ -98,7 +98,7 @@ an empty value, the default.")
   (format "<header class=\"site-header\">
   <div class=\"site-header-inner\">
     <a class=\"brand\" href=\"/\">
-      <img src=\"/img/logo.jpg\" alt=\"Ciudad Santo Domingo\" />
+      <img src=\"/img/logoTransparente.svg\" alt=\"Ciudad Santo Domingo\" />
       <span>Ciudad Santo Domingo</span>
     </a>
     <nav class=\"site-nav\" aria-label=\"Navegación principal\">
