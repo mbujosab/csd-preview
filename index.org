@@ -301,8 +301,7 @@ parque infantil (edificio del reloj).
 :END:
 
 #+ATTR_HTML: :class lead
-Información sobre la urbanización y sus servicios: convivencia, gestión
-del agua, seguridad, ruido de aviones y directorio de teléfonos.
+Información sobre la urbanización y sus servicios: convivencia, gestión del agua, seguridad y directorio de teléfonos.
 
 ** Consejos prácticos para la vida en Ciudad Santo Domingo
 
