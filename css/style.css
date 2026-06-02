@@ -10,6 +10,7 @@
   --color-accent:       #159938;
   --color-accent-dark:  #0e6d28;
   --color-accent-soft:  #e3f3e9;
+  --color-accent-light: #5fdc84;
   --color-border:       #e1e3e5;
   --color-footer-bg:    #2a2f33;
   --color-footer-fg:    #d6d9dc;
@@ -372,6 +373,8 @@ a.pdf:hover {
   margin: 0 auto;
   padding: 1rem 1.25rem;
 }
+/* On the dark footer, phone numbers use a lighter green for contrast. */
+.site-footer .phone { color: var(--color-accent-light); }
 .site-footer .contact { padding-top: 2rem; }
 .site-footer .contact strong { color: #fff; font-weight: 700; }
 .site-footer a { color: var(--color-footer-fg); }
