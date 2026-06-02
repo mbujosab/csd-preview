@@ -394,83 +394,85 @@ accidentes.
 | Ayuntamiento de Algete                    | 916 204 900  |
 | Empresa de autobuses urbanos (ALSA)       | 911 779 951  |
 
-*** Salud
+*** Otros servicios
 
-| Servicio                                  | Teléfono                     |
-|-------------------------------------------+------------------------------|
-| Clínica dental Hernandent                 | 916 222 075                  |
-| Clínica dental Santo Domingo              | 916 237 596 / 659 159 316    |
-| Centro médico Santo Domingo               | 918 314 921                  |
-| Clínica veterinaria                       | 916 221 269                  |
-| Urgencias veterinarias                    | 639 141 764                  |
+El [[https://www.centrosantodomingo.com/][Centro Comercial]] ofrece multitud de servicios.
 
-*** Estética
-
-| Servicio                                  | Teléfono                     |
-|-------------------------------------------+------------------------------|
-| A3 Espacio Belleza                        | 916 221 709 / 678 325 016    |
-| Santo Domingo Nails y Estética            | 911 544 016 / 644 878 637    |
-| Cucos Peluquería y Estética               | 916 220 578                  |
-| Carlos Conde Peluqueros                   | 916 220 646                  |
-
-*** Servicios del automóvil
-
-| Servicio                                  | Teléfono     |
-|-------------------------------------------+--------------|
-| Service Car Santo Domingo                 | 916 222 476  |
-
-*** Inmobiliaria
-
-| Servicio                                  | Teléfono     |
-|-------------------------------------------+--------------|
-| Abeto Coches & Casas                      | 916 221 790  |
-| Gilmar Consulting Inmobiliaria            | 916 236 650  |
-
-*** Alimentación
-
-| Servicio                                  | Teléfono     |
-|-------------------------------------------+--------------|
-| La Plaza del Día                          | 620 268 382  |
-| Panadería pastelería Martín               | 916 220 690  |
-| Frutería Ruiz y González                  | 689 398 876  |
-| Las secciones L&R                         | 916 222 069  |
-| L&R servicio a domicilio                  | 630 802 959  |
-
-*** Restauración
-
-| Servicio                                  | Teléfono     |
-|-------------------------------------------+--------------|
-| Verdejo Casa de Comidas                   | 916 237 911  |
-| Gastrobar M                               | 916 221 133  |
-| Vermutería Vermut Piripi                 | 910 842 070  |
-| Tutto's Pizzería Hamburguesería          | 910 253 852  |
-| Foodshui — cocina sana y saludable        | 680 838 803  |
-| Xarel-lo gastro bar                       | 916 222 055  |
-| Papa Persa                                | 628 097 846  |
-| La taza mágica, más que café              | 916 288 377  |
-| La Mia Nonna, Trattoria & Bistro          | 611 406 428  |
-
-*** Comercio
-
-| Servicio                                  | Teléfono                     |
-|-------------------------------------------+------------------------------|
-| La Casita                                 | 916 221 794                  |
-| La Mercería de Carmen                     | 916 220 966                  |
-| Los Peñotes Flor                          | 658 554 763                  |
-| Garden Pool Santo Domingo                 | 916 222 000                  |
-| Girasol librería                          | 912 557 326 / 639 221 558    |
-| Escuela de Danza Cristina Santos          | 662 948 845                  |
-| Construcciones Alcañiz de la Guía         | 627 951 330                  |
-| Estanco                                   | 916 221 959                  |
-| Loterías y apuestas del Estado, papelería | 689 398 876                  |
-| MD Decoración e Interiorismo              | 620 887 577                  |
-
-*** Finanzas y seguros
-
-| Servicio                                  | Teléfono     |
-|-------------------------------------------+--------------|
-| Banco de Santander                        | 915 556 576  |
-| Euro Assurance correduría de seguros      | 916 222 122  |
+# | Servicio                                  | Teléfono                     |
+# |-------------------------------------------+------------------------------|
+# | Clínica dental Hernandent                 | 916 222 075                  |
+# | Clínica dental Santo Domingo              | 916 237 596 / 659 159 316    |
+# | Centro médico Santo Domingo               | 918 314 921                  |
+# | Clínica veterinaria                       | 916 221 269                  |
+# | Urgencias veterinarias                    | 639 141 764                  |
+# 
+# *** Estética
+# 
+# | Servicio                                  | Teléfono                     |
+# |-------------------------------------------+------------------------------|
+# | A3 Espacio Belleza                        | 916 221 709 / 678 325 016    |
+# | Santo Domingo Nails y Estética            | 911 544 016 / 644 878 637    |
+# | Cucos Peluquería y Estética               | 916 220 578                  |
+# | Carlos Conde Peluqueros                   | 916 220 646                  |
+# 
+# *** Servicios del automóvil
+# 
+# | Servicio                                  | Teléfono     |
+# |-------------------------------------------+--------------|
+# | Service Car Santo Domingo                 | 916 222 476  |
+# 
+# *** Inmobiliaria
+# 
+# | Servicio                                  | Teléfono     |
+# |-------------------------------------------+--------------|
+# | Abeto Coches & Casas                      | 916 221 790  |
+# | Gilmar Consulting Inmobiliaria            | 916 236 650  |
+# 
+# *** Alimentación
+# 
+# | Servicio                                  | Teléfono     |
+# |-------------------------------------------+--------------|
+# | La Plaza del Día                          | 620 268 382  |
+# | Panadería pastelería Martín               | 916 220 690  |
+# | Frutería Ruiz y González                  | 689 398 876  |
+# | Las secciones L&R                         | 916 222 069  |
+# | L&R servicio a domicilio                  | 630 802 959  |
+# 
+# *** Restauración
+# 
+# | Servicio                                  | Teléfono     |
+# |-------------------------------------------+--------------|
+# | Verdejo Casa de Comidas                   | 916 237 911  |
+# | Gastrobar M                               | 916 221 133  |
+# | Vermutería Vermut Piripi                 | 910 842 070  |
+# | Tutto's Pizzería Hamburguesería          | 910 253 852  |
+# | Foodshui — cocina sana y saludable        | 680 838 803  |
+# | Xarel-lo gastro bar                       | 916 222 055  |
+# | Papa Persa                                | 628 097 846  |
+# | La taza mágica, más que café              | 916 288 377  |
+# | La Mia Nonna, Trattoria & Bistro          | 611 406 428  |
+# 
+# *** Comercio
+# 
+# | Servicio                                  | Teléfono                     |
+# |-------------------------------------------+------------------------------|
+# | La Casita                                 | 916 221 794                  |
+# | La Mercería de Carmen                     | 916 220 966                  |
+# | Los Peñotes Flor                          | 658 554 763                  |
+# | Garden Pool Santo Domingo                 | 916 222 000                  |
+# | Girasol librería                          | 912 557 326 / 639 221 558    |
+# | Escuela de Danza Cristina Santos          | 662 948 845                  |
+# | Construcciones Alcañiz de la Guía         | 627 951 330                  |
+# | Estanco                                   | 916 221 959                  |
+# | Loterías y apuestas del Estado, papelería | 689 398 876                  |
+# | MD Decoración e Interiorismo              | 620 887 577                  |
+# 
+# *** Finanzas y seguros
+# 
+# | Servicio                                  | Teléfono     |
+# |-------------------------------------------+--------------|
+# | Banco de Santander                        | 915 556 576  |
+# | Euro Assurance correduría de seguros      | 916 222 122  |
 
 ** Documento de referencia
 
