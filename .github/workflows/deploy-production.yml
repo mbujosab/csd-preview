@@ -1,10 +1,10 @@
-name: Deploy to production (SFTP)
+name: Deploy to production (FTP)
 
 on:
   workflow_dispatch:
 
 jobs:
-  sftp-deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,15 +23,15 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y --no-install-recommends lftp
 
-      - name: Deploy via SFTP
+      - name: Deploy via FTP
         env:
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
-          SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+          FTP_HOST:        ${{ secrets.SFTP_HOST }}
+          FTP_USER:        ${{ secrets.SFTP_USER }}
+          FTP_PASSWORD:    ${{ secrets.SFTP_PASSWORD }}
+          FTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
-          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
-            set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no"
+          lftp -u "$FTP_USER","$FTP_PASSWORD" ftp://"$FTP_HOST" <<LFTP
+            set ftp:ssl-allow no
             set net:max-retries 3
-            mirror --reverse --delete --verbose ./public/ $SFTP_REMOTE_PATH
+            mirror --reverse --delete --verbose ./public/ $FTP_REMOTE_PATH
           LFTP
