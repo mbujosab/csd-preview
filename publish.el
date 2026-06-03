@@ -73,9 +73,9 @@ an empty value, the default.")
 
 (defconst csd-menu-items
   '(("inicio"        . ("Inicio"               . "/"))
-    ("comunidad"     . ("Asuntos Comunidad"    . "/asuntos-comunidad/"))
-    ("municipales"   . ("Asuntos Municipales"  . "/asuntos-municipales/"))
-    ("oficina"       . ("Acceso Área Privada"  . "/oficina-virtual/")))
+    ("comunidad"     . ("Comunidad"            . "/asuntos-comunidad/"))
+    ("municipales"   . ("Municipio"            . "/asuntos-municipales/"))
+    ("oficina"       . ("Área Privada"         . "/oficina-virtual/")))
   "Main navigation: (NAV_KEY . (LABEL . URL)).")
 
 (defun csd--menu-html ()
