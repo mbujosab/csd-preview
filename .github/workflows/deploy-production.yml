@@ -1,14 +1,5 @@
 name: Deploy to production (SFTP)
 
-# Solo se ejecuta manualmente desde la pestaña Actions de GitHub.
-# Antes de usarlo, crea estos Secrets en:
-#   Settings → Secrets and variables → Actions → Secrets
-#
-#   SFTP_HOST        →  ciudadsantodomingo.org
-#   SFTP_USER        →  csd@csdomingo.com
-#   SFTP_PASSWORD    →  tu contraseña
-#   SFTP_REMOTE_PATH →  ruta raíz del sitio en el servidor, p.ej. /public_html/
-
 on:
   workflow_dispatch:
 
@@ -24,7 +15,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends emacs-nox
 
-      - name: Build site (producción: BASE_URL vacío, sirve en raíz)
+      - name: Build site (produccion)
         env:
           CSD_BASE_URL: ""
         run: make build
@@ -34,15 +25,13 @@ jobs:
 
       - name: Deploy via SFTP
         env:
-          SFTP_HOST:        ${{ secrets.SFTP_HOST }}
-          SFTP_USER:        ${{ secrets.SFTP_USER }}
-          SFTP_PASSWORD:    ${{ secrets.SFTP_PASSWORD }}
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
           SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
-          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<EOF
+          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
             set sftp:auto-confirm yes
             set net:max-retries 3
-            mirror --reverse --delete --verbose \
-              ./public/ $SFTP_REMOTE_PATH
-          EOF
-
+            mirror --reverse --delete --verbose ./public/ $SFTP_REMOTE_PATH
+          LFTP
