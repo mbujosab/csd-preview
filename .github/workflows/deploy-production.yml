@@ -31,7 +31,7 @@ jobs:
           SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
           lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
-            set sftp:auto-confirm yes
+            set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no"
             set net:max-retries 3
             mirror --reverse --delete --verbose ./public/ $SFTP_REMOTE_PATH
           LFTP
