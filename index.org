@@ -502,7 +502,7 @@ urbanización está bajo gestión municipal de Algete.
 
 #+HTML: <img class="img-natural" src="/img/linea-verde-logo.jpg" alt="Logo Línea Verde" />
 
-La Línea Verde es un instrumento para comunicar al Ayuntamiento
+La [[https://www.lineaverdealgete.com/][Línea Verde]] es un instrumento para comunicar al Ayuntamiento
 incidencias de seguridad, urbanísticas, orden público y
 medioambientales. Permite geolocalizar el problema.
 
@@ -621,7 +621,7 @@ prevención contra la contaminación por ruidos.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Esta unidad se creó en febrero de 2022. Está integrada por dos agentes
+Esta [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][unidad]] se creó en febrero de 2022. Está integrada por dos agentes
 con un vehículo y patrulla Ciudad Santo Domingo y Prado Norte.
 
 - *Teléfono móvil:* [[tel:+34659625379][659 62 53 79]]
@@ -689,6 +689,7 @@ municipal), debe personarse de lunes a viernes, de 10 a 14 h.
 
 - *Teléfono:* [[tel:+34916220406][916 220 406]]
 - *Correo:* [[mailto:mmontouto@aytoalgete.com][mmontouto@aytoalgete.com]]
+- *Web de la concejalía:* [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][aquí.]]
 
 #+HTML: </div>
 #+HTML: </section>
