@@ -294,7 +294,7 @@ parque infantil (edificio del reloj).
 <div id="lb-12" class="lightbox"><a class="lightbox-close" href="#" aria-label="Cerrar">×</a><img src="/img/supermercado-dia.jpg" alt="Supermercado"/><div class="lightbox-caption">Supermercado</div></div>
 #+END_EXPORT
 
-* Asuntos Comunidad
+* Asuntos de la Comunidad
 :PROPERTIES:
 :EXPORT_FILE_NAME: public/asuntos-comunidad/index
 :NAV_KEY: comunidad
@@ -389,14 +389,14 @@ accidentes.
 | [[https://www.correosoficinas.es/piscinas/oficina-2812001-ciudad-santo-domingo/][Correos]]                             | 916 222 193 |
 | [[https://parroquiasantodomingo.org/][Parroquia]]                           | 916 221 493 |
 | [[https://www.comunidad.madrid/centros/centro-salud-algete][Centro de Salud Algete]]              | 916 282 286 |
-| Oficina del centro comercial        | 916 220 800 |
+| [[https://www.centrosantodomingo.com/contacto/][Oficina del centro comercial]]        | 916 220 800 |
 | [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][Tenencia de Alcaldía Santo Domingo]]  | 916 220 406 |
 | [[https://aytoalgete.es/][Ayuntamiento de Algete]]              | 916 204 900 |
-| Empresa de autobuses urbanos (ALSA) | 911 779 951 |
+| [[https://www.madridbuses.com/empresas-autobus/alsa.html][Empresa de autobuses urbanos (ALSA)]] | 911 779 951 |
 
 *** Otros servicios
 
-El [[https://www.centrosantodomingo.com/][Centro Comercial]] ofrece multitud de servicios.
+El [[https://www.centrosantodomingo.com/][Centro Comercial]] ofrece multitud de [[https://www.centrosantodomingo.com/directorio/][servicios]].
 
 # | Servicio                                  | Teléfono                     |
 # |-------------------------------------------+------------------------------|
