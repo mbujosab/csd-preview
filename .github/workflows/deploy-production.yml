@@ -20,18 +20,13 @@ jobs:
           CSD_BASE_URL: ""
         run: make build
 
-      - name: Install lftp
-        run: sudo apt-get install -y --no-install-recommends lftp
-
       - name: Deploy via FTP
-        env:
-          FTP_HOST:        ${{ secrets.SFTP_HOST }}
-          FTP_USER:        ${{ secrets.SFTP_USER }}
-          FTP_PASSWORD:    ${{ secrets.SFTP_PASSWORD }}
-          FTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
-        run: |
-          lftp -u "$FTP_USER","$FTP_PASSWORD" ftp://"$FTP_HOST" <<LFTP
-            set ftp:ssl-allow no
-            set net:max-retries 3
-            mirror --reverse --delete --verbose ./public/ $FTP_REMOTE_PATH
-          LFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:            ${{ secrets.SFTP_HOST }}
+          username:          ${{ secrets.SFTP_USER }}
+          password:          ${{ secrets.SFTP_PASSWORD }}
+          local-dir:         ./public/
+          server-dir:        ${{ secrets.SFTP_REMOTE_PATH }}
+          protocol:          ftp
+          port:              21
