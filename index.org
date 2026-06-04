@@ -600,7 +600,7 @@ Los propietarios de parcelas disponen de acceso a la *Oficina Virtual* para cons
 El acceso a la Oficina Virtual requiere un registro de usuario previo y validado. Ponemos a su disposición dos herramientas de soporte para guiarle en el proceso:
 
 - Un manual de instrucciones detallado en formato PDF.
-- Un vídeo tutorial guiado paso a paso.
+- Un [[https://youtu.be/qEJ8fP5zPbc][vídeo tutorial]] guiado paso a paso.
 
 [[abs:/docs/tutorial-oficina-virtual.pdf][Descargar manual de usuario de la Oficina Virtual (PDF)]]
 
