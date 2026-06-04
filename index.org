@@ -13,38 +13,24 @@
 :END:
 
 #+ATTR_HTML: :class lead
-Sitio web de la Comunidad de Propietarios de la urbanización Ciudad Santo
-Domingo (Algete, Madrid). Aquí encontrará información general sobre la
-urbanización, sus servicios y los asuntos relacionados con la gestión
-municipal y comunitaria.
+Bienvenido al portal oficial de la urbanización Ciudad Santo Domingo (Algete, Madrid), un entorno residencial que conjuga naturaleza, seguridad y servicios para ofrecer una calidad de vida excepcional.
 
 ** Bienvenidos a Ciudad Santo Domingo
 
-Esta web proporciona un conocimiento exhaustivo de la urbanización Ciudad
-Santo Domingo y cuenta además con un *Área Privada* para los propietarios
-de parcelas.
+Este espacio digital ha sido diseñado para dar a conocer en detalle nuestra urbanización, así como para facilitar la gestión diaria de los residentes a través del [[https://ciudadsantodomingo.org/oficina-virtual/][*Área Privada*]] exclusiva para propietarios de parcelas.
 
-En las secciones [[abs:/asuntos-comunidad/][Asuntos de la Comunidad]] y
-[[abs:/asuntos-municipales/][Asuntos Municipales]] encontrará toda la información
-necesaria para conocer la urbanización y los servicios que la dotan, así
-como otra información relevante sobre cuestiones del ámbito municipal.
+En las secciones de [[abs:/asuntos-comunidad/][Asuntos de la Comunidad]] y [[abs:/asuntos-municipales/][Asuntos Municipales]] encontrará toda la información de interés sobre nuestras infraestructuras, servicios comunes, normativas y vías de colaboración con la administración local.
 
-Si es usted propietario, desde esta web puede acceder al
-[[abs:/oficina-virtual/][Área Privada]], donde encontrará los datos de gestión
-de su parcela que obran en la Gerencia de la Comunidad de Propietarios
-además de documentos relativos a la gobernanza de la Comunidad de
-Propietarios como actas, estatutos, presupuestos, tarifas, etc.
+Si ya es propietario de una vivienda en la urbanización, le invitamos a acceder a la [[abs:/oficina-virtual/][Oficina Virtual]]. En ella podrá consultar cómodamente los datos de gestión de su parcela que obran en la Gerencia de la Comunidad de Propietarios, así como actas de juntas, estatutos vigentes, presupuestos anuales, tarifas de servicios, etc.
 
-Por último, puede contactar con la Gerencia escribiendo a
-[[mailto:csd@csdomingo.com][csd@csdomingo.com]] o por teléfono al
-[[tel:+34916221511][916 221 511]].
+Para cualquier consulta personalizada, la Gerencia de la Comunidad de Propietarios queda a su entera disposición en el correo electrónico [[mailto:csd@csdomingo.com][csd@csdomingo.com]] o a través del teléfono [[tel:+34916221511][916 221 511]].
 
 #+BEGIN_QUOTE
 Somos una gran comunidad en la que impera una convivencia ordenada y
 tranquila aunque, desde el punto de vista de gestión, no exenta de
 complejidad e inquietudes.
 
-— Junta gestora
+— Junta Gestora
 #+END_QUOTE
 
 ** Nuestra urbanización
@@ -78,12 +64,7 @@ complejidad e inquietudes.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-*Ciudad Santo Domingo* es una urbanización situada al noreste de Madrid,
-a la que se accede directamente desde la carretera nacional *N1*, en la
-*salida del Km 28*. Fue fundada en 1976 por un conjunto de ingenieros de
-caminos —de ahí su nombre— con una indudable visión técnica y de futuro,
-que le ha permitido convertirse en el actual conjunto residencial, muy
-apreciado y consolidado, y que actualmente *integran un millar de chalets*.
+*Ciudad Santo Domingo* es una exclusiva urbanización situada al noreste de Madrid, con acceso directo desde la autovía del Norte (*A-1*, *salida del km 28*). Fundada en 1976 por un grupo de ingenieros de caminos —cuyo patrón da origen a su nombre—, fue concebida bajo una avanzada visión técnica y urbanística. Ello la ha consolidado como un entorno residencial altamente valorado, que hoy en día alberga a *cerca de un millar de chalets independientes* integrados armónicamente en un paisaje natural único.
 
 #+HTML: </div>
 #+HTML: </section>
@@ -94,9 +75,7 @@ apreciado y consolidado, y que actualmente *integran un millar de chalets*.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Ciudad Santo Domingo cuenta con su *propio equipo de seguridad 24/7 y
-vigilancia perimetral*, así como con la presencia de una *patrulla de
-policía municipal de proximidad*.
+La tranquilidad de nuestras familias es nuestra absoluta prioridad. Por ello, la urbanización cuenta con su *propio servicio de seguridad activa las 24 horas, los 365 días del año*, control de accesos automatizado y vigilancia perimetral, complementado por la presencia coordinada de una [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][*patrulla de la Policía Municipal de proximidad*]].
 
 #+HTML: </div>
 #+HTML: </section>
@@ -107,11 +86,7 @@ policía municipal de proximidad*.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Mediante un sistema de pozos, regulados informáticamente con energía
-fotovoltaica, la urbanización dispone de *red propia de abastecimiento y
-distribución de agua*, junto con su ciclo completo de depuración (EDAR).
-El suministro se complementa con una segunda *red de agua del Canal de
-Isabel II (CYII)*.
+Comprometidos con la eficiencia, disponemos de una *red propia de captación, distribución y depuración de agua (EDAR)* a partir de pozos propios automatizados mediante tecnología solar fotovoltaica. Esta red de agua comunitaria se complementa de forma independiente con el suministro del *Canal de Isabel II (CYII)*, garantizando la máxima calidad de servicio a todos los hogares.
 
 #+HTML: </div>
 #+HTML: </section>
@@ -122,8 +97,7 @@ Isabel II (CYII)*.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-La urbanización está dotada de un [[https://aytoalgete.es/index.php?Itemid=520&catid=89%3Aservicios&id=166%3Arecogida-residuos&option=com_content&view=article][*punto limpio*]] y de un sistema de
-*recogida de poda*, ambos de titularidad municipal.
+El cuidado y respeto por el medio ambiente se materializan en servicios específicos como un [[https://aytoalgete.es/index.php?Itemid=520&catid=89%3Aservicios&id=166%3Arecogida-residuos&option=com_content&view=article][*punto limpio*]] de uso exclusivo para los residentes y un sistema de *recogida de restos de poda*, ambos de titularidad municipal.
 
 #+HTML: </div>
 #+HTML: </section>
@@ -134,13 +108,8 @@ La urbanización está dotada de un [[https://aytoalgete.es/index.php?Itemid=520
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-En su [[https://www.centrosantodomingo.com/][*zona comercial*]], sin salir de la urbanización, los vecinos
-encuentran múltiples servicios: supermercado, frutería, pescadería,
-banco, librería, estanco, tiendas de complementos, peluquerías, taller
-mecánico, agencias inmobiliarias, clínica veterinaria, consultorio de
-seguros médicos, oficina de correos, centro médico de atención primaria
-de la Seguridad Social, entre otros, así como una amplia oferta de
-hostelería.
+En su completa [[https://www.centrosantodomingo.com/][*zona comercial*]], y sin necesidad de salir de la urbanización, los vecinos disponen de una amplia oferta de servicios y ocio: supermercado, frutería, pescadería, entidad bancaria, oficina postal, consultorio de
+seguros médicos, clínica veterinaria, despachos profesionales, consultorio médico de atención primaria de la Seguridad Social, así como una magnífica oferta de restauración con agradables terrazas ([[https://www.centrosantodomingo.com/directorio/][enlace al directorio comercial]]).
 
 #+HTML: </div>
 #+HTML: </section>
@@ -151,9 +120,7 @@ hostelería.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-La [[https://parroquiasantodomingo.org/][*parroquia de Santo Domingo de la Calzada*]] dota de servicios
-religiosos con su iglesia dentro de la urbanización. El
-*Ayuntamiento de Algete* dispone igualmente de una [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][*tenencia de alcaldía*]] en la propia urbanización.
+La vida social y comunitaria se enriquece con la [[https://parroquiasantodomingo.org/][*parroquia de Santo Domingo de la Calzada*]], que cuenta con su templo dentro de la propia urbanización, y con la presencia institucional de una [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][*Tenencia de Alcaldía*]] del Ayuntamiento de Algete para facilitar trámites administrativos sin desplazamientos.
 
 #+HTML: </div>
 #+HTML: </section>
@@ -164,9 +131,7 @@ religiosos con su iglesia dentro de la urbanización. El
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-El conjunto residencial se complementa con varios *parques y encinares*
-de gran extensión; y para los más jóvenes: un *parque infantil y
-deportivo* y un *skate park*.
+El entorno residencial destaca por su alto valor natural y paisajístico, sus *parques y amplios encinares*, un camino ecológico circular ideal para el paseo o la práctica deportiva, y espacios lúdicos que incluyen un *parque infantil, canchas multideporte y un skate park* para los más jóvenes.
 
 #+HTML: </div>
 #+HTML: </section>
@@ -177,9 +142,7 @@ deportivo* y un *skate park*.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-La gobernanza de la Comunidad de Propietarios se gestiona desde una
-*junta gestora* y mediante *asambleas anuales*. La Comunidad mantiene
-abiertas sus oficinas durante todo el año para *atención del propietario*.
+La gobernanza de la Comunidad de Propietarios es ejercida por una *Junta Gestora* y ratificada en sus *asambleas generales*. La Gerencia mantiene abiertas sus oficinas para prestar una *atención al propietario* durante todo el año.
 
 #+HTML: </div>
 #+HTML: </section>
@@ -188,93 +151,58 @@ abiertas sus oficinas durante todo el año para *atención del propietario*.
 
 *** Seguridad
 
-Para cualquier asunto relacionado con la seguridad (incidencia,
-detección de conductas sospechosas, etc.) llame al teléfono de
-seguridad. También será atendido por nuestro equipo de seguridad para
-otro tipo de incidencias como emergencias sanitarias, incendio,
-accidentes de tráfico, árboles caídos, etc. Desde seguridad coordinarán
-en instantes la solución más adecuada y se personará una patrulla en su
-domicilio.
+Para cualquier asunto relacionado con la seguridad, la prevención o la resolución de incidencias, nuestro equipo de seguridad está a su disposición de manera inmediata. Los vigilantes atienden y coordinan ágilmente cualquier llamada de auxilio, emergencia médica, conato de incendio o asistencia en viales comunes, de modo que una patrulla se personará en su domicilio en escasos minutos.
 
 - *Teléfono de seguridad:* [[tel:+34916221507][916 221 507]]
-- *Horario:* todos los días del año, 24 horas.
+- *Horario:* Todos los días del año, 24 horas.
 
 *** Policía de proximidad
 
-El Ayuntamiento de Algete tiene destacada una *patrulla de policía local*
-específica para las urbanizaciones Ciudad Santo Domingo y Prado Norte.
-Los agentes patrullan de forma constante *de lunes a viernes entre las 8
-y las 14 h*, con independencia de otras actuaciones policiales concretas
-fuera de este horario. Puede llamar directamente al móvil de los agentes
-para cualquier incidencia.
+El Ayuntamiento de Algete cuenta con una [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][*patrulla de la Policía Local*]] dedicada en exclusiva al ámbito de las urbanizaciones Ciudad Santo Domingo y Prado Norte. Los agentes realizan labores de prevención y vigilancia activa *de lunes a viernes en horario de 8:00 a 14:00 h*, con independencia de otras actuaciones policiales puntuales fuera de esta franja.
 
-- *Policía local de proximidad:* [[tel:+34659625379][659 62 53 79]] — De
-  lunes a viernes de 8 a 14 h.
-- *Servicio de policía local de Algete:* [[tel:+34916281513][916 28 15 13]]
-  — Todos los días del año, 24 h.
+- *Policía Local de proximidad:* [[tel:+34659625379][659 62 53 79]] — De lunes a viernes de 8:00 a 14:00 h.
+- *Policía Local de Algete (centralita):* [[tel:+34916281513][916 28 15 13]] — Todos los días del año, 24 horas.
 
 *** Atención primaria (Seguridad Social)
 
-La urbanización cuenta con un consultorio de atención primaria atendido
-por un facultativo y un servicio de enfermería.
+La urbanización cuenta con un [[https://www.libreeleccion.sanidadmadrid.org/Seleccione/CentroAtencionPrimaria.aspx/2214?CONS-SANTO-DOMINGO/][*consultorio médico de atención primaria*]] de la Seguridad Social situado en el sector norte de la zona comercial, atendido por un facultativo y personal de enfermería.
 
-Los vecinos con médico asignado en Ciudad Santo Domingo pueden solicitar
-cita llamando al [[tel:+34916282454][916 282 454]] o mediante la app
-*Cita Sanitaria*.
+Los vecinos adscritos al centro médico de Ciudad Santo Domingo pueden concertar su consulta telefónicamente llamando al [[tel:+34916282454][916 282 454]] o de forma digital a través de la aplicación oficial *Cita Sanitaria*.
 
 *** Punto limpio
 
-La urbanización cuenta con un punto limpio municipal situado junto al
-parque de la *calle Vivero*, al final de la Avda. del Guadalix. En el
-punto limpio puede depositar *muebles, plásticos, electrodomésticos,
-cartones, escombro de pequeñas obras* (2 sacas máximo), *restos de poda*
-(2 sacas máximo) y, en general, residuos que no son retirados en los
-cubos de basura ni son apropiados para los puntos de reciclaje. Se le
-exigirá la *presentación del DNI* y, si es una persona o empresa que
-trabaja para usted, una *autorización escrita*. Este control tiene por
-objeto evitar el abuso del punto limpio por personas o empresas ajenas a
-la urbanización.
+Contamos con un punto limpio municipal situado junto al parque de la *calle Vivero* (al final de la Avda. del Guadalix). En este recinto se pueden depositar de forma selectiva residuos domésticos no aptos para los contenedores ordinarios (muebles, plásticos voluminosos, pequeños electrodomésticos, cartones, escombros de pequeñas reformas domésticas y restos de poda con un máximo de 2 sacas). Para garantizar el uso exclusivo de la instalación a los vecinos, es obligatorio presentar el DNI o, en el caso de profesionales autorizados, un documento escrito firmado por el propietario.
 
-*Horario:* se puede consultar en este [[https://aytoalgete.es/index.php?Itemid=520&catid=89%3Aservicios&id=166%3Arecogida-residuos&option=com_content&view=article][enlace]].
-# de lunes a viernes de 10 a 14 h; sábados de 10 a 14 h y de 17 a 20 h; domingos y festivos de 10 a 14 h.
+*Horario:* Se puede consultar en la sección *Puntos Limpios Fijos* de este [[https://aytoalgete.es/index.php?Itemid=520&catid=89%3Aservicios&id=166%3Arecogida-residuos&option=com_content&view=article][enlace]].
 
 *** Oficina de correos
 
-Ciudad Santo Domingo está dotada de una oficina de correos a su
-disposición todos los días entre semana. Está situada en el extremo
-norte del centro comercial, en los bajos frente al parque infantil.
+Ciudad Santo Domingo cuenta con una oficina de Correos a su entera disposición que presta servicio de lunes a viernes. Está ubicada en el sector norte de la zona comercial, en los locales situados frente al parque infantil.
 
 - *Teléfono:* [[tel:+34916222193][916 222 193]]
-- *Horario:* en este [[https://www.correosoficinas.es/piscinas/oficina-2812001-ciudad-santo-domingo/][enlace]].
-# de lunes a viernes de 9 a 14 h.
+- *Horario:* Puede consultarse en este [[https://www.correosoficinas.es/piscinas/oficina-2812001-ciudad-santo-domingo/][enlace]].
 
 ** Transporte — Autobús
 
-Ciudad Santo Domingo cuenta con un servicio de la EMT procedente de
-Plaza de Castilla que accede dentro de la urbanización atravesando la
-Avenida del Guadalix.
+La urbanización dispone de un servicio de transporte público, mediante la red de autobuses interurbanos, que la conecta con la Plaza de Castilla y que, en su interior, realiza un trayecto circular por la Avenida del Guadalix y la Avenida del Monte.
 
 *** Línea 171 — autobús interurbano
 
-Madrid (Plaza de Castilla) — Hospital Infanta Sofía — Urb. Ciudalcampo
-— Urb. Santo Domingo.
+Madrid (Plaza de Castilla) — Hospital Infanta Sofía — Urb. Ciudalcampo — Urb. Santo Domingo.
 
-Consulta los horarios y paradas actualizados en
-@@html:<a href="https://www.redtransporte.com/madrid/autobuses-interurbanos/171-madrid-san-sebastian-de-los-reyes-algete.html" target="_blank" rel="noopener">redtransporte.com — Línea 171</a>@@.
+Consulte el recorrido, paradas y horarios detallados en @@html:<a href="https://www.redtransporte.com/madrid/autobuses-interurbanos/171-madrid-san-sebastian-de-los-reyes-algete.html" target="_blank" rel="noopener">redtransporte.com — Línea 171</a>@@.
+
+- Adicionalmente, la línea [[https://www.madridbuses.com/autobuses-interurbanos/horarios-166-madrid-san-sebastian-de-los-reyes-san-agustin-de-guadalix.html][166]], con parada en la autovía A-1 a la altura de la urbanización, conecta directamente con las estaciones de la [[https://www.metromadrid.es/es/linea/linea-10][Línea 10]] de Metro "Hospital Infanta Sofía" y "Reyes Católicos" en San Sebastián de los Reyes.
 
 ** Contacte con la Gerencia
 
-Como propietario de una parcela —o interesado en otros asuntos de la
-Comunidad— será puntual y personalmente atendido en las oficinas de la
-Comunidad, situadas en el extremo norte del centro comercial, frente al
-parque infantil (edificio del reloj).
+Tanto si ya es propietario de una parcela como si está interesado en formar parte de nuestra Comunidad, recibirá una atención personalizada y profesional en nuestras oficinas centrales, situadas en el edificio del reloj (zona norte del centro comercial, frente al parque infantil).
 
 - *Teléfono:* [[tel:+34916221511][916 221 511]]
 - *Correo:* [[mailto:csd@csdomingo.com][csd@csdomingo.com]]
-- *Horario:* lunes a jueves de 8 a 15 h; viernes de 8 a 14 h.
+- *Horario de atención:* Lunes a jueves de 8:00 a 15:00 h; viernes de 8:00 a 14:00 h.
 
-*Ciudad Santo Domingo. Gerencia.* Avda. del Guadalix, 37 · 28120 Algete
-(Madrid).
+*Ciudad Santo Domingo. Gerencia.* Avda. del Guadalix, 37 · 28120 Algete (Madrid).
 
 # --- Modales del lightbox para la galería de 12 fotos ---
 # Cada uno se activa cuando la URL apunta a #lb-N (clic en la miniatura).
@@ -301,7 +229,7 @@ parque infantil (edificio del reloj).
 :END:
 
 #+ATTR_HTML: :class lead
-Información sobre la urbanización y sus servicios: convivencia, gestión del agua, seguridad y directorio de teléfonos.
+Información detallada sobre la urbanización y su catálogo de servicios exclusivos: convivencia, gestión del agua, seguridad y directorio de contactos esenciales.
 
 ** Consejos prácticos para la vida en Ciudad Santo Domingo
 
@@ -311,10 +239,9 @@ Información sobre la urbanización y sus servicios: convivencia, gestión del a
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Se han recopilado recomendaciones para facilitar la convivencia
-comunitaria.
+Con el objetivo de preservar la armonía residencial de nuestro entorno y facilitar el día a día de las familias, hemos elaborado una serie de recomendaciones prácticas para asegurar una convivencia respetuosa y ordenada en la urbanización.
 
-[[abs:/docs/consejos-vida-comunidad.pdf][Descargar recomendaciones (PDF)]]
+[[abs:/docs/consejos-vida-comunidad.pdf][Descargar recomendaciones de convivencia (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -327,22 +254,13 @@ comunitaria.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-La urbanización extrae agua de *once pozos propios* con una concesión
-oficial de 2 071 611 m³ anuales. La extracción está monitorizada por
-ordenador en tiempo real. Las bombas se abastecen de energía de dos
-parques fotovoltaicos propios. El agua se almacena en un depósito
-ubicado en la calle alta y se distribuye por gravedad mediante red
-propia.
+Nuestra Comunidad cuenta con un sistema hídrico independiente de gran envergadura. Extraemos agua de *once pozos propios* bajo una concesión oficial de 2.071.611 m³ anuales, y monitorizamos las extracciones electrónicamente en tiempo real. Las estaciones de bombeo se nutren de energía sostenible procedente de dos parques fotovoltaicos de nuestra propiedad. El agua se almacena en depósitos estratégicamente elevados para su distribución eficiente por gravedad a toda la urbanización.
 
-Las aguas residuales se recogen y depuran en una *depuradora propia*
-(EDAR), siendo vertidas al río Guadalix bajo vigilancia constante de
-laboratorio externo.
+Las aguas residuales se recogen y tratan en nuestra *estación depuradora de aguas residuales (EDAR) propia*, lo que garantiza un vertido de alta calidad y respetuoso con el río Guadalix, supervisado por laboratorios externos autorizados.
 
-Debido a la legislación actual, que recomienda no usar agua de pozos
-para consumo humano (exceso de arsénico), la urbanización dispone de
-una *segunda red abastecida con agua del Canal de Isabel II*.
+Para una mayor comodidad y en total cumplimiento de las directrices sanitarias, la urbanización dispone de forma paralela de una *segunda red de agua sanitaria abastecida directamente por el Canal de Isabel II (CYII)*.
 
-[[abs:/docs/gestion-del-agua.pdf][Descargar informe de gestión del agua (PDF)]]
+[[abs:/docs/gestion-del-agua.pdf][Descargar dossier sobre la gestión del agua (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -355,22 +273,16 @@ una *segunda red abastecida con agua del Canal de Isabel II*.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Ciudad Santo Domingo cuenta con *servicio de seguridad privada 24/7*.
-El servicio gestiona el acceso automatizado con grabación en vídeo de
-todos los vehículos. Patrullas con coches eléctricos circulan
-constantemente. Los vigilantes están armados.
+Ciudad Santo Domingo cuenta con un eficiente *servicio de seguridad privada ininterrumpido 24/7/365*. El acceso a la urbanización se gestiona de forma automatizada mediante lectura de matrículas y grabación de vídeo de alta definición. Patrullas activas con vehículos de tecnología eléctrica recorren de manera constante el viario, operadas por vigilantes debidamente habilitados y armados.
 
-El sistema integra:
+Nuestra infraestructura de protección integral incluye:
 
-- Circuito de cámaras con visión nocturna en perímetro externo.
-- Nodo de alarmas avanzado tecnológicamente.
+- Circuito cerrado de televisión (CCTV) con cámaras de visión nocturna en el perímetro exterior.
+- Un centro de control y recepción de alertas avanzado para una respuesta inmediata.
 
-El Director de seguridad y su equipo han recibido reconocimientos
-públicos de la Guardia Civil y la Policía Municipal. Los guardias
-intervienen también en emergencias médicas, caídas, incendios y
-accidentes.
+Tanto el director de seguridad como su equipo técnico han sido distinguidos con felicitaciones públicas de la Guardia Civil y la Policía Municipal por su eficacia. Asimismo, el equipo colabora de forma ágil en emergencias sanitarias, prestación de primeros auxilios y prevención de incendios.
 
-[[abs:/docs/seguridad.pdf][Descargar informe de Seguridad (PDF)]]
+[[abs:/docs/seguridad.pdf][Descargar dossier del departamento de seguridad (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -383,16 +295,16 @@ accidentes.
 |-------------------------------------+-------------|
 | Control de seguridad                | 916 221 507 |
 | Oficinas de la Comunidad            | 916 221 511 |
-| [[https://www.aytoalgete.es/index.php?option=com_k2&view=itemlist&task=tag&tag=polic%C3%ADa+local&Itemid=455][Policía local]]                       | 916 280 137 |
-| [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][Policía de proximidad]]               | 659 625 379 |
+| [[https://www.aytoalgete.es/index.php?option=com_k2&view=itemlist&task=tag&tag=polic%C3%ADa+local&Itemid=455][Policía Local]]                       | 916 280 137 |
+| [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][Policía de Proximidad]]               | 659 625 379 |
 | [[https://www.cylex.es/ciudad-santo-domingo/farmacia-santo-domingo-11359876.html][Farmacia]]                            | 916 221 233 |
 | [[https://www.correosoficinas.es/piscinas/oficina-2812001-ciudad-santo-domingo/][Correos]]                             | 916 222 193 |
 | [[https://parroquiasantodomingo.org/][Parroquia]]                           | 916 221 493 |
 | [[https://www.comunidad.madrid/centros/centro-salud-algete][Centro de Salud Algete]]              | 916 282 286 |
 | [[https://www.centrosantodomingo.com/contacto/][Oficina del centro comercial]]        | 916 220 800 |
-| [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][Tenencia de Alcaldía Santo Domingo]]  | 916 220 406 |
+| [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][Tenencia de Alcaldía]]                | 916 220 406 |
 | [[https://aytoalgete.es/][Ayuntamiento de Algete]]              | 916 204 900 |
-| [[https://www.madridbuses.com/empresas-autobus/alsa.html][Empresa de autobuses urbanos (ALSA)]] | 911 779 951 |
+| [[https://www.redtransporte.com/madrid/autobuses-interurbanos/171-madrid-san-sebastian-de-los-reyes-algete.html][Línea 171 de autobús]]                | 911 779 951 |
 
 *** Otros servicios
 
@@ -476,10 +388,9 @@ El [[https://www.centrosantodomingo.com/][Centro Comercial]] ofrece multitud de 
 
 ** Documento de referencia
 
-Toda la información detallada en la web está recogida extensamente en
-un documento único de interés para los vecinos.
+Toda la información esencial sobre nuestra urbanización, su historia y su catálogo de servicios se encuentra recogida detalladamente en el siguiente documento de interés para residentes y futuros propietarios.
 
-[[abs:/docs/conoce-csd.pdf][Conoce Ciudad Santo Domingo (PDF)]]
+[[abs:/docs/conoce-csd.pdf][Descargar dossier informativo "Conoce Ciudad Santo Domingo" (PDF)]]
 
 * Asuntos Municipales
 :PROPERTIES:
@@ -488,23 +399,15 @@ un documento único de interés para los vecinos.
 :END:
 
 #+ATTR_HTML: :class lead
-Información relevante para el vecino o propietario en su relación con el
-Ayuntamiento de Algete.
+Información de utilidad para el vecino en su relación administrativa con el Ayuntamiento de Algete.
 
-Ciudad Santo Domingo se ubica en el municipio de Algete (21 000
-habitantes). Las calles no son privadas, sino de carácter urbano. El
-Ayuntamiento provee servicios públicos como alumbrado, limpieza de
-vías, recogida de basuras, policía local y punto limpio. Salvo agua y
-seguridad (gestionados por la Comunidad de Propietarios), la
-urbanización está bajo gestión municipal de Algete.
+Ciudad Santo Domingo se emplaza en el municipio de Algete (21.000 habitantes). Los viales interiores son públicos y de carácter urbano, de modo que el Ayuntamiento provee los servicios públicos regulados de alumbrado, conservación de pavimentos, limpieza viaria, recogida de basuras, Policía Local y punto limpio. Exceptuando el suministro de agua propia y la seguridad privada, gestionados de forma autónoma por la Comunidad de Propietarios, la urbanización se beneficia de los servicios municipales prestados por el Ayuntamiento de Algete.
 
 ** Línea Verde — app
 
 #+HTML: <img class="img-natural" src="/img/linea-verde-logo.jpg" alt="Logo Línea Verde" />
 
-La [[https://www.lineaverdealgete.com/][Línea Verde]] es un instrumento para comunicar al Ayuntamiento
-incidencias de seguridad, urbanísticas, orden público y
-medioambientales. Permite geolocalizar el problema.
+La plataforma *Línea Verde* es una eficaz herramienta digital puesta a disposición por el Ayuntamiento para comunicar incidencias en la vía pública o viales comunes (desperfectos, mobiliario urbano, alumbrado, etc.), lo que facilita su geolocalización directa para una rápida resolución.
 
 [[http://www.lineaverdealgete.com/][Acceso a Línea Verde Algete]]
 
@@ -513,14 +416,14 @@ medioambientales. Permite geolocalizar el problema.
 | Comunidad de Propietarios                                          | Ayuntamiento de Algete                                              | Otras entidades proveedoras                              |
 |--------------------------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------------|
 | Red de pozos, agua, aguas residuales y depuradora (EDAR)           | Gestiones en Tenencia de Alcaldía (padrón, registro)                | Iglesia: Cáritas Diocesana                               |
-| Oficinas de administración y facturación                           | Policía Municipal y de proximidad                                   | Suministro de agua: CYII                                 |
+| Oficinas de administración y facturación                           | Policía Municipal y de Proximidad                                   | Suministro de agua: CYII                                 |
 | Mantenimiento de pluviales soterradas                              | Alumbrado público                                                   | Suministro eléctrico: Iberdrola                          |
 | Pantalla LED para anuncios                                         | Mantenimiento viario                                                | Telefonía: Telefónica, Movistar, Orange                  |
 | Seguridad privada: patrullas y vigilancia                          | Parques infantiles y zonas verdes                                   | Residencia de mayores y apartamentos asistidos           |
-| Página web                                                         | Mantenimiento pluviales en superficie y cunetas                     | Club deportivo                                           |
+| Página web                                                         | Mantenimiento de pluviales en superficie y cunetas                  | Club deportivo                                           |
 | Plantas generadoras fotovoltaicas                                  | Recogida de residuos sólidos urbanos                                | Centro comercial y comercios                             |
 | Teléfono de emergencias del Control                                | Recogida de poda                                                    | Río y riberas: Confederación Hidrográfica del Tajo       |
-|                                                                    | Recogida en puntos de acopio de reciclaje                           | Accesos desde N1: Ministerio de Fomento                  |
+|                                                                    | Recogida en puntos de acopio de reciclaje                           | Accesos desde la A-1: Ministerio de Fomento              |
 |                                                                    | Punto limpio (c/ Vivero)                                            | Asociación contra el ruido de aviones                    |
 |                                                                    | Mantenimiento plantas, alcorques, riego, poda                       | Cooperativa del gas                                      |
 |                                                                    | Señalización y regulación del tráfico                               | Colegio público: Comunidad de Madrid                     |
@@ -540,10 +443,9 @@ medioambientales. Permite geolocalizar el problema.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-La convivencia ciudadana en el municipio se regula mediante ordenanza
-municipal.
+El civismo y el respeto mutuo están regulados por la normativa de convivencia ciudadana del Ayuntamiento de Algete, orientada a garantizar el bienestar colectivo.
 
-[[abs:/docs/ordenanza-convivencia.pdf][Descargar ordenanzas municipales (PDF)]]
+[[abs:/docs/ordenanza-convivencia.pdf][Descargar ordenanza municipal de convivencia (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -556,10 +458,9 @@ municipal.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-En el área de recogida de poda se explica detalladamente cómo proceder
-para que sea recogida anualmente por el Ayuntamiento.
+El Ayuntamiento regula y organiza la retirada periódica de restos de poda doméstica. Conozca las directrices para que sean retirados correctamente.
 
-[[abs:/docs/recogida-podas.pdf][Descargar normativa de poda (PDF)]]
+[[abs:/docs/recogida-podas.pdf][Descargar normativa de recogida de poda (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -572,10 +473,9 @@ para que sea recogida anualmente por el Ayuntamiento.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-En la normativa vigente para residuos urbanos puede informarse de los
-detalles aplicables.
+La correcta gestión de los residuos sólidos urbanos está sujeta a horarios y pautas de clasificación para la preservación medioambiental del entorno.
 
-[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/Modificacion_Ordenanza_Residuos.pdf][Descargar normativa de residuos (PDF, ayto. de Algete)]]
+[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/Modificacion_Ordenanza_Residuos.pdf][Descargar normativa de residuos (PDF, Ayto. de Algete)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -588,10 +488,9 @@ detalles aplicables.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Los propietarios de parcelas están obligados a mantenerlas desbrozadas
-para evitar incendios estivales.
+Como medida indispensable de prevención de incendios y de salubridad durante el estío, los propietarios están legalmente obligados a mantener sus fincas desbrozadas y libres de maleza.
 
-[[abs:/docs/desbroce-parcelas.pdf][Descargar normativa de desbroce (PDF)]]
+[[abs:/docs/desbroce-parcelas.pdf][Descargar normativa de desbroce de parcelas (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -604,11 +503,9 @@ para evitar incendios estivales.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Puede acceder a la ordenanza que regula el ejercicio de las
-competencias del Ayuntamiento de Algete en materia de protección y
-prevención contra la contaminación por ruidos.
+La ordenanza contra el ruido vela por la calidad del descanso y el sosiego acústico propio de nuestro entorno residencial.
 
-[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM%20Ordenanza%20de%20ruidos%20Algete.pdf][Descargar normativa de ruidos (PDF, ayto. de Algete)]]
+[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM%20Ordenanza%20de%20ruidos%20Algete.pdf][Descargar ordenanza municipal de ruidos (PDF, Ayto. de Algete)]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -621,12 +518,11 @@ prevención contra la contaminación por ruidos.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Esta [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][unidad]] se creó en febrero de 2022. Está integrada por dos agentes
-con un vehículo y patrulla Ciudad Santo Domingo y Prado Norte.
+Creada en febrero de 2022, esta [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][unidad especializada]] de la Policía Local de Algete está integrada por dos agentes y un vehículo radiopatrulla, y presta atención específica a Ciudad Santo Domingo y Prado Norte.
 
-- *Teléfono móvil:* [[tel:+34659625379][659 62 53 79]]
+- *Teléfono móvil directo:* [[tel:+34659625379][659 62 53 79]]
 
-[[http://www.aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][Información de la policía local de urbanizaciones]]
+[[http://www.aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][Información oficial de la policía local de urbanizaciones]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -639,41 +535,33 @@ con un vehículo y patrulla Ciudad Santo Domingo y Prado Norte.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-La actuación vecinal respecto a mascotas está regulada por la
-*Ordenanza Reguladora de la Tenencia y Protección de Animales*,
-publicada en el BOCM el 17 de diciembre de 2021, núm. 300.
+La tenencia de animales de compañía en nuestro municipio se rige por la *Ordenanza Reguladora de la Tenencia y Protección de Animales* de Algete (BOCM nº 300 de 17 de diciembre de 2021).
 
-En Ciudad Santo Domingo, zona residencial con jardines colindante con
-campo abierto, numerosas casas albergan mascotas. La ordenanza es muy
-detallada y debe ser conocida por las personas responsables de animales
-domésticos o de alimentación de animales en libertad.
+Al tratarse de una urbanización de chalets con amplios jardines y colindante con un ecosistema natural abierto, la presencia de mascotas es muy elevada. Esta rigurosa ordenanza tiene como fin primordial velar tanto por el bienestar y la protección de los animales como por la tranquilidad pública y el respeto vecinal.
 
-El principio fundamental es /«la prohibición absoluta de cualquier acto
-de maltrato, crueldad o práctica que pueda producir sufrimiento, daños
-o muerte a los animales»/.
+El principio básico se fundamenta en *«la prohibición absoluta de cualquier acto de maltrato, crueldad o práctica que pueda producir sufrimiento, daños o muerte a los animales»*.
 
 #+HTML: </div>
 #+HTML: </section>
 
 *** Índice de materias
 
-- Normas para la tenencia de animales en domicilio y espacios privados.
-- Documentación que debe disponer el propietario.
-- Obligación de colaborar con la administración.
-- Controles sanitarios, identificación y seguros.
-- Observación antirrábica y agresiones.
-- Animales potencialmente peligrosos.
-- Animales silvestres, exóticos y de explotación.
-- Animales abandonados, extraviados y vagabundos.
-- Focos felinos / colonias de gatos ferales.
-- Animales heridos, enfermos y muertos.
-- Desalojo y retirada de animales.
-- Regulación de centros y empresas de animales.
-- Prohibiciones generales.
-- Inspecciones municipales.
-- Infracciones y sanciones.
+- Normas para la tenencia de animales en domicilios y espacios privados.
+- Documentación oficial requerida para los propietarios.
+- Obligación de colaboración con las autoridades sanitarias.
+- Controles sanitarios, identificación obligatoria y pólizas de seguro.
+- Protocolos de observación antirrábica y gestión de agresiones.
+- Regulación sobre animales potencialmente peligrosos (PPP).
+- Normas para animales silvestres, exóticos y de explotación.
+- Gestión de animales abandonados, extraviados y vagabundos.
+- Focos felinos y control de colonias de gatos ferales.
+- Actuación ante animales heridos, enfermos y cadáveres.
+- Protocolos de desalojo y retirada de animales.
+- Regulación para establecimientos y residencias de mascotas.
+- Prohibiciones de carácter general y régimen de inspecciones.
+- Catálogo de infracciones y baremo de sanciones.
 
-[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM_ORDENANZA_TENENCIA_ANIMALES_2021.pdf][Descargar normativa completa sobre animales (PDF, ayto. de Algete)]]
+[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM_ORDENANZA_TENENCIA_ANIMALES_2021.pdf][Descargar ordenanza municipal completa de protección animal (PDF)]]
 
 ** Tenencia de Alcaldía
 
@@ -683,13 +571,11 @@ o muerte a los animales»/.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-Para asuntos relacionados con el Ayuntamiento (empadronamientos,
-licencias de obras, permisos de tala, impuestos, escritos en registro
-municipal), debe personarse de lunes a viernes, de 10 a 14 h.
+Para tramitar gestiones municipales (padrón, licencias de obra, permisos de tala, impuestos o presentación de escritos oficiales en el registro), la oficina auxiliar del Ayuntamiento atiende a los vecinos de lunes a viernes, de 10:00 a 14:00 h.
 
 - *Teléfono:* [[tel:+34916220406][916 220 406]]
 - *Correo:* [[mailto:mmontouto@aytoalgete.com][mmontouto@aytoalgete.com]]
-- *Web de la concejalía:* [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][aquí.]]
+- *Sitio web de la concejalía:* [[https://aytoalgete.es/index.php?option=com_content&view=article&id=175&Itemid=628][Acceso directo aquí.]]
 
 #+HTML: </div>
 #+HTML: </section>
@@ -701,8 +587,7 @@ municipal), debe personarse de lunes a viernes, de 10 a 14 h.
 :END:
 
 #+ATTR_HTML: :class lead
-Los propietarios pueden consultar los datos de su parcela registrados
-en la base de datos comunitaria a través de la *Oficina Virtual*.
+Los propietarios de parcelas disponen de acceso a la *Oficina Virtual* para consultar de forma privada, segura y ágil sus datos registrados en el censo comunitario y gestionar sus trámites.
 
 ** Cómo registrarse
 
@@ -712,20 +597,19 @@ en la base de datos comunitaria a través de la *Oficina Virtual*.
 #+HTML: </div>
 #+HTML: <div class="row-text">
 
-El acceso a la Oficina Virtual requiere registro previo. Para realizarlo
-correctamente disponemos de dos recursos:
+El acceso a la Oficina Virtual requiere un registro de usuario previo y validado. Ponemos a su disposición dos herramientas de soporte para guiarle en el proceso:
 
-- Documento PDF con las instrucciones detalladas.
-- Vídeo tutorial.
+- Un manual de instrucciones detallado en formato PDF.
+- Un vídeo tutorial guiado paso a paso.
 
-[[abs:/docs/tutorial-oficina-virtual.pdf][Descargar tutorial de la Oficina Virtual (PDF)]]
+[[abs:/docs/tutorial-oficina-virtual.pdf][Descargar manual de usuario de la Oficina Virtual (PDF)]]
 
 #+HTML: </div>
 #+HTML: </section>
 
 ** Acceso
 
-Si ya está registrado, acceda directamente a la plataforma:
+Si ya dispone de sus credenciales activas, puede acceder de forma directa a la plataforma de gestión:
 
 #+BEGIN_EXPORT html
 <p><a class="cta" href="https://aquaov.lecturadecontadores.es/aquaOV?id=17F940F3-C870-471F-81D8-814FABEDC326" target="_blank" rel="noopener">Entrar en la Oficina Virtual</a></p>
@@ -733,11 +617,10 @@ Si ya está registrado, acceda directamente a la plataforma:
 
 ** Soporte
 
-Si tiene cualquier dificultad con el acceso o el registro, contacte con
-la Gerencia:
+Para resolver cualquier incidencia técnica durante el alta o para consultas de acceso, nuestro personal de la Gerencia le atenderá de forma personalizada:
 
-- *Teléfono:* [[tel:+34916221511][916 221 511]]
-- *Correo:* [[mailto:csd@csdomingo.com][csd@csdomingo.com]]
+- *Teléfono de atención:* [[tel:+34916221511][916 221 511]]
+- *Correo de soporte:* [[mailto:csd@csdomingo.com][csd@csdomingo.com]]
 
 * Aviso legal
 :PROPERTIES:
@@ -745,103 +628,51 @@ la Gerencia:
 :NAV_KEY:
 :END:
 
-C.P. CIUDAD SANTO DOMINGO, responsable del sitio web, en adelante
-RESPONSABLE, pone a disposición de los usuarios el presente documento
-con el que pretende dar cumplimiento a las obligaciones dispuestas en
-la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
-Información y de Comercio Electrónico (LSSICE), BOE n.º 166, así como
-informar a todos los usuarios del sitio web respecto a las condiciones
-de uso.
+La COMUNIDAD DE PROPIETARIOS DE CIUDAD SANTO DOMINGO, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento con el objeto de dar cumplimiento a las obligaciones establecidas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), así como de informar a todos los usuarios del sitio web respecto a las condiciones de uso.
 
-Toda persona que acceda a este sitio web asume el papel de usuario,
-comprometiéndose a la observancia y cumplimiento riguroso de las
-disposiciones aquí dispuestas, así como a cualquier otra disposición
-legal que fuera de aplicación.
+Toda persona que acceda a este sitio web adquiere la condición de usuario y se compromete a la observancia y cumplimiento riguroso de las disposiciones aquí establecidas, así como de cualquier otra normativa legal que resulte de aplicación.
 
-C.P. CIUDAD SANTO DOMINGO se reserva el derecho de modificar cualquier
-tipo de información que pudiera aparecer en el sitio web, sin que
-exista obligación de preavisar o poner en conocimiento de los usuarios
-dichas modificaciones, entendiéndose como suficiente la publicación en
-el sitio web.
+La COMUNIDAD DE PROPIETARIOS DE CIUDAD SANTO DOMINGO se reserva el derecho de modificar cualquier información que pudiera aparecer en el sitio web, sin que exista la obligación de preavisar de dichas actualizaciones, para lo cual se entenderá como suficiente la mera publicación en el portal.
 
 ** Identificación y titularidad
 
-En cumplimiento del artículo 10 de la Ley 34/2002, el titular expone
-sus datos identificativos:
+En cumplimiento del artículo 10 de la Ley 34/2002, se detallan los datos identificativos del titular de este sitio web:
 
-- *Titular:* Comunidad de Propietarios de Ciudad Santo Domingo.
-- *Domicilio:* Avenida del Guadalix, 37 — Ciudad Santo Domingo, Algete
-  (España).
+- *Titular:* Comunidad de Propietarios de la Urbanización Ciudad Santo Domingo.
+- *Domicilio social:* Avenida del Guadalix, 37 — Ciudad Santo Domingo, 28120 Algete (Madrid, España).
 - *NIF:* E28525368
-- *Correo electrónico:* [[mailto:csd@csdomingo.com][csd@csdomingo.com]]
-- *Sitio web:* [[https://ciudadsantodomingo.org/][ciudadsantodomingo.org]]
+- *Correo electrónico de contacto:* [[mailto:csd@csdomingo.com][csd@csdomingo.com]]
+- *Sitio web oficial:* [[https://ciudadsantodomingo.org/][ciudadsantodomingo.org]]
 
 ** Finalidad
 
-La finalidad del sitio web es la información y gestión accesible a los
-vecinos de la urbanización Ciudad Santo Domingo, en Algete (Madrid).
+La finalidad de este sitio web es la de informar de forma transparente sobre la urbanización, así como ofrecer herramientas de gestión electrónica accesibles para los vecinos de la urbanización Ciudad Santo Domingo, situada en Algete (Madrid).
 
 ** Derechos de propiedad intelectual e industrial
 
-El sitio web, incluyendo a título enunciativo pero no limitativo su
-programación, edición, compilación y demás elementos necesarios para su
-funcionamiento, los diseños, logotipos, textos y/o gráficos, son
-propiedad del RESPONSABLE o, en su caso, dispone de licencia o
-autorización expresa por parte de los autores. Todos los contenidos del
-sitio web se encuentran debidamente protegidos por la normativa de
-propiedad intelectual e industrial.
+El presente sitio web, incluyendo a título enunciativo pero no limitativo su programación, diseño, edición, compilación, logotipos, imágenes, textos o gráficos, es propiedad del RESPONSABLE o, en su defecto, cuenta con la licencia o autorización expresa de sus legítimos autores. Todos los contenidos del sitio web se encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial española e internacional.
 
-Independientemente de la finalidad para la que fueran destinados, la
-reproducción total o parcial, uso, explotación, distribución y
-comercialización requiere en todo caso la autorización escrita previa
-por parte del RESPONSABLE.
+Independientemente de su finalidad, la reproducción total o parcial, uso, explotación, distribución y comercialización de estos contenidos requiere, en todo caso, la autorización previa y por escrito del RESPONSABLE.
 
-Los diseños, logotipos, textos y/o gráficos ajenos al RESPONSABLE y que
-pudieran aparecer en el sitio web pertenecen a sus respectivos
-propietarios, siendo ellos mismos responsables de cualquier posible
-controversia que pudiera suscitarse respecto a los mismos.
+Los diseños, logotipos o textos ajenos al RESPONSABLE que pudieran aparecer en el sitio web pertenecen a sus respectivos propietarios, quienes serán los responsables de cualquier posible controversia jurídica que pudiera surgir sobre los mismos.
 
-Para realizar cualquier tipo de observación respecto a posibles
-incumplimientos de los derechos de propiedad intelectual o industrial,
-así como sobre cualquiera de los contenidos del sitio web, puede
-hacerlo a través del correo electrónico
-[[mailto:csd@csdomingo.com][csd@csdomingo.com]].
+Para realizar cualquier aclaración o sugerencia sobre posibles infracciones de los derechos de propiedad intelectual o industrial, puede dirigir un escrito al correo electrónico [[mailto:csd@csdomingo.com][csd@csdomingo.com]].
 
 ** Exención de responsabilidades
 
-El RESPONSABLE se exime de cualquier tipo de responsabilidad derivada
-de la información publicada en su sitio web siempre que no tenga
-conocimiento efectivo de que esta información haya sido manipulada o
-introducida por un tercero ajeno al mismo o, si lo tiene, haya actuado
-con diligencia para retirar los datos o hacer imposible el acceso a
-ellos.
+El RESPONSABLE se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web siempre que no tenga conocimiento efectivo de que dicha información haya sido alterada o introducida por un tercero ajeno, o bien, si lo tuviere, haya actuado con la debida diligencia profesional para retirar los datos de forma inmediata o imposibilitar el acceso a los mismos.
 
 ** Política de enlaces
 
-Desde el sitio web es posible que se redirija a contenidos de terceros.
-Dado que el RESPONSABLE no puede controlar siempre los contenidos
-introducidos por terceros en sus respectivos sitios web, no asume
-ningún tipo de responsabilidad respecto a dichos contenidos. En todo
-caso, procederá a la retirada inmediata de cualquier contenido que
-pudiera contravenir la legislación nacional o internacional, la moral o
-el orden público.
+Este portal web puede contener enlaces que redirijan a sitios web de terceros. Dado que el RESPONSABLE no puede supervisar constantemente los contenidos introducidos por terceros en sus propias páginas, no asume responsabilidad alguna sobre los mismos. En todo caso, se procederá a la retirada inmediata de aquellos enlaces que pudieren contravenir la legislación nacional o internacional, la moral o el orden público.
 
 ** Direcciones IP
 
-Los servidores del sitio web podrán detectar de manera automática la
-dirección IP y el nombre de dominio utilizados por el usuario. Esta
-información se registra en un fichero de actividad del servidor
-debidamente inscrito, que permite el posterior procesamiento de los
-datos con fines exclusivamente estadísticos.
+Los servidores de este sitio web detectan de forma automática la dirección IP y el nombre de dominio utilizados por el usuario. Esta información se registra temporalmente en ficheros de actividad del servidor ("logs") debidamente autorizados, con el fin de realizar mediciones exclusivamente estadísticas que sirvan para mejorar el rendimiento del servicio.
 
 ** Ley aplicable y jurisdicción
 
-Para la resolución de todas las controversias o cuestiones relacionadas
-con el presente sitio web, o de las actividades en él desarrolladas,
-será de aplicación la legislación española, a la que se someten
-expresamente las partes, siendo competentes para la resolución de todos
-los conflictos los Juzgados y Tribunales del domicilio del usuario o el
-lugar de cumplimiento de la obligación.
+Para la resolución de todas las controversias, reclamaciones o cuestiones relacionadas con el presente sitio web o de las actividades que en él se desarrollan, será de aplicación la legislación española, y las partes se someten expresamente a la competencia de los Juzgados y Tribunales correspondientes al domicilio del usuario o del lugar de cumplimiento de la obligación.
 
 * Política de privacidad
 :PROPERTIES:
@@ -851,54 +682,42 @@ lugar de cumplimiento de la obligación.
 
 ** ¿Quién es el responsable del tratamiento de tus datos personales?
 
-C.P. CIUDAD SANTO DOMINGO es el responsable del tratamiento de los
-datos personales del usuario. Los datos se tratan conforme al
-Reglamento (UE) 2016/679 (GDPR) y la Ley Orgánica 3/2018 (LOPDGDD).
+La COMUNIDAD DE PROPIETARIOS DE CIUDAD SANTO DOMINGO es la entidad responsable del tratamiento de los datos personales del usuario. Estos datos serán tratados de conformidad con lo dispuesto en el Reglamento (UE) 2016/679 (RGPD) y en la Ley Orgánica 3/2018 (LOPDGDD).
 
 ** ¿Para qué tratamos tus datos personales?
 
-Para mantener relación con el usuario en el contexto de la gestión de
-la Comunidad de Propietarios. Las operaciones incluyen:
+Para canalizar la relación, comunicaciones e incidencias del usuario en el ámbito de la gestión y administración de la Comunidad de Propietarios. Las operaciones previstas incluyen:
 
-- Tramitación de encargos y respuesta a consultas del usuario.
-- Envío de comunicaciones informativas relacionadas con la Comunidad.
+- Tramitación de gestiones y respuesta a consultas del usuario.
+- Envío de circulares informativas de relevancia sobre la urbanización.
 - Envío de boletines informativos sobre novedades de la Comunidad.
 
 ** ¿Por qué motivo podemos tratar tus datos personales?
 
-El tratamiento se legitima por:
+El tratamiento se encuentra plenamente legitimado con base en:
 
-- Consentimiento del usuario para las comunicaciones y el boletín
-  informativo.
-- Interés legítimo del responsable para la tramitación de solicitudes.
+- El consentimiento explícito otorgado por el usuario para el envío de comunicaciones informativas.
+- El interés legítimo de la entidad para dar trámite a las consultas y solicitudes de los usuarios.
 
 ** ¿Durante cuánto tiempo guardaremos tus datos personales?
 
-Los datos personales se conservan no más tiempo del necesario para
-mantener la finalidad del tratamiento y conforme a las prescripciones
-legales. Posteriormente se suprimen con medidas de seguridad adecuadas.
+Se conservarán durante el tiempo estrictamente necesario para cumplir con los fines del tratamiento o mientras existan obligaciones legales aplicables. Posteriormente, se procederá a su eliminación con medidas de seguridad adecuadas que garanticen la destrucción o el bloqueo completo de los datos.
 
 ** ¿A quién facilitamos tus datos personales?
 
-No está prevista ninguna comunicación de datos personales a terceros
-salvo a proveedores de servicios sujetos a contratos de
-confidencialidad.
+No se contempla la cesión de datos personales a terceros, salvo imperativo legal o a aquellos proveedores técnicos contratados que actúen bajo la condición de encargados de tratamiento en virtud de un estricto contrato de confidencialidad.
 
 ** ¿Cuáles son tus derechos?
 
-- Derecho a retirar el consentimiento en cualquier momento.
-- Derechos de acceso, rectificación, portabilidad, supresión y
-  limitación u oposición al tratamiento.
-- Derecho a presentar reclamación ante la autoridad de control
-  ([[https://www.aepd.es/][www.aepd.es]]).
+- Derecho a retirar el consentimiento otorgado en cualquier momento.
+- Derechos de acceso, rectificación, portabilidad, supresión de los datos, así como la limitación u oposición a su tratamiento.
+- Derecho a presentar una reclamación ante la Agencia Española de Protección de Datos ([[https://www.aepd.es/][www.aepd.es]]) si considera que el tratamiento no se ajusta a la legalidad.
 
 ** Datos de contacto
 
-C.P. Ciudad Santo Domingo. Avda. del Guadalix, 37 — 28120 Ciudad Santo
-Domingo (Madrid). Correo: [[mailto:csd@csdomingo.com][csd@csdomingo.com]].
+Comunidad de Propietarios Ciudad Santo Domingo. Avda. del Guadalix, 37 — 28120 Ciudad Santo Domingo, Algete (Madrid). Correo de contacto: [[mailto:csd@csdomingo.com][csd@csdomingo.com]].
 
 ** Medidas de seguridad
 
-El responsable cumple con todas las disposiciones de las normativas
-GDPR y LOPDGDD, y ha implementado políticas técnicas y organizativas
-apropiadas para proteger los derechos y libertades de los usuarios.
+
+La entidad responsable cumple escrupulosamente con el marco legal del RGPD y la LOPDGDD, e implanta políticas técnicas y organizativas rigurosas con el fin de salvaguardar los derechos y libertades de los usuarios.
