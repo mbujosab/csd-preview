@@ -1,7 +1,7 @@
 # Paquetes de TeX Live que necesitan los dosieres (pdf/csd-dossier.sty).
 # Los instala tlmgr en GitHub Actions; ver preview.yml. Uno o varios por línea.
 latex-bin latexmk luaotfload lualibs luatexbase ctablestack
-fontspec libertinus-fonts opensans fontawesome5
+fontspec lm libertinus-fonts opensans fontawesome5
 babel babel-spanish hyphen-spanish
 tools graphics amsmath amsfonts l3kernel l3packages
 hyperref url kvoptions kvsetkeys kvdefinekeys ltxcmds infwarerr

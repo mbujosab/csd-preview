@@ -78,7 +78,16 @@ jobs:
         run: echo "$HOME/texlive/bin/x86_64-linux" >> "$GITHUB_PATH"
 
       - name: Compilar los dosieres PDF
-        run: make pdf-docs
+        run: |
+          if ! make pdf-docs; then
+            echo "::group::Errores de LaTeX"
+            grep -h -A6 '^!' pdf/build/*.log | head -80 || true
+            echo "::endgroup::"
+            echo "::group::Últimas líneas de los .log"
+            tail -n 40 pdf/build/*.log
+            echo "::endgroup::"
+            exit 1
+          fi
 
       - name: Construir el sitio (producción, URLs sin prefijo)
         env:
