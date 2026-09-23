@@ -27,22 +27,42 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends emacs-nox
 
-      - name: Instalar TeX Live (solo lo necesario para los dosieres)
-        uses: teatimeguest/setup-texlive-action@v3
+      # TeX Live mínimo sin acciones de terceros (la política del repo las
+      # bloquea): instalador oficial + tlmgr con solo los paquetes necesarios,
+      # cacheado entre ejecuciones.
+      - name: Caché de TeX Live
+        id: texlive-cache
+        uses: actions/cache@v4
         with:
-          packages: |
-            latex-bin latexmk luaotfload lualibs luatexbase ctablestack
-            fontspec libertinus-fonts opensans fontawesome5
-            babel babel-spanish hyphen-spanish
-            tools graphics amsmath amsfonts l3kernel l3packages l3backend
-            hyperref url kvoptions kvsetkeys kvdefinekeys ltxcmds infwarerr
-            pdftexcmds pdfescape letltxmacro refcount gettitlestring hycolor
-            auxhook bitset bigintcalc intcalc uniquecounter rerunfilecheck
-            stringenc etexcmds atbegshi atveryend epstopdf-pkg pdfcol zapfding
-            geometry booktabs caption csquotes enumitem environ etoolbox
-            fancyhdr float iftex listings microtype pgf tcolorbox titlesec
-            titletoc ulem wrapfig xcolor xkeyval varwidth trimspaces
-            collectbox ifoddpage adjustbox colortbl
+          path: ~/texlive
+          key: texlive-2025-${{ hashFiles('.github/texlive-packages.txt') }}
+
+      - name: Instalar TeX Live mínimo
+        if: steps.texlive-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          cd "$(mktemp -d)"
+          curl -sSL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xz
+          cd install-tl-*
+          cat > profile.txt <<EOF
+          selected_scheme scheme-infraonly
+          TEXDIR $HOME/texlive
+          TEXMFCONFIG $HOME/texlive/texmf-config
+          TEXMFVAR $HOME/texlive/texmf-var
+          TEXMFHOME $HOME/texmf
+          TEXMFLOCAL $HOME/texlive/texmf-local
+          TEXMFSYSCONFIG $HOME/texlive/texmf-config
+          TEXMFSYSVAR $HOME/texlive/texmf-var
+          tlpdbopt_install_docfiles 0
+          tlpdbopt_install_srcfiles 0
+          tlpdbopt_autobackup 0
+          EOF
+          ./install-tl --profile=profile.txt --no-interaction
+          export PATH="$HOME/texlive/bin/x86_64-linux:$PATH"
+          tlmgr install $(grep -v '^#' "$GITHUB_WORKSPACE/.github/texlive-packages.txt" | tr '\n' ' ')
+
+      - name: Añadir TeX Live al PATH
+        run: echo "$HOME/texlive/bin/x86_64-linux" >> "$GITHUB_PATH"
 
       - name: Compilar los dosieres PDF
         run: make pdf-docs
