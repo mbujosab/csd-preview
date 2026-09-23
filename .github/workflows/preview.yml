@@ -27,9 +27,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends emacs-nox
 
-      # TeX Live mínimo sin acciones de terceros (la política del repo las
-      # bloquea): instalador oficial + tlmgr con solo los paquetes necesarios,
-      # cacheado entre ejecuciones.
+      # TeX Live mínimo sin acciones de terceros (setup-texlive-action fallaba
+      # con «Repository access blocked»): instalador oficial + tlmgr con solo
+      # los paquetes necesarios, cacheado entre ejecuciones.
       - name: Caché de TeX Live
         id: texlive-cache
         uses: actions/cache@v4
