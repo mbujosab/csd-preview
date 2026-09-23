@@ -168,10 +168,11 @@ files in `docs/`.
     only. Input `modo=comprobar` (default) just lists the remote folder;
     `modo=publicar` plus `confirmar=PUBLICAR` uploads. Uses the repo secrets
     `SFTP_HOST`, `SFTP_USER`, `SFTP_PASSWORD`, `SFTP_REMOTE_PATH` and SFTP on
-    port 22 via lftp. Untested from GitHub since June 2026: earlier attempts
-    over plain FTP (port 21) failed with "530 Login incorrect" and timeouts,
-    and the SFTP attempt hung on the host-key prompt (now handled with
-    ssh-keyscan). If it still fails, use the local path.
+    port 22 via lftp + sshpass. As of 2026-09-23 it does NOT work: with the
+    same credentials that work from home (verified by hash), Arsys answers
+    "Permission denied" to GitHub runners, which points to a geographic/IP
+    restriction on the SFTP account. Waiting for Arsys support. Until then,
+    production is deployed with the local path.
 - Credentials for Arsys/SFTP live in `notas.org` (git-ignored). Never copy
   them anywhere else.
 

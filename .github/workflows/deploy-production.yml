@@ -4,6 +4,11 @@ name: Deploy to production (SFTP)
 # Por defecto solo COMPRUEBA el acceso (lista la carpeta remota, no sube nada).
 # Para publicar de verdad: modo = publicar y confirmar = PUBLICAR.
 # Nada debe publicarse hasta que la Junta dé el visto bueno.
+#
+# Estado (23-09-2026): con las credenciales correctas (verificadas por huella
+# frente a ~/.authinfo.gpg, que funciona desde casa) Arsys responde
+# «Permission denied» a las máquinas de GitHub. Todo apunta a una restricción
+# geográfica o por IP del acceso SFTP en Arsys. Pendiente de su soporte.
 
 on:
   workflow_dispatch:
@@ -111,8 +116,6 @@ jobs:
           SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
           echo "Longitudes (no se imprimen valores): host ${#SFTP_HOST}, usuario ${#SFTP_USER}, contraseña ${#SSHPASS}, ruta ${#SFTP_REMOTE_PATH}"
-          echo "Huella de la contraseña (6 primeros hex de sha256, para comparar con la local): $(printf '%s' "$SSHPASS" | sha256sum | cut -c1-6)"
-          echo "Huella del usuario: $(printf '%s' "$SFTP_USER" | sha256sum | cut -c1-6)"
           echo "== Prueba 1: sftp de OpenSSH con sshpass =="
           printf 'ls -l %s\n' "$SFTP_REMOTE_PATH" | sshpass -e sftp -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -b - "$SFTP_USER@$SFTP_HOST"
           echo "== Prueba 2: lftp con sshpass como programa de conexión =="
