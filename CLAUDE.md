@@ -28,7 +28,8 @@ The repository root IS the `site/` project (no parent wrapper). A read-only
 | `make build CSD_BASE_URL=/csd-preview` | Build with a URL prefix (GitHub Pages of a project repo).               |
 | `make serve`                           | Builds and serves on http://localhost:8080.                             |
 | `make clean`                           | Wipes `public/`.                                                        |
-| `make pdf`                             | Builds the PDF dossiers from `documentos.org` → `pdf/build/*.pdf` (needs LuaLaTeX, latexmk, Inkscape). |
+| `make pdf`                             | Builds the PDF dossiers from `documentos.org` → `pdf/build/*.pdf` (needs LuaLaTeX and latexmk). |
+| `make logos`                           | Regenerates `pdf/logo-csd*.pdf` from the SVGs in `img/` (needs Inkscape). The PDFs are committed. |
 | `make pdf DOC=gestion-del-agua`        | Builds only that dossier.                                               |
 | `make pdf-docs`                        | `make pdf` + copies the results into `docs/` (what the web links to).   |
 | `./import-assets.sh`                   | (Re-)copies images and PDFs from `../ciudadsantodomingo.org/wp-content/uploads/` into `img/` and `docs/`. Idempotent. |
@@ -122,10 +123,13 @@ subtree to `pdf/build/NAME.tex` and compiles it with latexmk/LuaLaTeX,
 running from the repo root so image links like `[[file:pdf/img/foo.jpg]]`
 work both in Emacs and in LaTeX. The look (cover, header, fonts, colours,
 `recuadro`/`destacado`/`aviso`/`fotos` special blocks) lives in
-`pdf/csd-dossier.sty`. Logos are converted from the SVGs in `img/` by the
-Makefile. PDFs are built locally and committed into `docs/` (CI has no
-TeX). External documents (municipal ordinances, bandos, vendor manuals)
-stay as plain files in `docs/`.
+`pdf/csd-dossier.sty`. The logos are committed as `pdf/logo-csd*.pdf`
+(`make logos` regenerates them with Inkscape). The six generated PDFs are
+NOT committed: both workflows install a minimal TeX Live
+(`teatimeguest/setup-texlive-action`, package list in the workflow) and run
+`make pdf-docs` before `make build`, so every push rebuilds them. External
+documents (municipal ordinances, bandos, vendor manuals) stay as plain
+files in `docs/`.
 
 ## What's intentionally NOT in the site
 

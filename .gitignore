@@ -13,6 +13,19 @@ Thumbs.db
 # Intermedios de LaTeX de los dosieres PDF
 pdf/build/
 
+# PDF generados desde documentos.org: los construye GitHub Actions en cada
+# push (make pdf-docs). En docs/ solo se commitean los documentos externos.
+docs/conoce-csd.pdf
+docs/consejos-vida-comunidad.pdf
+docs/gestion-del-agua.pdf
+docs/recogida-podas.pdf
+docs/seguridad.pdf
+docs/tutorial-oficina-virtual.pdf
+
+# Exportaciones locales de los informes
+informe-*.pdf
+informe-*.tex
+
 # Notas personales con credenciales: NUNCA al repositorio
 notas.org
 notas.org~

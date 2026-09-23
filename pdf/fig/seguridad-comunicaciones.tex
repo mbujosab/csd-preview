@@ -1,0 +1,48 @@
+%% Esquema de comunicaciones de las alarmas (dosier «Seguridad»).
+%% Se incluye desde documentos.org con  #+latex: \input{pdf/fig/seguridad-comunicaciones}
+\begin{center}
+\begin{tikzpicture}[
+    font=\small\bfseries,
+    lbl/.style={text=csdverde,align=center},
+    flecha/.style={-latex,thick,csdtexto!80},
+    doble/.style={latex-latex,thick,csdtexto!80},
+    equipo/.style={draw=csdtexto,thick,fill=white,minimum width=18mm,
+                   minimum height=5mm,rounded corners=1pt},
+  ]
+  % Vivienda
+  \node (viv) at (0,0) {\color{csdverde}\fontsize{34}{34}\selectfont\faHome};
+  \node[fill=csdverde,text=white,inner sep=2pt] at (viv.south) [below] {Vivienda};
+  % Nodo de radio + antena
+  \node[equipo] (nodo) at (6,0) {};
+  \node (ant) at (3.3,0.9) {\color{csdtexto}\fontsize{24}{24}\selectfont\faBroadcastTower};
+  \draw[thick,csdtexto!80] (viv.east) -- ++(0.9,0) -- (ant.south) -- (nodo.west);
+  \node[lbl,below=3mm of nodo.south,anchor=north]
+    {Nodo de concentración de comunicaciones de radio\\
+     \& Conversor de radio a señal ADSL};
+  % C.R.A.
+  \node[draw=csdtexto,thick,fill=white,rounded corners=2pt,minimum width=20mm,
+        minimum height=13mm,lbl,font=\scriptsize\bfseries] (cra) at (12,0.3)
+    {{\normalsize C.R.A.}\\DRIN\\SEGURIDAD};
+  \node[equipo,below=1mm of cra] (crabase) {};
+  \draw[doble] (nodo.east) -- node[above,lbl,font=\large\bfseries] {ADSL}
+    ([xshift=2mm]cra.west);
+  % Teléfono
+  \node (tel) at (6,3.4) {\color{csdtexto}\fontsize{22}{22}\selectfont\faPhone};
+  \node[lbl,below=0mm of tel] {OM INT316/2011\\Conexión telefónica};
+  \draw[flecha] (viv.north) to[out=80,in=180] (tel.west);
+  \draw[flecha] (tel.east) to[out=0,in=100] (cra.north);
+  % Garita de control
+  \node[draw=csdtexto,thick,fill=white,rounded corners=2pt,minimum width=20mm,
+        minimum height=15mm] (gar) at (6,-4) {\includegraphics[height=11mm]{\csdlogo}};
+  \node[equipo,below=1mm of gar] (garbase) {};
+  \node[lbl,below=1mm of garbase] (garlbl) {Garita de control};
+  \draw[doble,dashed] ([yshift=-14mm]nodo.south) -- (gar.north);
+  % Avisos «Acuda»
+  \draw[flecha] (crabase.south) to[out=-90,in=0]
+    node[pos=0.75,below,lbl,font=\large\bfseries,align=center] {ADSL\\«Acuda»}
+    (garbase.east);
+  \draw[flecha] (garbase.west) to[out=180,in=-90]
+    node[pos=0.25,above,lbl,font=\large\bfseries] {«Acuda»}
+    ([yshift=-5mm]viv.south);
+\end{tikzpicture}
+\end{center}

@@ -27,6 +27,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends emacs-nox
 
+      - name: Instalar TeX Live (solo lo necesario para los dosieres)
+        uses: teatimeguest/setup-texlive-action@v3
+        with:
+          packages: |
+            latex-bin latexmk luaotfload lualibs luatexbase ctablestack
+            fontspec libertinus-fonts opensans fontawesome5
+            babel babel-spanish hyphen-spanish
+            tools graphics amsmath amsfonts l3kernel l3packages l3backend
+            hyperref url kvoptions kvsetkeys kvdefinekeys ltxcmds infwarerr
+            pdftexcmds pdfescape letltxmacro refcount gettitlestring hycolor
+            auxhook bitset bigintcalc intcalc uniquecounter rerunfilecheck
+            stringenc etexcmds atbegshi atveryend epstopdf-pkg pdfcol zapfding
+            geometry booktabs caption csquotes enumitem environ etoolbox
+            fancyhdr float iftex listings microtype pgf tcolorbox titlesec
+            titletoc ulem wrapfig xcolor xkeyval varwidth trimspaces
+            collectbox ifoddpage adjustbox colortbl
+
+      - name: Compilar los dosieres PDF
+        run: make pdf-docs
+
       - name: Build site with /csd-preview prefix
         env:
           CSD_BASE_URL: /csd-preview

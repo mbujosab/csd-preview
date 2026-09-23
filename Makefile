@@ -12,7 +12,7 @@ export CSD_BASE_URL
 
 PUBLIC := public
 
-.PHONY: build html assets clean serve pdf pdf-docs pdf-clean deploy deploy-check
+.PHONY: build html assets clean serve pdf pdf-docs pdf-clean logos deploy deploy-check
 
 build: html assets
 
@@ -35,23 +35,22 @@ serve: build
 
 # ---------------------------------------------------------------- PDF
 # Dosieres PDF generados desde documentos.org con LuaLaTeX (ver publish-pdf.el
-# y pdf/csd-dossier.sty). Se compilan en local (el CI no tiene TeX):
+# y pdf/csd-dossier.sty). Se compilan aquí y también en GitHub Actions
+# (preview.yml y deploy-production.yml instalan lo mínimo de TeX Live):
 #   make pdf                        # todos -> pdf/build/
 #   make pdf DOC=gestion-del-agua   # solo uno
 #   make pdf-docs                   # compila y copia a docs/ (lo que enlaza la web)
+#   make logos                      # regenera pdf/logo-csd*.pdf desde los SVG (Inkscape)
+# Los logos en PDF están commiteados en pdf/ para no necesitar Inkscape en CI.
 PDF_BUILD := pdf/build
 DOC ?=
-PDF_LOGOS := $(PDF_BUILD)/logo-csd.pdf $(PDF_BUILD)/logo-csd-blanco.pdf
 
-$(PDF_BUILD)/logo-csd.pdf: img/logoTransparente.svg
+logos:
+	inkscape img/logoTransparente.svg --export-type=pdf --export-filename=pdf/logo-csd.pdf
+	inkscape img/logos/logoFondoBlanco.svg --export-type=pdf --export-filename=pdf/logo-csd-blanco.pdf
+
+pdf:
 	mkdir -p $(PDF_BUILD)
-	inkscape $< --export-type=pdf --export-filename=$@
-
-$(PDF_BUILD)/logo-csd-blanco.pdf: img/logos/logoFondoBlanco.svg
-	mkdir -p $(PDF_BUILD)
-	inkscape $< --export-type=pdf --export-filename=$@
-
-pdf: $(PDF_LOGOS)
 	CSD_PDF_DOC=$(DOC) $(EMACS) --batch --quick \
 	  --load publish-pdf.el \
 	  --funcall csd-publish-pdf

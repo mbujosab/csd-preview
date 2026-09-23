@@ -1,0 +1,303 @@
+%% csd-dossier.sty — Estilo institucional de los dosieres PDF de la
+%% Comunidad de Propietarios Ciudad Santo Domingo.
+%%
+%% Se usa desde documentos.org (vía publish-pdf.el). Requiere LuaLaTeX.
+%% Reproduce la maqueta de los antiguos dosieres de InDesign: portada con el
+%% logo en marca de agua y banda verde, cabecera con logo y etiqueta de
+%% sección, títulos en serif verde, viñetas cuadradas y recuadros de color.
+%%
+%% Macros que se pueden fijar desde cada documento (#+LATEX_HEADER:):
+%%   \csdetiqueta{...}   texto de la etiqueta de la cabecera (| … |)
+%% La fecha es la de #+DATE / :EXPORT_DATE: (portada y final del documento).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{csd-dossier}[2026/09/23 Dosieres CSD]
+
+%% ---------------------------------------------------------------- Página
+\RequirePackage[a4paper,top=30mm,bottom=25mm,left=22mm,right=22mm,
+  headheight=14mm,headsep=6mm,footskip=12mm]{geometry}
+
+%% ---------------------------------------------------------------- Idioma
+\RequirePackage[spanish,es-noshorthands,es-tabla]{babel}
+\RequirePackage{csquotes}
+
+%% ---------------------------------------------------------------- Fuentes
+%% Open Sans (la misma de la web) para el texto; Libertinus Serif para los
+%% títulos, en el papel que tenía NewAster en los originales.
+\RequirePackage{fontspec}
+\setmainfont{Open Sans}[Scale=0.92]
+\setsansfont{Open Sans}[Scale=0.92]
+\newfontfamily\csdserif{Libertinus Serif}
+\renewcommand{\familydefault}{\sfdefault}
+\linespread{1.15}
+\RequirePackage{microtype}
+
+%% ---------------------------------------------------------------- Colores
+%% Verdes del logo (#0f6139, #77b527) y del verde de los dosieres (#008663).
+\RequirePackage[table]{xcolor}
+\definecolor{csdverde}{HTML}{008663}
+\definecolor{csdoscuro}{HTML}{0F6139}
+\definecolor{csdlima}{HTML}{77B527}
+\definecolor{csdclaro}{HTML}{80BCA5}
+\definecolor{csdsuave}{HTML}{E3F1EB}
+\definecolor{csdtexto}{HTML}{2A2A2A}
+\definecolor{csdcoral}{HTML}{E0705C}
+\color{csdtexto}
+
+%% ---------------------------------------------------------------- Paquetes
+\RequirePackage{graphicx}
+\RequirePackage[export]{adjustbox}   % clave «frame» en \includegraphics
+\RequirePackage{tikz}
+\usetikzlibrary{calc,positioning}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{enumitem}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{array}
+\RequirePackage{caption}
+\RequirePackage{float}
+\RequirePackage{wrapfig}
+\RequirePackage{amssymb}
+\RequirePackage[normalem]{ulem}       % _subrayado_ de Org (\uline)
+\RequirePackage{fontawesome5}         % iconos para los diagramas
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=csdverde,urlcolor=csdverde,
+  pdfcreator={documentos.org + LuaLaTeX}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\raggedbottom
+
+%% ---------------------------------------------------------------- Datos
+\def\csd@etiqueta{}
+\newcommand{\csdetiqueta}[1]{\def\csd@etiqueta{#1}}
+%% Título de portada sin el «Ciudad Santo Domingo» final (lo fija publish-pdf.el).
+\newcommand{\csd@tituloportada}{\@title}
+\newcommand{\csdtituloportada}[1]{\renewcommand{\csd@tituloportada}{#1}}
+\newcommand{\csdlogo}{logo-csd}          % img/logo-csd.pdf (generado del SVG)
+\newcommand{\csdlogoblanco}{logo-csd-blanco}
+
+%% ---------------------------------------------------------------- Cabecera
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{%
+  \raisebox{-0.35\height}{\includegraphics[height=9mm]{\csdlogo}}\hspace{2mm}%
+  \small Comunidad de Propietarios Ciudad Santo Domingo}
+\fancyhead[R]{%
+  \ifx\csd@etiqueta\@empty\else
+    {\color{csdverde}\rule[-0.3ex]{0.6pt}{2.2ex}\hspace{1.2mm}%
+     \scriptsize\bfseries\MakeUppercase{\csd@etiqueta}%
+     \hspace{1.2mm}\rule[-0.3ex]{0.6pt}{2.2ex}}%
+  \fi}
+\fancyfoot[C]{\small\color{csdverde}\thepage}
+\fancypagestyle{plain}{\fancyhf{}}
+
+%% ---------------------------------------------------------------- Títulos
+\newcommand{\csd@nohyph}{\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000}
+\titleformat{\section}
+  {\csd@nohyph\csdserif\color{csdverde}\fontsize{21}{25}\selectfont}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.4em}{0.5em}
+\titleformat{\subsection}
+  {\csd@nohyph\csdserif\color{csdverde}\fontsize{16}{19}\selectfont}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.4em}
+\titleformat{\subsubsection}
+  {\bfseries\color{csdverde}}{}{0pt}{\underline}
+\titlespacing*{\subsubsection}{0pt}{1em}{0.2em}
+\titleformat{\paragraph}[runin]{\bfseries\color{csdverde}}{}{0pt}{}[.]
+
+%% Título de la primera página de contenido: «Gestión del agua ▌»
+\newcommand{\csdtitulointerior}[1]{%
+  \begin{flushright}
+    {\csdserif\color{csdverde}\fontsize{26}{30}\selectfont #1\hspace{2mm}%
+     \rule[-0.1ex]{2.4mm}{0.8em}}
+  \end{flushright}\vspace{1em}}
+
+%% ---------------------------------------------------------------- Listas
+\setlist{topsep=0.2em,itemsep=0.25em,parsep=0.2em}
+\setlist[itemize,1]{label={\color{csdverde}\raisebox{0.15ex}{\small$\blacksquare$}},
+  leftmargin=1.6em}
+\setlist[itemize,2]{label={\color{csdverde}--},leftmargin=1.4em}
+\setlist[enumerate,1]{label={\color{csdverde}\bfseries\arabic*.},leftmargin=1.8em}
+\setlist[enumerate,2]{label={\color{csdverde}\alph*)},leftmargin=1.6em}
+\setlist[description]{font=\bfseries\color{csdverde}}
+
+%% ---------------------------------------------------------------- Citas
+\renewenvironment{quote}
+  {\begin{list}{}{\leftmargin=1.5em\rightmargin=1.5em}\item\relax
+   \color{csdverde}\itshape\bfseries}
+  {\end{list}}
+
+%% ---------------------------------------------------------------- Recuadros
+%% Dentro de los recuadros se mantiene la separación entre párrafos.
+\newcommand{\csd@caja}{\setlength{\parskip}{0.55em}}
+%% Viñetas de otro color dentro de los recuadros oscuros.
+\newcommand{\csd@vinetas}[1]{%
+  \setlist[itemize,1]{label={\color{#1}\raisebox{0.15ex}{\small$\blacksquare$}}}}
+
+%% #+begin_recuadro ... #+end_recuadro   (fondo verde claro)
+%% #+attr_latex: :options [title={Título}]  para ponerle título.
+\newtcolorbox{recuadro}[1][]{enhanced,breakable,
+  colback=csdsuave,colframe=csdverde,boxrule=0pt,leftrule=3pt,arc=0pt,
+  left=4mm,right=4mm,top=3mm,bottom=3mm,fontupper=\csd@caja,
+  fonttitle=\bfseries,coltitle=csdverde,colbacktitle=csdsuave,
+  attach title to upper={\par\smallskip},#1}
+
+%% #+begin_destacado ... #+end_destacado   (fondo verde, texto blanco)
+\newtcolorbox{destacado}[1][]{enhanced,breakable,
+  colback=csdverde,colupper=white,boxrule=0pt,arc=2mm,
+  left=5mm,right=5mm,top=4mm,bottom=4mm,
+  fontupper={\bfseries\csd@caja\csd@vinetas{white}},
+  coltitle=white,fonttitle=\large\bfseries,
+  attach title to upper={\par\medskip},#1}
+
+%% #+begin_aviso ... #+end_aviso   (borde discontinuo, como el «Resumen»)
+\newtcolorbox{aviso}[1][]{enhanced,breakable,
+  colback=csdverde,colupper=white,colframe=white,arc=0pt,
+  borderline={1.2pt}{-2mm}{red!70!black,dashed},
+  left=5mm,right=5mm,top=4mm,bottom=4mm,
+  coltitle=white,fonttitle=\large\bfseries,
+  fontupper={\csd@caja\csd@vinetas{red!75!black}},
+  attach title to upper={\par\medskip},#1}
+
+%% #+begin_panel ... #+end_panel   (degradado verde claro, texto en negrita;
+%% como la última página de «Seguridad»)
+\newtcolorbox{panel}[1][]{enhanced,breakable,
+  interior style={top color=csdclaro!85,bottom color=csdsuave!40},
+  frame hidden,arc=4mm,left=6mm,right=6mm,top=5mm,bottom=5mm,
+  fontupper={\bfseries\csd@caja},#1}
+
+%% Tarjeta de teléfono con degradado (desde Org: {{{tarjeta(título,teléfonos,lema)}}})
+\newcommand{\csdtarjeta}[3]{%
+  \par\medskip
+  \begin{tcolorbox}[enhanced,frame hidden,arc=3mm,
+    interior style={left color=csdverde!65,right color=csdsuave},
+    halign=center,top=5mm,bottom=5mm,
+    underlay={\node[opacity=0.12,anchor=west] at ([xshift=3mm]frame.west)
+      {\includegraphics[height=30mm]{\csdlogo}};}]
+    {\csdserif\bfseries\color{white}\fontsize{22}{26}\selectfont #1\par}
+    \medskip
+    {\csdserif\bfseries\color{csdtexto}\fontsize{28}{32}\selectfont #2\par}
+    \medskip
+    {\csdserif\itshape\color{white}\fontsize{22}{26}\selectfont #3\par}
+  \end{tcolorbox}\medskip}
+
+%% #+begin_fotos ... #+end_fotos   imágenes centradas, en fila, con pie.
+%% #+attr_latex: :options [Pie de foto]   (antes del bloque)
+%% Dentro, las imágenes con  #+attr_latex: :width .48\linewidth :center nil
+\newenvironment{fotos}[1][]
+  {\par\medskip\begin{center}\def\csd@pie{#1}}
+  {\ifx\csd@pie\@empty\else\par\vspace{-0.6em}%
+     {\small\itshape\color{csdverde}\csd@pie\par}\fi
+   \end{center}}
+
+%% ---------------------------------------------------------------- Tablas
+\arrayrulecolor{csdverde}
+\captionsetup{font={small,it},labelformat=empty,justification=raggedright,
+  singlelinecheck=false}
+
+%% ---------------------------------------------------------------- Portada
+%% Dibujo común de portada y portadillas: marca de agua, título a la derecha
+%% (#1, con «Ciudad Santo Domingo» siempre en la última línea) y banda verde
+%% inferior. #2 = contenido del pie de la banda (vacío en las portadillas).
+\newcommand{\csd@portada}[2]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % Logo en marca de agua, cortado por la esquina superior izquierda.
+    \node[anchor=center,opacity=0.35,inner sep=0pt]
+      at ($(current page.north west)+(22mm,-42mm)$)
+      {\includegraphics[width=112mm]{\csdlogo}};
+    % Título a la derecha; «Ciudad Santo Domingo» siempre en la última línea.
+    \node[anchor=north east,align=right,text=csdverde,inner sep=0pt,
+           text width=125mm]
+      at ($(current page.north east)+(-18mm,-62mm)$)
+      {\lefthyphenmin=62\csdserif\fontsize{32}{36}\selectfont
+       #1\\[1mm]
+       \bfseries Ciudad Santo Domingo};
+    % Banda verde inferior.
+    \fill[csdverde] ($(current page.south west)+(12mm,0)$)
+      rectangle ($(current page.south east)+(0,160mm)$);
+    \node[anchor=north east,inner sep=0pt]
+      at ($(current page.south east)+(-18mm,140mm)$)
+      {\includegraphics[width=28mm]{\csdlogoblanco}};
+    #2
+  \end{tikzpicture}}
+
+%% Sustituye a \maketitle: portada a sangre + título interior (dosier) o
+%% índice (compendio).
+\newif\ifcsdcompendio
+\renewcommand{\maketitle}{%
+  \global\let\csd@date\@date
+  \begin{titlepage}
+  \csd@portada{\csd@tituloportada}{%
+    % Pie de la banda: remitente y fecha.
+    \node[anchor=south west,align=left,text=white,inner sep=0pt]
+      at ($(current page.south west)+(28mm,22mm)$)
+      {\small\bfseries Comunidad de Propietarios Ciudad Santo Domingo\\
+       \small Avda. del Guadalix, 37 · 28120 Algete (Madrid)};
+    \node[anchor=south east,text=white,inner sep=0pt]
+      at ($(current page.south east)+(-18mm,22mm)$)
+      {\small\csd@date};}
+  \end{titlepage}
+  \setcounter{page}{1}%
+  \ifcsdcompendio\csdindice\else\csdtitulointerior{\@title}\fi}
+
+%% ---------------------------------------------------------------- Compendio
+%% En el compendio («Conoce Ciudad Santo Domingo») cada encabezado ** es un
+%% capítulo (\csdcapitulo); publish-pdf.el antepone \csdportadilla salvo que
+%% el encabezado tenga :PORTADILLA: no. Las partes se marcan a mano con
+%% #+latex: \csdparte{I. Asuntos de la Comunidad de Propietarios}
+\RequirePackage{titletoc}
+\titlecontents{part}[0pt]
+  {\addvspace{1.2em}\csdserif\large\color{csdverde}}{}{}
+  {\hfill\contentspage}
+\titlecontents{section}[1.2em]
+  {\addvspace{0.3em}}{}{}
+  {\color{csdverde}\titlerule*[0.7pc]{.}\color{csdtexto}\contentspage}
+
+\newcommand{\csdindice}{%
+  \csdtitulointerior{Índice}%
+  {\let\clearpage\relax\renewcommand{\contentsname}{}%
+   \vspace*{-3em}\tableofcontents}%
+  \clearpage}
+
+\newcommand{\csdportadilla}[1]{%
+  \clearpage\thispagestyle{empty}%
+  \csd@portada{#1}{}\null\clearpage}
+
+\newcommand{\csdcapitulo}[1]{%
+  \clearpage
+  \csdetiqueta{#1}%
+  \phantomsection\addcontentsline{toc}{section}{#1}%
+  \csdtitulointerior{#1}}
+
+\newcommand{\csdparte}[1]{%
+  \clearpage\thispagestyle{empty}%
+  \phantomsection\addcontentsline{toc}{part}{#1}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[csdoscuro] (current page.south west) rectangle (current page.north east);
+    \node[opacity=0.12,inner sep=0pt] at ($(current page.center)+(-40mm,40mm)$)
+      {\includegraphics[width=170mm]{\csdlogoblanco}};
+    \node[anchor=south east,align=right,text=white,text width=150mm,inner sep=0pt]
+      at ($(current page.south east)+(-18mm,40mm)$)
+      {\lefthyphenmin=62\csdserif\fontsize{36}{42}\selectfont #1};
+  \end{tikzpicture}\null\clearpage}
+
+%% ---------------------------------------------------------------- Cierre
+%% Recuadro de contacto que cierra todos los dosieres.
+\let\csd@date\@empty
+\AtEndDocument{%
+  \par\vfill
+  \ifx\csd@date\@empty\else
+    \begin{flushright}\small\csd@date\end{flushright}\fi
+  \begin{tcolorbox}[enhanced,colback=csdverde,colupper=white,boxrule=0pt,
+    arc=0pt,left=5mm,right=5mm,top=3mm,bottom=3mm,width=0.62\linewidth]
+    \footnotesize
+    \textbf{© Comunidad de Propietarios Ciudad Santo Domingo}\\[1mm]
+    Avda. del Guadalix, 37 · 28120 Algete (Madrid)\\
+    Tel.: 916 221 511 · Seguridad 24 h: 916 221 507\\
+    \href{mailto:csd@csdomingo.com}{\color{white}csd@csdomingo.com} ·
+    \href{https://ciudadsantodomingo.org}{\color{white}ciudadsantodomingo.org}
+  \end{tcolorbox}}
+
+\endinput
