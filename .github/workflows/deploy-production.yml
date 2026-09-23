@@ -110,7 +110,14 @@ jobs:
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
           SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
+          echo "Diagnóstico (no se imprimen valores):"
+          echo "  longitud de SFTP_HOST=$(printf '%s' "$SFTP_HOST" | wc -c)  SFTP_USER=$(printf '%s' "$SFTP_USER" | wc -c)  SFTP_PASSWORD=$(printf '%s' "$SFTP_PASSWORD" | wc -c)  SFTP_REMOTE_PATH=$(printf '%s' "$SFTP_REMOTE_PATH" | wc -c)"
+          printf '%s' "$SFTP_USER$SFTP_PASSWORD$SFTP_HOST$SFTP_REMOTE_PATH" | grep -q '[[:space:]]' && echo "  AVISO: algún secreto contiene espacios o saltos de línea" || echo "  sin espacios ni saltos de línea en los secretos"
+          ssh -V
+          echo "Métodos de autenticación que ofrece el servidor:"
+          ssh -o BatchMode=yes -o PreferredAuthentications=none -o StrictHostKeyChecking=yes -p 22 "$SFTP_USER@$SFTP_HOST" true 2>&1 | tail -2 || true
           lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
+            debug 3
             set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
             set net:max-retries 2
             set net:timeout 30
