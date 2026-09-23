@@ -2,8 +2,8 @@
 #+DATE: 23 de septiembre de 2026
 #+LANGUAGE: es
 #+STARTUP: showall
-#+LATEX_HEADER: \usepackage[a4paper,margin=2cm]{geometry}
-#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage{geometry}\geometry{a4paper,margin=2cm}
+#+LATEX_HEADER: \usepackage{iftex}\ifPDFTeX\usepackage{lmodern}\else\usepackage{fontspec}\fi
 #+LATEX_HEADER: \usepackage{xltabular}
 #+LATEX_HEADER: \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 #+OPTIONS: toc:nil
