@@ -38,7 +38,7 @@ jobs:
       - name: Instalar Emacs y lftp
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends emacs-nox lftp
+          sudo apt-get install -y --no-install-recommends emacs-nox lftp sshpass
 
       # TeX Live mínimo sin acciones de terceros (setup-texlive-action fallaba
       # con «Repository access blocked»): instalador oficial + tlmgr con solo
@@ -107,18 +107,15 @@ jobs:
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
           SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
-          echo "Diagnóstico (no se imprimen valores):"
-          echo "  longitud de SFTP_HOST=$(printf '%s' "$SFTP_HOST" | wc -c)  SFTP_USER=$(printf '%s' "$SFTP_USER" | wc -c)  SFTP_PASSWORD=$(printf '%s' "$SFTP_PASSWORD" | wc -c)  SFTP_REMOTE_PATH=$(printf '%s' "$SFTP_REMOTE_PATH" | wc -c)"
-          printf '%s' "$SFTP_USER$SFTP_PASSWORD$SFTP_HOST$SFTP_REMOTE_PATH" | grep -q '[[:space:]]' && echo "  AVISO: algún secreto contiene espacios o saltos de línea" || echo "  sin espacios ni saltos de línea en los secretos"
-          ssh -V
-          echo "Métodos de autenticación que ofrece el servidor:"
-          ssh -o BatchMode=yes -o PreferredAuthentications=none -o StrictHostKeyChecking=yes -p 22 "$SFTP_USER@$SFTP_HOST" true 2>&1 | tail -2 || true
-          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
-            debug 3
-            set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+          echo "Longitudes (no se imprimen valores): HOST=$(printf '%s' "$SFTP_HOST" | wc -c) USER=$(printf '%s' "$SFTP_USER" | wc -c) PASSWORD=$(printf '%s' "$SSHPASS" | wc -c) PATH=$(printf '%s' "$SFTP_REMOTE_PATH" | wc -c)"
+          echo "== Prueba 1: sftp de OpenSSH con sshpass =="
+          printf 'ls -l %s\n' "$SFTP_REMOTE_PATH" | sshpass -e sftp -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -b - "$SFTP_USER@$SFTP_HOST"
+          echo "== Prueba 2: lftp con sshpass como programa de conexión =="
+          lftp -u "$SFTP_USER",x sftp://"$SFTP_HOST" <<LFTP
+            set sftp:connect-program "sshpass -e ssh -a -x -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no"
             set net:max-retries 2
             set net:timeout 30
             cls -l "$SFTP_REMOTE_PATH"
@@ -130,11 +127,11 @@ jobs:
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
           SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
           SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
-          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
-            set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+          lftp -u "$SFTP_USER",x sftp://"$SFTP_HOST" <<LFTP
+            set sftp:connect-program "sshpass -e ssh -a -x -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no"
             set net:max-retries 3
             set net:timeout 60
             mirror --reverse --delete --verbose ./public/ "$SFTP_REMOTE_PATH"
