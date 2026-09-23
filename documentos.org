@@ -1,0 +1,3080 @@
+#+TITLE: Dosieres PDF de Ciudad Santo Domingo
+#+LANGUAGE: es
+#+STARTUP: overview
+#+MACRO: tarjeta @@latex:\csdtarjeta{$1}{$2}{$3}@@
+
+# Fuente única de los dosieres PDF que se descargan desde la web.
+#
+# Cada subárbol de primer nivel con :EXPORT_FILE_NAME: produce un PDF:
+#   make pdf                        -> pdf/build/*.pdf   (para revisar)
+#   make pdf DOC=gestion-del-agua   -> solo ese documento
+#   make pdf-docs                   -> además los copia a docs/ (los que enlaza la web)
+#
+# Propiedades de cada documento:
+#   EXPORT_FILE_NAME  nombre del PDF, sin extensión (el mismo que en docs/)
+#   EXPORT_TITLE      título de portada (si falta, se usa el del encabezado)
+#   EXPORT_DATE       fecha que aparece en portada y al final
+#   ETIQUETA          texto de la cabecera de las páginas: | GESTIÓN DEL AGUA |
+#
+# Dentro de cada documento, los encabezados ** son secciones, *** subsecciones
+# y **** apartados (subrayados). Bloques especiales disponibles:
+#   #+begin_recuadro ... #+end_recuadro     recuadro verde claro
+#   #+begin_destacado ... #+end_destacado   recuadro verde, texto blanco
+#   #+begin_aviso ... #+end_aviso           recuadro verde con borde rojo discontinuo
+#   #+begin_quote ... #+end_quote           cita en verde y cursiva
+#   #+begin_fotos ... #+end_fotos           imágenes en fila con pie de foto
+#   #+begin_panel ... #+end_panel           panel con degradado verde, en negrita
+#   #+begin_center / #+begin_flushright     texto centrado / alineado a la derecha
+# A los recuadros se les puede cambiar el color:
+#   #+attr_latex: :options [title={Datos de contacto},colback=csdcoral]
+# Tarjeta de teléfono destacada:
+#   {{{tarjeta(Título,Teléfonos,Lema)}}}
+# Iconos (Font Awesome 5) en diagramas y textos: @@latex:\faPhone@@
+# Para darles título:  #+attr_latex: :options [title={Mi título}]
+#
+# Las imágenes propias de los PDF van en pdf/img/ y se enlazan como
+# [[file:pdf/img/nombre.jpg]] (así también se ven desde Emacs).
+# Para enmarcar una imagen (p. ej. un documento escaneado):
+#   #+attr_latex: :width .8\linewidth :options frame
+# Para un salto de página:  #+latex: \newpage
+
+* Gestión del agua
+:PROPERTIES:
+:EXPORT_FILE_NAME: gestion-del-agua
+:EXPORT_DATE: Junio 2022
+:ETIQUETA: gestión del agua
+:END:
+
+** Descripción de la Red de Agua y Saneamiento de Ciudad Santo Domingo
+
+Ciudad Santo Domingo es un núcleo de población 100 % residencial que lo
+forman +/-1.000 parcelas unifamiliares, 8 subcomunidades de pisos, un CEIP
+con capacidad para 350 alumnos, una Residencia con capacidad para 300
+residentes de tercera edad asistidos más 124 apartamentos para no asistidos,
+2 centros comerciales, parroquia… etc. En total +/-5.000 residentes
+permanentes.
+
+Ciudad Santo Domingo dispone de una red propia de abastecimiento de agua y de
+su correspondiente red de evacuación y depuración de aguas residuales. Desde
+que se constituyó en 1966 la Comunidad de Propietarios realiza el tratamiento
+integral de sus aguas.
+
+- Para la alimentación de la red de abastecimiento se perforaron 11 pozos de
+  captación de profundidades comprendidas entre 250 y 350 metros de los que 8
+  de ellos están plenamente operativos.
+- Ciudad Santo Domingo es titular de una concesión de la Confederación
+  Hidrográfica del Tajo para la captación y aprovechamiento de aguas
+  privativas de un total de 2.084.228 m³ anuales. Esta concesión tiene un
+  periodo de vigencia hasta octubre de 2038.
+- 6 pozos vierten en un Depósito Colector situado en la cota 613 desde donde
+  se eleva el agua al Depósito Regulador mediante cuatro grupos de
+  electrobombas sumergidas, con una potencia total de 180 CV.
+- El Depósito Regulador dispone de una capacidad para 6.000 m³ y está situado
+  en la cota 670,5. Otros 2 pozos vierten directamente en el Depósito
+  Regulador. Disponemos además de un segundo Depósito Colector de 2.500 m³ de
+  capacidad.
+- Nuestra red de distribución tiene una longitud de 36,5 km con diámetros
+  entre 100 y 500 mm para una presión de 10-15 atmósferas con juntas de unión
+  GIBAULT.
+- Está dividida en tres sectores: uno, que alimenta la mayor parte de las
+  parcelas y recibe el agua por gravedad. Los otros dos se alimentan por
+  dispositivos de presión situados, uno en el propio Depósito Regulador, y el
+  otro en el Depósito de la Avenida del Monte.
+- El grupo de presión situado en el Depósito Regulador suministra a un total
+  de 315 parcelas situadas entre las cotas 630 a 670,5. El dispositivo de
+  presión situado en el Depósito de la Avenida del Monte da servicio a 82
+  parcelas situadas entre las cotas 642,5 y 658.
+- La evacuación de aguas residuales se realiza por medio de una red también
+  propia de saneamiento de una longitud de 30 km con tubular de hormigón de
+  30 cm de diámetro que vierte por intermedio de un colector emisario de
+  600 mm.
+- Existe una red separativa de pluviales que mantiene igualmente la Comunidad
+  de Propietarios y que vierte directamente al río Guadalix.
+- EDAR, propia de oxidación-reducción, de tanque reactor único con un
+  aireador que combina agitación con aireación, y con una potencia nominal de
+  37 kW. La EDAR dispone de una concesión de la CHT para el tratamiento de
+  aguas residuales domésticas y asignado un canon de vertido de 860.000 m³
+  anuales.
+- Ciudad Santo Domingo cuenta además con una segunda red separativa de agua
+  que suministra el CYII.
+
+En 2008 se implementaron nuevas tarifas del agua incentivando los ahorros,
+logrando reducir los volúmenes aflorados y consumidos así como
+concienciando a la población. Desde entonces, en valores consolidados, se
+registran +/- 20 % de menores consumos.
+
+En 2017 se han automatizado y monitorizado todos nuestros medios de
+producción: pozos, sondas, grupos de presión y depósitos, conectándolos a un
+ordenador central y operados por un programa tipo /scada/, con lo que se han
+optimizado producciones y rendimientos. Esto nos ha permitido generar ahorros
+muy importantes en nuestros consumos de energía. Gracias a esta
+automatización actualmente solo se opera en horas de consumo /valle/ y a lo
+sumo /llanas/.
+
+En 2018 se completó nuestra EDAR con la instalación de un deshidratador de
+fangos y la instalación de un sistema de dosificación de cloruro férrico para
+la eliminación de fósforo contratado a SUEZ.
+
+En 2020 hemos contratado 3 parques solares para suministro de energía
+fotovoltaica con el fin de alimentar respectivamente el Pozo Depósito, el
+Grupo de Presión Depósito y la EDAR, con potencias instaladas de
+funcionamiento de 65 kW, 22 kW y 30 kW respectivamente. Las instalaciones
+constan de:
+
+- Pozo Depósito :: campo fotovoltaico de 324 módulos de 380 Wp para un total
+  de 123 kWp con 3 inversores, para una generación anual de 211.000 kWh/año.
+- Grupo de Presión :: campo fotovoltaico de 108 módulos de 380 Wp para un
+  total de 41 kWp con 1 inversor, para una generación anual de 70.340
+  kWh/año.
+- EDAR :: campo fotovoltaico de 216 módulos de 380 Wp para un total de 82 kWp
+  con 2 inversores, para una generación anual de 141.700 kWh/año.
+
+Ambos parques están plenamente operativos.
+
+#+latex: \newpage
+** Concesión de las aguas
+
+#+attr_latex: :width .82\linewidth :options frame
+[[file:pdf/img/agua-concesion-2001.png]]
+
+Con fecha 11/09/2001 se consigue la transferencia protocolizada del
+aprovechamiento de aguas subterráneas a través de 11 pozos por un total
+aproximado de 2.071.661 m³. La concesión caduca el 24/10/2038, fecha en que
+se procederá a su renovación.
+
+** Canal de Isabel II
+
+En el 2002 se decidió acometer por parte de la Comunidad una segunda red de
+suministro de agua. Se constituyó una Cooperativa y se sufragaron las obras de
+la red, aducción, depósito regulador y red de distribución. Una vez concluidas
+se le entregó al CYII para su uso y mantenimiento. El compromiso contractual
+fue que el CYII aplicaría unas bonificaciones sobre el consumo hasta amortizar
+la inversión realizada.
+
+Concluida esta fase se firma un nuevo convenio en febrero de 2012 entre el
+Ayuntamiento, el CYII y la Comunidad de Propietarios fijando las nuevas
+condiciones de suministro y especificando que:
+
+*Estipulación Segunda: Cantidad a abonar:*
+
+#+begin_quote
+«Los contratantes de nuevos suministros de agua de consumo humano deberán
+abonar a la URBANIZACIÓN la cantidad de 2.800 €, que supone el importe
+estimado que habrán abonado el resto de vecinos de la Urbanización “Ciudad
+Santo Domingo” para la ejecución de las obras de renovación de la red interior
+de agua de consumo humano de dicho ámbito, en concepto de cuota fija.»
+#+end_quote
+
+Así pues, en Santo Domingo existen 2 redes separativas de agua: la de los pozos
+de la Urbanización y la del CYII para consumo «de boca».
+
+En lo que respecta a las aguas residuales, la red es conjunta y lo mismo la
+depuración. La Comunidad hace el tratamiento de la red de saneamiento y depura
+el agua de ambas redes.
+
+** Plan de Modernización del Sistema de Pozos: Monitorización y Parques Solares
+
+La red de agua de Ciudad Santo Domingo es uno de nuestros mayores activos.
+Resulta una instalación de alto valor añadido para los vecinos de la
+Comunidad, que nos permite asignar unas cuotas por el servicio de suministro
+de agua muy inferiores a las de otras urbanizaciones de la zona, y sobre todo
+contar con suficientes recursos para abastecer las necesidades de agua de los
+vecinos en los días más secos y críticos del año que se pudieran imaginar.
+
+Sin embargo, se trata de una instalación con una red de más de 45 años de
+antigüedad que requería ser puesta al día con un triple objetivo:
+*(1) Garantizar la continuidad* de la red y el sistema mediante la renovación
+de la red próxima a su obsolescencia y/o en situación recurrente de fallo,
+*(2) Garantizar la independencia* y capacidad de reacción operativa mediante
+la automatización y monitorización permanente del sistema, y en especial,
+*(3) Reducir los costes de operación* del sistema, mediante la aplicación de
+nuevas tecnologías y el ajuste de la estrategia operativa para obtener un
+aumento de la eficiencia energética y, en definitiva, una reducción
+significativa del gasto anual en el servicio de suministro de agua.
+
+En este sentido, en el año 2016 propusimos a la Asamblea un *programa de
+modernización / monitorización de la red de pozos*, ya a día de hoy
+plenamente operativa y que nos está proporcionando importantes ahorros. *La
+primera actuación* de nuestro plan fue, como ya fue comunicado en su día, la
+implementación de un sistema de automatización y monitorización de los pozos,
+depósitos y grupos de presión, que finalizó en 2017. Con la implementación
+del nuevo sistema de automatización y monitorización (en adelante el «SAM»)
+es posible saber en tiempo real, incluso desde el móvil, qué caudal de bombeo
+está produciendo cada pozo, el nivel de los depósitos y las posibles
+anomalías operativas del sistema, el rendimiento de los grupos de presión,
+entre otros, pudiendo actuar sobre el sistema en remoto las 24 horas del día
+de todos los días del año de forma automática para activar/parar los pozos,
+bien sea siguiendo una programación o de forma reactiva frente a «alarmas»
+y/o situaciones no deseadas en el funcionamiento del sistema. Gracias a la
+implantación del *SAM*, hoy entendemos mucho mejor el perfil de la demanda de
+agua de la Comunidad y podemos ajustar la producción de los pozos a dicho
+perfil para lograr la máxima eficiencia operativa del sistema.
+
+La primera actuación no ha podido ser más positiva, pero teníamos que seguir
+avanzando en el plan de modernización de la red de pozos.
+
+#+attr_latex: :options [title={En el 2019 se propuso avanzar con las siguientes actuaciones:}]
+#+begin_recuadro
+1. *Renovación de los cuadros eléctricos* de ciertos pozos, obsoletos en su
+   mayor parte (cuadro Colector, pozo Viaducto, pozo Monte, pozo Barranca,
+   grupo de presión Monte, etc.).
+2. *Inversión en 3 Parques Solares:*
+
+   | a) Pozo Depósito     | para una potencia de | 123 kWp |
+   | b) Grupo de Presión  | para una potencia de |  41 kWp |
+   | c) EDAR (depuradora) | para una potencia de |  82 kWp |
+   |----------------------+----------------------+---------|
+   |                      | *TOTAL*              | *246 kWp* |
+#+end_recuadro
+
+Para la contratación de los Parques Solares se convocó un concurso
+restringido al que se invitó a 6 de las empresas más representativas del
+sector, incluido nuestro actual proveedor IBERDROLA. La idea era acudir a un
+préstamo bancario que se amortizará fácilmente con los ahorros que se
+generarían. La oferta y condiciones más ventajosas resultó ser la de la
+empresa ERCAM, S.A.
+
+La inversión en «parques solares» formaba parte de la operación que se
+presentó a la Asamblea de Propietarios de 2016, y que se aprobó por
+unanimidad. En ella se proponía una actuación en 2 niveles o fases. La 1ª
+fase, el «Sistema de Control y Monitorización de nuestra red de pozos y
+agua», ya se ha completado, quedando esta 2ª fase que ahora se abordaba.
+
+Ambos parques solares ya están terminados, si bien sufrimos importantes
+retrasos en su instalación fundamentalmente porque hoy las placas,
+inversores, etc. son elementos que provienen de China y, con la declaración
+de la pandemia a primeros de 2020, tanto la fabricación como el transporte
+sufrieron importantes retrasos en la entrega de materiales.
+
+Ambos parques están plenamente operativos.
+
+#+attr_latex: :options [Parque solar Depósito]
+#+begin_fotos
+#+attr_latex: :width .48\linewidth :center nil
+[[file:pdf/img/agua-parque-solar-deposito-1.jpg]] [[file:pdf/img/agua-parque-solar-deposito-2.jpg]]
+#+end_fotos
+
+#+attr_latex: :options [Parque solar de Las Balsas]
+#+begin_fotos
+#+attr_latex: :width .48\linewidth :center nil
+[[file:pdf/img/agua-parque-solar-balsas-1.jpg]] [[file:pdf/img/agua-parque-solar-balsas-2.jpg]]
+#+end_fotos
+
+* Seguridad
+:PROPERTIES:
+:EXPORT_FILE_NAME: seguridad
+:ETIQUETA: seguridad Ciudad Santo Domingo
+:END:
+
+{{{tarjeta(Control de seguridad Santo Domingo,916 221 507 / 646 112 097,¡estamos para ayudarle!)}}}
+
+El Servicio de Seguridad de la Urbanización Ciudad Santo Domingo tiene como
+fin último ayudar, apoyar y asegurar al conjunto de los vecinos de la
+Urbanización y sus bienes. Es uno de los múltiples servicios que presta la
+Comunidad para mejorar la calidad de vida de todos nosotros. Con el objetivo
+de mejorar nuestra «seguridad», nos permitimos ofrecerles algunas
+recomendaciones en materia de seguridad a tener en cuenta.
+
+#+begin_quote
+«Nuestra seguridad se apoya en los vigilantes y en las alarmas de nuestras
+viviendas. El vigilante acudirá ante una sospecha o cuando se active una
+alarma, de ahí la importancia de las mismas para una mayor seguridad de cada
+una de las viviendas. Si no dispone de sistema de alarmas, contrátelo: apenas
+representa el 0,05 % de la inversión en su vivienda. Si todas las viviendas
+dispusieran de su alarma conectada a la central, nuestra urbanización sería
+inexpugnable.»
+#+end_quote
+
+** Consejos de seguridad en la vivienda
+
+**** Cuando esté en casa:
+
+- Haga evidente su presencia en el domicilio.
+- Deje el menor número de puertas y ventanas sin asegurar y, si es posible,
+  _active la alarma_ de las zonas que no vaya a utilizar.
+- _*No abra la puerta de su casa a desconocidos*_, pero sí conteste al
+  interfono y observe. Si quien llama es personal de empresas de servicios
+  (teléfono, electricidad, gas, agua, etc.) pida que se identifique. Si usted
+  considera oportuno reconfirmar la identidad del visitante, no lo haga en el
+  número de teléfono de la tarjeta que él le muestre, ya que podría ser el de
+  un cómplice. Si le genera alguna duda, llámenos al CONTROL DE SEGURIDAD
+  916 221 507 (Garita de Control) y una de nuestras patrullas identificará y
+  confirmará la identidad del visitante.
+- Ante la presencia de _*personas extrañas*_ en los alrededores avise al
+  CONTROL DE SEGURIDAD (Garita de Control) y tome nota de la matrícula de
+  cualquier vehículo que le parezca sospechoso.
+- _*«Botón del pánico»*_. Se están unificando las alarmas de los vecinos con
+  un solo operador que retransmite inmediatamente los avisos de alarma a
+  nuestro CONTROL DE SEGURIDAD. Los nuevos equipos disponen de un «botón de
+  pánico», que hace posible que nuestras patrullas se personen en el lugar de
+  la alarma de inmediato.
+
+**** Cuando esté ausente:
+
+- Asegure con llave todas las puertas y cierre las ventanas, especialmente las
+  que den a zonas poco visibles desde el exterior.
+- No deje juegos de llaves en escondites.
+- En el CONTROL DE SEGURIDAD tiene la posibilidad de utilizar el _«servicio
+  de custodia de llaves»_, de manera gratuita y con todas las garantías
+  legales. Si su ausencia va a ser más larga de lo habitual:
+  - Comuníquenoslo en el Centro de Control de Seguridad.
+  - Facilítenos sus datos de contacto, o actualícelos.
+  - Deposite un juego de llaves en custodia (la mayoría de los residentes ya
+    lo practica).
+- Asegúrese de informarnos y acreditar a las personas que tengan que acceder
+  a su domicilio o parcela durante su ausencia.
+
+**** Consejos genéricos
+
+- Si no lo ha hecho, memorice ahora mismo los teléfonos de nuestra seguridad
+  en su móvil y en el de los suyos: *916 221 507* y *646 112 097*.
+- La Comunidad cuenta en plantilla con un Director de Seguridad. Consúltele
+  todas sus dudas: podrá asesorarle y le prestará el apoyo que necesite.
+- Cuando vuelva a su domicilio, observe si hay personas en los alrededores o
+  en los vehículos próximos a su casa. En caso afirmativo, pase de largo y
+  avísenos llamando al Centro de Control de Seguridad. No le importe que sea
+  una hora intempestiva o una falsa alarma.
+- Si al llegar a su casa nota algo anormal, no entre; comuníquelo al CONTROL
+  DE SEGURIDAD (Garita de Control). Le prestarán ayuda de inmediato.
+- En el caso de robo consumado, evite alterar el escenario del delito para
+  facilitar las labores de investigación a la policía científica.
+- Si detecta marcas o adhesivos desconocidos en sus puertas, accesos o
+  buzones, infórmenos llamando al CONTROL DE SEGURIDAD; nosotros lo
+  pondremos en conocimiento de las autoridades.
+- Al contratar al servicio doméstico, pida referencias y observe su
+  comportamiento durante los primeros días. Evite que el personal ajeno
+  conozca los cuartos de seguridad o la ubicación de cajas fuertes.
+- No ponga en sus llaves ningún dato y preste atención cuando haga duplicados.
+- Cambie la cerradura en los siguientes casos: al instalarse en una vivienda
+  nueva o que ha sido habitada anteriormente, si ha reformado su casa y algún
+  trabajador ha tenido acceso a las llaves, siempre que pierda las llaves y en
+  el caso de tratarse de una cerradura «antigua».
+- Instale un sistema que le permita ver a la persona que llama a su puerta.
+- Fotografíe o anote la marca, modelo, número de serie o de fabricación, etc.
+  de sus objetos de valor con el fin de poder reconocerlos si los roban.
+- Asegúrese de que la puerta del garaje quede cerrada, tanto al salir como al
+  entrar.
+- Instale un sistema de alarma anti intrusión. En instantes, el CONTROL DE
+  SEGURIDAD de la Urbanización ubicará las patrullas en su domicilio.
+
+**** Si sorprende o le sorprenden intrusos en su casa:
+
+- Si su sistema de alarma ya dispone del *«Botón del pánico»*, utilícelo.
+  Acudiremos a ayudarle de inmediato.
+- Inicialmente gritar, pedir socorro, puede intimidar al intruso o asaltante;
+  si no, intente mantener la calma, acceda a sus peticiones y no se ponga en
+  riesgo.
+- Observe las características esenciales del intruso (edad, estatura, color
+  de pelo, rasgos de su rostro, nacionalidad, acento al hablar, vestimenta,
+  dirección de la huida, vehículo utilizado, etcétera). Cuanto más precisa sea
+  su información, mayores serán las posibilidades de localizar al delincuente
+  y recuperar los objetos sustraídos.
+- Si son varios los agresores, procure centrarse en uno de ellos, el que
+  tenga más próximo o el que más destaque.
+- Después de haberse cometido el delito, si le es posible, avise con la
+  máxima celeridad al CONTROL DE SEGURIDAD: seremos los que antes podamos
+  intervenir, y a la vez estaremos llamando a la Policía o Guardia Civil.
+- Mientras esperamos la llegada de la Guardia Civil o la Policía, anote sus
+  observaciones. No haga comentarios con los demás sobre el suceso, ya que
+  podrían mezclarse con sus propias impresiones. No coloque ni toque nada
+  hasta la llegada de la Policía o la Guardia Civil. Podría destruir
+  involuntariamente las pruebas del delito.
+
+**** Protección de los niños:
+
+- Enseñe a los niños datos como su propio nombre, apellido, domicilio y
+  teléfono.
+- Los niños deben saber siempre que, en caso de extravío, lo mejor es
+  quedarse parados: sus familiares o el servicio de seguridad, al percatarse
+  de la ausencia, volverán sobre sus pasos.
+- Jamás asuste a los niños amenazándoles con que viene la policía; todo lo
+  contrario, incúlqueles que en situación de necesidad, preferiblemente
+  recurran a personas uniformadas.
+- Explíqueles a quién dirigirse en caso de peligro, tanto si están en la calle
+  como si se encuentran en casa.
+- Procure conocer a las amistades y compañías de sus hijos.
+- Explíqueles las ventajas de volver a casa en grupo. En el caso de tener que
+  hacerlo solos, pueden pedir en el Centro de Control que les acompañe un
+  Vigilante.
+- Que no abran la puerta de casa cuando estén solos.
+- Explíqueles que rechacen siempre la invitación de desconocidos a subir en un
+  automóvil o acompañarles con cualquier pretexto.
+- Que no acepten golosinas, caramelos, tabaco, etc., que pueda ofrecerles
+  cualquier persona no conocida.
+- Preste mucha atención a cualquier relato que le haga su hijo. Por ejemplo:
+  sobre una persona que ha tratado de acariciarle, de regalarle algo, etc.
+  Dígale que jamás debe mantener estas relaciones en secreto, aunque se lo
+  pidan esas personas.
+
+#+begin_panel
+Lo ideal es que las señales de sus centrales de alarmas se reciban
+_directamente_ en nuestra Garita de Control, y que esa señal se reciba vía
+_«dual» teléfono y radio_, y que además la comunicación sea _telemática e
+instantánea_.
+
+La Comunidad ha realizado un gran esfuerzo inversor en infraestructuras de
+sistemas y comunicaciones. Nuestro presupuesto anual en seguridad es muy
+importante: utilice y benefíciese de los medios y recursos que estamos
+poniendo a su disposición.
+
+#+latex: \input{pdf/fig/seguridad-comunicaciones}
+
+Periódicamente verifique que sus datos están actualizados: personas,
+teléfonos de contacto, correo electrónico, matrículas de los vehículos,
+personas a su servicio autorizadas, etc.
+
+Para cualquier problema sobre su seguridad no dude en consultarnos.
+#+end_panel
+
+* Procedimiento de recogida de podas
+:PROPERTIES:
+:EXPORT_FILE_NAME: recogida-podas
+:PORTADILLA: no
+:EXPORT_TITLE: Recogida de podas
+:EXPORT_DATE: Octubre 2021
+:ETIQUETA: asuntos municipales
+:END:
+
+En el área de RECOGIDA DE PODA se explica detalladamente cómo debe usted
+proceder para que le sea recogida anualmente la poda por el Ayuntamiento.
+
+#+begin_center
+*PROTOCOLO DE RECOGIDA DE PODA SANTO DOMINGO 21/22*\\
+*AYUNTAMIENTO DE ALGETE*
+#+end_center
+
+#+begin_flushright
+Octubre de 2021
+#+end_flushright
+
+Estimado vecino/a:
+
+La recogida de poda privada por un ayuntamiento es un servicio atípico. No
+obstante, iniciado hace ya muchos años en la Urbanización Santo Domingo, este
+«servicio» se ha consolidado como parte de las actuaciones del municipio en la
+urbanización.
+
+Sin embargo, hasta la fecha, no se ha resuelto satisfactoriamente, ni para
+los vecinos/as, ni para la Comunidad de Propietarios ni para el propio
+Ayuntamiento. Al no existir una regulación suficientemente clara y práctica,
+se ha interpretado frecuentemente por muchos vecinos/as como una actividad
+arbitraria sin límites, ni de volumen, ni de tipo de residuos, ni de fechas;
+provocando incluso conflictos entre los propios vecinos/as además de una
+situación insostenible en las calles de la urbanización.
+
+La pasada temporada se realizó un primer intento de racionalización, que
+empezó con buenos resultados pero que, desgraciadamente, colapsó con la
+borrasca Filomena, registrándose un incremento superior en cinco veces a la
+carga vegetal normal.
+
+Esta nueva temporada 21/22 se ha optado, mediante un nuevo concurso público,
+por implementar un sistema que ha probado su eficacia en otros municipios. El
+nuevo sistema, basado en sacas de 1 m³, racionaliza el servicio y, sobre todo,
+evita los indeseados montones de poda por todas las calles.
+
+Se ha calculado que una poda estandarizada genera un volumen de 5 m³ por
+parcela. Este volumen es recogido por el Ayuntamiento sin ningún coste para
+el vecino, y el propietario de cada parcela debe colaborar siguiendo un
+protocolo de fechas.
+
+Todos los residuos vegetales que excedan este volumen, o que procedan de
+talas y no de podas (confusión frecuente), deben ser gestionados y retirados
+de manera privada, bien por el propietario o bien por su empresa de
+jardinería. Es relevante señalar que las empresas de jardinería tienen
+obligación de retirar los residuos, cosa que en el pasado trataban de evitar,
+saturando la capacidad pública de recogida.
+
+En las siguientes páginas se explica el nuevo sistema. No obstante, puede
+usted consultar sus dudas en la Tenencia de Alcaldía de Santo Domingo o en
+los servicios de Medio Ambiente del Ayuntamiento.
+
+Reciba mis más cordiales saludos.
+
+#+begin_flushright
+*Estrella Pereda*\\
+Concejal de Medio Ambiente\\
+Ayuntamiento de Algete
+#+end_flushright
+
+#+latex: \newpage
+** Protocolo de recogida de poda en la Urb. Santo Domingo, temporada 21/22
+
+1. El Ayuntamiento provee el servicio gratuito de recogida de poda para todas
+   las parcelas de la urbanización Santo Domingo en esta temporada 21/22
+   desde el:
+   #+begin_center
+   *1 DE DICIEMBRE 2021 HASTA EL 30 DE ABRIL DE 2022*
+   #+end_center
+2. Esta temporada 21/22 se implementa *un nuevo sistema de recogida mediante
+   sacas homologadas.*
+3. Se proveen *5 sacas de 1 m³ aprox. por parcela* en dos entregas:
+   - _Primera entrega (diciembre-enero-febrero)_: 2 sacas por parcela.
+   - _Segunda entrega (febrero-marzo-abril)_: 3 sacas adicionales por parcela.
+   - El/La vecino/a que así lo juzgue conveniente *puede retirar las 5 sacas
+     de una única vez, en el segundo periodo febrero-abril.*
+4. *Si Ud. genera _más de las 5 sacas_ de materia vegetal procedente de poda,
+   deberá contratar un contenedor de poda y gestionarla por sus propios
+   medios privados.*
+
+   El punto limpio de la c/ Vivero solo admite restos de poda de 3 bolsas de
+   240 litros por persona.
+5. *Para la obtención de las sacas se procede del siguiente modo:*
+   - Se deben solicitar las sacas en la *Tenencia de Alcaldía* ya sea
+     _presencialmente, por teléfono o por e-mail_.
+   - _*Las sacas se recogen físicamente en el PUNTO LIMPIO de la Calle
+     Vivero.*_ En los horarios habituales del punto limpio.
+6. Una vez llenas de poda, *el propietario debe ubicar las sacas en el frente
+   de su parcela* (¡no en la de otro vecino!). Las sacas se recogen por el
+   Ayuntamiento, mediante camiones especializados, por fechas, según la zona
+   de la urbanización (se adjunta plano de Zonas y Calles que incluyen cada
+   Zona):
+   - Entre los días _1 al 10: la Zona NORTE_
+   - Entre los días _11 al 20: la Zona CENTRO_
+   - Entre los días _21 y final de mes: Zona SUR_
+7. Para evitar las situaciones pasadas, se pide al vecino que sea previsor
+   para «cuadrar» su poda con las fechas indicadas y *nunca debe haber sacas
+   de poda en la vía pública fuera de los plazos programados.*
+8. *Si algún propietario organiza una recogida con medios propios de poda o
+   tala, no deben existir montones de poda en la vía pública sino
+   contenedores estandarizados y ser retirados de forma privada en el plazo
+   más breve posible.*
+9. *Si Ud. contrata a una empresa de jardinería*, debe conocer que estas
+   empresas tienen obligación legal de retirar los residuos vegetales que
+   generan. Por favor, si usted contrata alguna compañía de servicios de
+   jardinería, exíjales que incluyan la retirada de la poda como es
+   preceptivo.
+10. *Si usted cuenta con personal a su cargo que realiza tareas de jardinería
+    en su parcela*, asegúrese, por favor, de que dicho personal esté informado
+    y cumpla con este protocolo; es su potestad llevar por sus propios medios
+    la poda al punto limpio de la calle Vivero.
+11. Cualquier actuación que contravenga este protocolo puede ser objeto de
+    apercibimiento y de _sanción_ por parte de la Policía Local.
+
+/En beneficio de todos, por el bien común, y el mantenimiento de la
+urbanización Ciudad Santo Domingo en las mejores condiciones estéticas y de
+salubridad, y en la aplicación de criterios uniformes entre todos los
+vecinos,/ _*/rogamos encarecidamente que sea respetado este protocolo./*_
+
+**** Información adicional
+
+- La poda *no debe depositarse en la calle fuera de las sacas* o en otro tipo
+  de saca diferente a las entregadas, pues no se recogerán.
+- Las sacas no deben depositarse *en el frente de parcela de otro
+  propietario.*
+- No se considera poda, sino tala, todos aquellos residuos vegetales de más
+  de 90 cm de largo o de más de 35 cm de sección. *Las talas no deben ser
+  depositadas en el vial público.*
+- *La siega (césped) no es poda*, y no será retirada como poda; nunca debe
+  depositarse en las sacas. Se introduce en bolsas de plástico y se deposita
+  en el cubo de basura orgánico, siempre en bolsas, EVITANDO COLAPSAR EL CUBO
+  para no dañarlo.
+- *Aquellos/as vecinos/as, en cuyo frente de parcela o parcela más próxima se
+  encuentre depositada poda fuera de los meses de recogida o en días distintos
+  a los indicados para cada zona, o en montones fuera de las sacas, serán
+  denunciados y sancionados por la POLICÍA LOCAL con importes económicos
+  significativos (hasta 3.000 €) según se prevé en la Ordenanza de Residuos
+  del Ayuntamiento de Algete.*
+
+#+attr_latex: :options [title={DATOS DE CONTACTO:},colback=csdcoral,fontupper=\normalfont\setlength{\parskip}{0.55em}]
+#+begin_destacado
+_*Tenencia de Alcaldía*_\\
+Teléfono: 91 622 04 06, de 9 a 14 h\\
+Correo: mmontouto@aytoalgete.com
+
+_*Oficinas de la Comunidad*_\\
+Teléfono: 91 622 15 11, de 9 a 14 h
+
+_*Punto Limpio de Santo Domingo (recogida de las sacas)*_\\
+Dirección: c/ Vivero\\
+Horario: de lunes a viernes de 11:00 a 14:00; viernes de 17:00 a 20:00;
+sábados y domingos de 9:00 a 14:00
+
+_*Concejalía de Medio Ambiente*_\\
+Teléfono: 916 204 900, ext. 4019, 4010 o 4008, de 9 a 14 h\\
+Correo: medioambiente@aytoalgete.com
+#+end_destacado
+
+#+attr_latex: :options [title={RESUMEN: ¿QUÉ DEBO HACER CON MIS RESTOS DE PODA?}]
+#+begin_aviso
+*SE RUEGA LA MÁXIMA COLABORACIÓN EN BENEFICIO DE TODOS*
+
+- *SOLICITAR MIS SACAS EN LA TENENCIA DE ALCALDÍA* presencialmente, por
+  teléfono o por e-mail.
+- *RECOGER MIS SACAS EN EL PUNTO LIMPIO DE VIVERO.*
+- *DEPOSITAR MIS SACAS LLENAS DE PODA EN EL FRENTE DE MI PARCELA EN EL
+  PERIODO DEL MES QUE CORRESPONDE A MI PARCELA.*
+- *NUNCA DEPOSITAR MONTONES DE PODA EN LA VÍA PÚBLICA.*
+#+end_aviso
+
+#+latex: \newpage
+** Zonas de recogida de poda
+
+#+attr_latex: :height .7\textheight
+[[file:pdf/img/podas-zonas-recogida.jpg]]
+
+* Oficina Virtual
+:PROPERTIES:
+:EXPORT_FILE_NAME: tutorial-oficina-virtual
+:EXPORT_TITLE: Oficina Virtual
+:ETIQUETA: oficina virtual
+:END:
+
+Hemos creado un acceso directo a la «Oficina Virtual» donde el propietario
+encontrará todos sus datos que figuran en nuestra base de datos. Para acceder
+y darse de alta en este servicio las instrucciones son muy sencillas.
+
+Acceda a la «Oficina Virtual» en el siguiente enlace:
+[[https://ciudadsantodomingo.org][www.ciudadsantodomingo.org]] y seleccione la opción *ACCESO AREA PRIVADA*
+
+Los propietarios no estarán dados de alta por defecto, deberá hacerlo Ud. en
+su calidad de propietario.
+
+Tienen dos formas de darse de alta, dando así su consentimiento:
+
+- Se pueden dar de alta ellos mismos (es la forma habitual), en la propia
+  página web. _Les solicita un nº contrato, que es un número que asigna el_
+  _sistema y es único por parcela, este número se imprime en las facturas_
+  _para que cada vecino pueda saberlo._ También se solicita el importe de la
+  última factura, un correo electrónico que sería su usuario y una contraseña
+  que ellos elijan. Lo de que el usuario sea un correo electrónico es porque
+  luego tienen la opción de recuperar contraseña si la olvidan y se les envía
+  un correo automáticamente. (es imprescindible que dispongamos de su
+  dirección de correo electrónico en nuestro sistema)
+- Solicitarlo a la oficina: Desde administración les daría de alta,
+  asignándoles un usuario y contraseña.
+
+#+attr_latex: :options [Pantalla inicial]
+#+begin_fotos
+#+attr_latex: :width .6\linewidth :center nil :options frame
+[[file:pdf/img/oficina-virtual-pantalla-inicial.png]]
+#+end_fotos
+
+Deberá Ud. registrarse si es la primera vez que accede. En esta pantalla tiene
+la opción de consultar un «tutorial» para guiarle en su alta en el sistema.
+
+La segunda pantalla será para generar su alta con su clave de acceso
+personal.
+
+#+attr_latex: :width .6\linewidth :options frame
+[[file:pdf/img/oficina-virtual-registro.png]]
+
+#+attr_latex: :height .66\textheight :options frame
+[[file:pdf/img/oficina-virtual-factura.jpg]]
+
+En la «Oficina Virtual» tendrá Ud. acceso a todos sus datos personales que
+figuran en nuestra base de datos:
+
+- Nombre, apellidos, NIF / Pasaporte, teléfonos de contacto, correos
+  electrónicos, IBAN...etc.
+- Los datos de su parcela, nº, m2...etc.
+- Todas las facturas generadas a su nombre por cuotas de comunidad, término
+  fijo, consumos de agua...etc
+- Matrículas de sus coches
+- Últimas circulares / comunicaciones remitidas
+
+Si necesitara Ud. modificar o ampliar los datos que le corresponde deberá
+comunicárnoslo por correo electrónico a la dirección
+[[mailto:csd@csdomingo.com][csd@csdomingo.com]] para que los actualicemos nosotros. Siempre por escrito
+para que quede constancia.
+
+Atentos saludos
+
+* Consejos prácticos para la vida en Ciudad Santo Domingo
+:PROPERTIES:
+:EXPORT_FILE_NAME: consejos-vida-comunidad
+:EXPORT_TITLE: Consejos prácticos para la vida en Ciudad Santo Domingo
+:ETIQUETA: consejos prácticos
+:END:
+
+#+attr_latex: :width \linewidth
+[[file:pdf/img/consejos-entrada-urbanizacion.jpg]]
+
+*Existen* un conjunto de consejos prácticos y normas aplicables a la vida en
+Ciudad Santo Domingo. Algunas de estas normas proceden de leyes de la
+Comunidad de Madrid o bien de ordenanzas del ayuntamiento de Algete, ambas,
+de obligado cumplimiento. En otros casos, se trata más bien de
+recomendaciones derivadas de la experiencia y motivadas por criterios de
+conciencia cívica. Muchos consejos pueden considerarse obvios e innecesarios,
+pero en una comunidad de un millar de casas, casi 4.500 vecinos y 1.500.000
+vehículos anuales, pocas cosas resultan obvias.
+
+A continuación se reseñan las principales normas y consejos para facilitar
+colectivamente la vida en Ciudad Santo Domingo.
+
+** Conocer las competencias y para hacer reclamaciones…
+
+*** 1. Competencias
+
+*Es frecuente que se produzcan confusiones respecto a qué asuntos son*
+*responsabilidad de las distintas instituciones o particulares y a quién se*
+*debe acudir en caso de problemas.*
+
+Se ha elaborado un cuadro detallado de competencias. A grandes rasgos, como
+las calles son de titularidad pública, todo lo que les afecta, es competencia
+del ayuntamiento; como por ejemplo el asfalto, la iluminación, la
+señalización, la limpieza, las plantas, los parques infantiles, las
+instalaciones deportivas, la recogida de basuras, el punto limpio, las islas
+de reciclaje, así como los permisos urbanísticos, los permisos de rodaje o de
+celebración de eventos y, en general el hacer cumplir todo el conjunto de
+normas de tráfico, ruido, animales y convivencia. En determinados casos, como
+por ejemplo en la recogida de vidrio o cartón, se trata de servicios
+mancomunados que prestan empresas a varios municipios. Son competencia de la
+comunidad de propietarios la red de agua de los pozos, la depuradora, la
+seguridad y el botiquín, así como todo lo que concierne a recibos y gastos
+comunes. La comunidad no tiene capacidad legal de efectuar inversiones en las
+vías públicas de la urbanización. El consultorio médico y los servicios
+sanitarios en general son competencia de la Comunidad de Madrid, y el
+ayuntamiento no interviene ni decide en su desempeño. Es también competencia
+de la Comunidad de Madrid el colegio y su funcionamiento, aunque algunas
+actividades extraescolares son ofrecidas por el ayuntamiento y son de
+carácter voluntario. La red de agua del Canal de Isabel II es competencia de
+esta empresa. Ni la Comunidad de propietarios ni el ayuntamiento intervienen
+en ella. Ocurre lo mismo con los servicios de suministro eléctrico, de gas, o
+de telefonía e Internet que pertenecen a Iberdrola y a los distintos
+suministradores privados. Por lo demás, todo lo que ocurre en el interior de
+su parcela es responsabilidad suya.
+
+*** 2. Viario público
+
+*Los cincuenta y ocho kilómetros de calles de Ciudad Santo Domingo son de
+titularidad pública.*
+
+Su propiedad comienza desde su valla. Los frentes de parcela no son propiedad
+privada. No obstante, la costumbre ha hecho que muchos vecinos dediquen
+esfuerzo y recursos a embellecer y mantener su frente de parcela. Esta
+actitud es bienvenida.
+
+*** 3. Línea verde
+
+*La línea verde es una aplicación para móviles (app) y web de gran
+utilidad.*
+
+Funciona en la mayoría de los municipios y que sirve para que los vecinos
+pongan en conocimiento de los servicios municipales cualquier elemento
+anómalo, como puede ser un árbol caído, un bache, mobiliario urbano
+destruido, plantas que quiten visibilidad al tráfico, suciedad concentrada en
+puntos, rotura de tuberías, señales de tráfico deterioradas, farolas
+fundidas, y un largo etc. Piense que los servicios de inspección del
+ayuntamiento no tienen capacidad de vigilar toda la extensión municipal, que
+en el caso de Algete esta circunstancia se agudiza. Todos los mensajes son
+procesados, distribuidos y reciben respuesta. La aplicación es gratuita y
+muy fácil de manejar. Permite además la geolocalización del problema y la
+incorporación de fotografías tomadas con el móvil:
+
+[[http://www.lineaverdealgete.com/][http://www.lineaverdealgete.com/]]
+
+** En materia de seguridad e incendios…
+
+*** 4. Policía de proximidad
+
+*El ayuntamiento provee un servicio de policía de proximidad.*
+
+Una pareja de agentes con gran experiencia patrulla los cinco días de la
+semana con regularidad todas las mañanas y en horarios concretos de tardes,
+noches y fines de semana. Avíseles directamente a su móvil tanto para
+informar de riesgos o incidencias como para consultas. *Policía de
+Proximidad: 619 300 600*
+
+*** 5. Alarmas y actividades sospechosas
+
+*Ciudad Santo Domingo detenta uno de los índices de criminalidad (hurtos,
+robos, agresiones, etc.) más bajos de España.*
+
+No obstante, es imposible reducir estos índices a cero. La colaboración de
+todos los vecinos, junto con el equipo de seguridad, la policía municipal de
+proximidad y la Guardia Civil es el baluarte para que Ciudad Santo Domingo
+siga siendo un espacio muy tranquilo y seguro para vivir. Si usted observa
+alguna actitud extraña como por ejemplo toma de fotografías de casas o
+movimientos con vehículos que no parecen tener un destino concreto, por
+favor, avise inmediatamente a seguridad. Ellos acudirán para realizar las
+comprobaciones necesarias. Ciudad Santo Domingo puso en marcha un concurso de
+ofertas para seleccionar una empresa que instalase una central de alarmas
+moderna en la propia urbanización. Resultó ganadora la empresa DRIN. El
+tiempo de respuesta ante la activación de una alarma es realmente corto, ya
+que alerta directamente a nuestro propio equipo de seguridad; cosa que no
+ocurre con otros proveedores. Usted, lógicamente, es libre de contratar con
+cualquier compañía de alarmas; pero la relación calidad precio de la empresa
+ganadora del concurso resulta óptima, ya que los equipos y sus conexiones
+están instalados en la urbanización. Aproximadamente un 80 % de las parcelas
+cuenta con alarmas. Se produce aquí un efecto de protección mutua y
+disuasión. Cuantas más viviendas estén equipadas con alarmas se mejora la
+seguridad colectiva. *Seguridad: 916 221 507*
+
+*** 6. Grafitis y vandalismo
+
+*Actualmente, ningún municipio está a salvo de los grafiteros.*
+
+En Ciudad Santo Domingo, este fenómeno, ligado mayormente a la juventud, se
+cierne primordialmente sobre las casetas de Iberdrola, sobre las señales de
+tráfico, sobre las instalaciones deportivas y sobre las paredes del Centro
+Comercial. Todos estos puntos se limpian y repintan con regularidad, a
+excepción de las casetas eléctricas. El ayuntamiento de Algete no puede
+actuar sobre unos edificios, estas casetas, que son privadas. La Comunidad de
+Propietarios podría hacerlo, con autorización de Iberdrola, pero precisaría
+de un presupuesto extraordinario aprobado en Asamblea. Se da la circunstancia
+de que una vez limpio, los grafiteros vuelven a repintar inmediatamente.
+Muchos municipios y empresas han adoptado como solución encargar dibujos
+propios, ya que los grafiteros sí respetan los dibujos de otros grafiteros.
+En cualquier caso, como vecinos, lo que sí se debe hacer es avisar a
+seguridad si se ve a algún grafitero pintando, de modo que se le pueda
+detener. Los jueces sentencian a los jóvenes a realizar trabajos para la
+comunidad. Este criterio, de avisar a seguridad, es igualmente válido para
+casos, también frecuentes, de vandalismo.
+
+*** 7. Incendios
+
+*En época estival, cada día más intensamente por el calor y la falta de
+lluvias, se presenta un alto riesgo de incendio.*
+
+Por ello se aconsejan estrictas medidas de prevención. Mantenga las parcelas
+limpias de maleza. Destinen un lugar seguro para almacenar productos
+inflamables. Disponga de una manguera permanentemente conectada a un grifo.
+En caso de incendio llame inmediatamente al control de seguridad, su
+respuesta es mucho más rápida que la de cualquier otro dispositivo, y son los
+guardas de seguridad los que además de personarse en escasos minutos avisan
+a los bomberos. Recuerde que el fuego, cuando toma fuerza, puede arrasar
+cualquier vivienda.
+
+*** 8. Fogatas
+
+*Está totalmente prohibida la quema de cualquier tipo de material, ni
+siquiera en las obras, bajo ningún concepto.*
+
+Si usted realiza barbacoas, debe hacerlo con todas las medidas precautorias
+y utilizando los dispositivos diseñados para ello que ofrece el mercado,
+nunca un fuego sobre el suelo.
+
+*** 9. Desbroce de parcelas
+
+*Toda parcela no «urbanizada o vivida» deberá ser desbrozada en primavera.*
+
+El desbroce constituye una medida de protección contra incendios, cada día
+más peligrosos: desde la Comunidad se facilita este servicio. Aquella
+parcela que no se desbroce motivará la actuación de oficio del Ayuntamiento,
+y corre el riesgo de ser sancionada.
+
+** En materia de seguridad vial…
+
+*** 10. Limitación de velocidad
+
+*Muchos conductores desaprensivos no son conscientes o prefieren ignorar que
+Ciudad Santo Domingo es un espacio residencial.*
+
+Las normas de tráfico resultan muy claras y no admiten interpretación. El
+hecho de ser poseedor de un vehículo deportivo o de gran potencia, no
+significa una «patente de corso» para circular a cualquier velocidad. No
+solo estos vehículos de gran cilindrada exceden su velocidad, sino otros
+muchos conductores y notoriamente las furgonetas de reparto. En Ciudad Santo
+Domingo, desgraciadamente, se han producido atropellos de viandantes de
+gravedad, son constantes los atropellos de perros, gatos y ardillas, y más
+recurrentes aún las protestas airadas de las personas que literalmente
+tienen que «esconderse» de algún vehículo cuando pasean tranquilamente por su
+calle; máxime si van acompañados de niños, personas mayores o van en
+bicicleta. No sería en absoluto necesario decirlo, pero el respeto de la
+velocidad es una de las obligaciones primordiales que más frecuentemente se
+vulnera. No es cuestión de evitar las sanciones de policía, sino de acreditar
+una conciencia cívica y sentido común. Si usted hace el cálculo, entre una
+velocidad peligrosa y una velocidad adecuada, se ganan escasos segundos. El
+ahorro de tiempo no resulta en ningún caso una excusa, y la motivación más
+bien hay que buscarla en la vanidad personal, la soberbia y en la falta de
+consideración hacia los demás.
+
+*** 11. Conducción bajo alcohol y drogas
+
+*Accidentes causados en circunstancias vinculadas a alcohol y otras
+sustancias, ocurren con cierta frecuencia en Ciudad Santo Domingo.*
+
+El hecho de ser una urbanización no exime la obligación de no conducir bajo
+efecto de alcohol para llegar a casa.
+
+*** 12. Acceso a la urbanización
+
+*El acceso a la urbanización está vigilado permanentemente por el servicio
+de seguridad.*
+
+Sin embargo, Ciudad Santo Domingo constituye un espacio público urbano como
+cualquier otro barrio de cualquier municipio; y, por tanto, el acceso es
+libre. El sistema de Seguridad graba todas las matrículas de los vehículos
+que acceden a la urbanización y que superan el millón anual. Este sistema
+posibilita la acción precoz y puede cerrar las barreras ante una emergencia o
+alerta. La puerta de Vivero permanece normalmente cerrada y se abre bajo
+petición. El cruce de acceso a la urbanización, pasado el control, es lugar
+frecuente de alcances entre vehículos. Por favor no pierda la concentración
+y respete el stop y las preferencias.
+
+*** 13. Coches aparcados y abandonados
+
+*Prácticamente todas las parcelas cuentan con acceso privado para sus
+vehículos y sus garajes.*
+
+En la medida de lo posible aparque en el interior de su parcela. Las calles
+son estrechas y dificulta el tránsito, especialmente a los viandantes. En
+ningún caso abandone coches en la vía pública o los deje mucho tiempo
+aparcados sin utilizar, especialmente los remolques o las caravanas.
+
+** En materia de gestión de residuos y limpieza…
+
+*** 14. Residuos orgánicos
+
+*Los residuos orgánicos deben depositarse dentro de los cubos
+correspondientes de los que dispone cada parcela.*
+
+A su vez, en cada cubo, dentro de una bolsa de basura. Esto facilita el
+servicio de recogida del Ayuntamiento que se efectúa mecánicamente y su
+posterior tratamiento. En determinados casos, los operarios de la contrata de
+recogida de residuos pueden optar por no retirar algún cubo si la basura
+depositada no cumple con las normas.
+
+*** 15. Césped
+
+*La siega de césped tiene tratamiento de residuo sólido urbano (el mismo que
+los restos de comida).*
+
+Debe por tanto meterse en bolsa de basura y ésta dentro del cubo. De no
+hacerlo así, el césped, normalmente mojado, supone demasiado peso para su
+manipulación, y los cubos tienden a romperse.
+
+*** 16. Reposición de cubos
+
+*Cada parcela tiene derecho a recibir un cubo nuevo cada diez años sin coste
+alguno.*
+
+Si su cubo se rompiese por una manipulación de la contrata de recogidas,
+este sería igualmente repuesto por el ayuntamiento. La solicitud de
+renovación de cubos debe cursarse a través de la Tenencia de Alcaldía de
+Ciudad Santo Domingo, *916 220 406*.
+
+*** 17. Cubos en el interior de las parcelas
+
+*La normativa municipal, prohíbe que se queden los cubos en la calle
+permanentemente.*
+
+Por favor, guárdenlos dentro de la parcela hasta la noche anterior a la
+próxima recogida. Los cubos por las calles, excepto en el horario nocturno
+de recogida, afean la urbanización e incomodan tanto el tráfico como el paseo
+peatonal.
+
+*** 18. Recogida de poda mediante sacas normalizadas
+
+*El recorte de setos y poda en general, debe realizarse según el protocolo
+de poda publicado al efecto.*
+
+Y únicamente durante las fechas establecidas para la campaña de poda que
+suele iniciarse en el mes de noviembre y terminarse en el mes de abril de
+cada campaña. Los restos vegetales deben ser depositados en sacas
+normalizadas de 1 m³ que suministra sin coste el ayuntamiento, que se
+solicitan en la Tenencia de Alcaldía (*916 220 406*), y se recogen en el
+Punto Limpio. Es fundamental respetar los días establecidos para la recogida
+de las sacas por zonas. Con el fin de mejorar el aspecto general de la
+urbanización, cada propietario debe depositar las sacas delante de su
+parcela solo en la decena que corresponde según su zona de residencia. De
+esta forma, se evita el problema sufrido durante años de encontrar las
+calles de la urbanización llenas de montones de poda durante largos
+periodos. Este sistema de sacas se ha implantado por primera vez en 2022 y
+su resultado global ha sido satisfactorio.
+
+*** 19. Tala de árboles
+
+*La tala de árboles está plenamente regulada por las ordenanzas
+medioambientales de la Comunidad de Madrid.*
+
+Estas normas buscan proteger el patrimonio natural de la región. Para talar
+un árbol debe pedirse autorización previa al departamento de Medio Ambiente
+del Ayuntamiento de Algete *916 204 900 extensión 4010*. No importa que el
+árbol o árboles que usted quiera talar se encuentren dentro de su parcela.
+Están igualmente protegidos por Ley. No contar con estas autorizaciones
+puede acarrear multas muy cuantiosas. Las talas, a diferencia de las podas,
+son entera responsabilidad de cada propietario. Si se contrata a una empresa
+especializada, ésta debe conocer que es su responsabilidad el transporte de
+la tala a vertederos especializados. Si la tala la realizara por sus propios
+medios será responsabilidad suya llevar los restos de la poda al Punto
+Limpio de Vivero con sus propios medios y respetando unos volúmenes por cada
+entrega para no saturar el sistema. La tala no es «poda» y no la retirará en
+ningún caso el servicio municipal.
+
+*** 20. Punto limpio
+
+*Ciudad Santo Domingo está dotada de una instalación de Punto Limpio.*
+
+En este espacio acotado se deben entregar todos aquellos residuos u objetos
+que no pueden ser asimilados a la basura doméstica o que no procede
+legalmente ser depositados en las «islas» de reciclaje, como por ejemplo:
+muebles, electrodomésticos, restos de obras, aceites, aparatos electrónicos,
+maderas, juguetes de plástico, etc. El punto limpio está situado junto al
+parque de Vivero y opera en un horario limitado que incluye los fines de
+semana y festivos. El vecino o persona que pretenda entregar los referidos
+materiales u objetos, deberá identificarse con su DNI. Se pretende con ello
+que el punto limpio no sea saturado por empresas de construcción o reformas
+o por vecinos de otras urbanizaciones.
+
+*** 21. Islas de reciclaje
+
+*La urbanización está dotada de varias «islas de reciclaje» situadas
+estratégicamente para optimizar las distancias a cada parcela.*
+
+En ellas se deben depositar residuos de tres categorías: papel y cartón,
+plásticos y envases y vidrio. Cada una de estas categorías cuenta con su
+contenedor específico de un color identificable. En el caso del vidrio, no
+está permitido introducir nada más que vidrio hueco (botellas, vasos, etc.).
+El vidrio plano (ventanas y puertas, encimeras, etc.) no se recicla en estos
+contenedores, por lo que se debe entregar en el Punto Limpio. La recogida de
+los contenedores es efectuada por empresas especializadas en cada material
+(no por el ayuntamiento) que operan a escala supramunicipal e incluso
+nacional, ya que además de la recogida efectúan el tratamiento de los
+residuos. El contratista del vidrio nunca va a recoger una silla, un colchón
+o un saco de escombros. Tampoco lo va a hacer el camión que recoge cartón, o
+el de los plásticos. Sí, en cambio, retirará cada uno su propio material que
+exceda la capacidad del contenedor. Todos los objetos abandonados fuera de
+los contenedores son retirados cada mañana por la empresa municipal GESERAL.
+Cualquier objeto depositado con posterioridad a la recogida permanecerá por
+tanto, en la calle hasta el día siguiente; salvo que se trate de un material
+peligroso.
+
+*** 22. No depositar nada fuera de los contenedores
+
+*Es crucial y está terminantemente prohibido, abandonar objetos fuera de los
+contenedores específicos.*
+
+Desgraciadamente, con cierta frecuencia, se abandonan colchones, muebles,
+cajas de cartón, bolsas de basura, etc. que debieran ser llevadas al punto
+limpio. Esta actitud, severamente reprobable, tiene un impacto muy negativo
+sobre el vecindario que lo soporta y sustrae tiempo de trabajo de los
+servicios de limpieza viaria, ya que, en ningún caso puede ser retirada por
+las contratas de reciclaje que operan con camiones específicos. Si usted ve a
+personas abandonando objetos en las islas de reciclaje, por favor
+comuníquelo inmediatamente a seguridad a fin de que se evite y reprenda esta
+circunstancia. Le rogamos transmita estas instrucciones al personal a su
+cargo a quien suele encargarse llevar a estos puntos los residuos a
+depositar, y controle que siguen las normas.
+
+*** 23. Mantenimiento de las calles
+
+*La limpieza de las calles y la jardinería pública de Ciudad Santo Domingo
+corresponde al Ayuntamiento.*
+
+El Ayuntamiento de Algete tiene destacado actualmente un equipo estable de
+once personas que trabaja cada día laborable para esta labor. Sin embargo,
+Ciudad Santo Domingo tiene 28 km de calle (más que la distancia a Madrid). Y
+todos los recursos municipales dedicados al mantenimiento de la urbanización
+son percibidos como insuficientes. Esta cuestión es uno de los debates más
+intensos con todos los equipos de gobierno municipal legislatura tras
+legislatura. No obstante, la colaboración de todos los vecinos reviste gran
+importancia. Obviamente, no se deben tirar latas, papeles, bolsas, restos de
+comida, etc. en las calles. Esto, no es desgraciadamente respetado por
+todos. Las calles se limpian con regularidad, pero un determinado residuo
+puede permanecer días en el suelo, máxime si se encuentra entre plantas o
+lugares más inaccesibles. La colaboración de todos resulta por tanto
+esencial.
+
+** En materia de respeto colectivo…
+
+*** 24. Ruidos
+
+*Las agresiones acústicas están reguladas por la correspondiente ordenanza
+municipal.*
+
+Por favor, conozca el contenido de esta ordenanza y respételo. Se aconseja,
+en cualquier caso, limitar al máximo los ruidos (siempre dentro de las normas
+legales) en los periodos: lunes a viernes de 20:00 h a 8:00 h; sábados a
+partir de las 14:00 h; domingos y festivos, durante todo el día. Las
+infracciones a causa del ruido pueden alcanzar importes muy elevados.
+
+*** 25. Fiestas
+
+*Las fiestas en las parcelas deben respetar las normas de ruido y no rebasar
+el horario de descanso entre las 23 y las 7 h.*
+
+Si usted quiere llevar a cabo un evento que pueda emitir ruidos excesivos o
+molestos, debe pedir autorización en el Ayuntamiento, y en cualquier caso a
+las 24:00 h debe cesar.
+
+*** 26. Petardos y fuegos artificiales
+
+*Los fuegos artificiales están terminantemente prohibidos.*
+
+Su celebración requiere permisos especiales y la actuación de empresas
+acreditadas. Usted, como particular no debe nunca efectuar fuegos
+artificiales. Los eventos pirotécnicos suelen circunscribirse a festejos y
+son organizados por los ayuntamientos. Los fuegos artificiales resultan muy
+peligrosos por su capacidad de provocar incendios. Además, infligen un gran
+sufrimiento a la mayoría de los animales domésticos, cuyo oído, mucho más
+sensible que el humano, los capta como una amenaza que les provoca miedo y
+gran desconcierto. En Ciudad Santo Domingo existen más de quinientos perros y
+otros tantos gatos en domicilios particulares. Los fuegos artificiales y los
+petardos son muy mal recibidos por las familias que cuentan con animales
+domésticos, además, obviamente, de su prohibición.
+
+*** 27. Conflictos urbanísticos y licencias de obras
+
+*Son también frecuentes los conflictos entre vecinos.*
+
+Ya sea por una valla vencida, un depósito de tierras que inunda la parcela
+contigua, árboles que rebasan los lindes, garajes o edificios que no
+respetan las lindes, etc. Estos conflictos suelen acabar en los tribunales y
+suponen un gran desgaste emocional para los vecinos colindantes. Cualquier
+acuerdo de buena voluntad suele ser mucho mejor que un pleito. Recuerde, en
+primer lugar, que existen unas normas urbanísticas muy claras, que cualquier
+obra debe contar con su correspondiente licencia de ayuntamiento, lo que en
+una gran cantidad de casos, evita los conflictos. Y, en general, siempre es
+recomendable consultar a su vecino si sospecha que una actuación en su
+parcela puede perjudicarle. Existen siempre soluciones de consenso que
+deberían reflejarse por escrito entre ambos propietarios con el fin de que un
+posterior propietario se viera «protegido» por este «consenso».
+
+*** 28. Drones
+
+*Ciudad Santo Domingo se encuentra en un área afectada por el aeropuerto de
+Madrid Barajas. El vuelo de drones está totalmente prohibido.*
+
+Para volar un dron es necesaria una titulación de piloto de drones y además,
+en el caso de Ciudad Santo Domingo, una autorización especial para ello pues
+nos encontramos en zona de servidumbre del aeropuerto. Los vecinos suelen
+sentirse molestos cuando sobrevuelan drones sobre sus casas que violan la
+intimidad de su domicilio.
+
+*** 29. Rodajes
+
+*Los rodajes cinematográficos y de series resultan frecuentes en Ciudad
+Santo Domingo.*
+
+Para realizarlos, es imprescindible solicitar un permiso a la policía de
+Algete y pagar unas tasas. La incomodidad de los rodajes para los vecinos se
+deriva fundamentalmente de la ocupación de las calles por camiones
+auxiliares. Los rodajes están permitidos en todas las ciudades y por tanto en
+las vías públicas de Algete. Aunque suponen una incomodidad transitoria
+normalmente breve, en general, aportan valor ya que dan a conocer una zona.
+Indudablemente, son beneficiosos para el propietario que alquila su casa.
+Otra cuestión sería si una parcela se convirtiera en un set-estudio
+permanente de rodajes, lo que supone una actividad industrial y está
+totalmente prohibida.
+
+*** 30. Actividades profesionales
+
+*Ciudad Santo Domingo tiene consideración urbanística de área residencial.*
+
+Por tanto, incompatible con cualquier actividad industrial, comercial,
+hotelera, hospitalaria, de culto, etc. expresamente no autorizadas en
+nuestros Estatutos, excepto en las zonas habilitadas para ello. Sí está
+permitido, sin embargo, desarrollar una actividad profesional en una porción
+de su vivienda, como pueda ser un despacho de abogado, consultor, diseñador,
+etc. Pero no montar un bufete, por ejemplo. Si usted conoce de alguna
+propiedad que incumpla este criterio, por favor, póngalo en conocimiento de
+la Comunidad de Propietarios.
+
+*** 31. Riego de los frentes de parcelas
+
+*Es costumbre mantener cuidados los frentes de parcelas.*
+
+Aunque, obviamente, no es obligación de ningún vecino, resulta positivo regar
+las plantas del viario público que puedan encontrarse en el frente de su
+parcela.
+
+*** 32. Pérdidas de agua
+
+*Si usted observa un charco persistente en un lugar que normalmente no está*
+*mojado, o directamente agua brotando, por favor avise a seguridad.*
+*916 221 511*
+
+Ellos lo pondrán inmediatamente en conocimiento del personal de
+mantenimiento de la red de aguas. Si observa que la fuga procede del interior
+de una parcela, avise igualmente.
+
+** En materia de animales…
+
+*** 33. Ordenanza municipal en materia de animales
+
+*El ayuntamiento de Algete cuenta con una detallada Ordenanza de Animales.*
+
+Los animales, ya sean mascotas o animales que viven en libertad, constituyen
+una materia de constante atención por parte de los ayuntamientos. A este
+respecto, el territorio de Algete se rige por la ORDENANZA REGULADORA DE LA
+TENENCIA Y PROTECCIÓN DE ANIMALES publicada en el B.O.C.M. el 17 de
+diciembre de 2021, Nº 300. Al tratarse de un texto público, todos los
+ciudadanos pueden acceder a esta ordenanza. El principio fundamental que
+subyace a la ordenanza es la prohibición absoluta de cualquier acto de
+maltrato, crueldad o práctica que pueda producir sufrimiento, daños o muerte
+a los animales. Es muy recomendable su lectura, ya que incluye la regulación
+de prácticamente todas las circunstancias en las que podemos encontrarnos
+respecto a los animales, ya sea domésticos o libres. La ordenanza cubre,
+entre otras, las siguientes materias: Normas para la tenencia de animales en
+el domicilio y en otros espacios privados; Documentación de la que debe
+disponer el propietario de animales; Obligación de colaborar con la
+administración para la protección de los animales; Controles sanitarios,
+identificación de los animales y seguros; Observación antirrábica y
+agresiones a personas o entre los animales; Animales potencialmente
+peligrosos; Animales silvestres, exóticos y de explotación; Animales
+abandonados, extraviados y vagabundos; Focos felinos-colonias de gatos
+ferales; Animales heridos, enfermos y muertos; Desalojo y retirada de
+Animales; Regulación de los Centros y empresas de animales de compañía;
+Prohibiciones generales respecto a los animales; Inspecciones municipales,
+Infracciones y Sanciones.
+
+*** 34. Perros y gatos sueltos
+
+*Las ordenanzas municipales no autorizan perros sueltos en la vía pública.*
+
+Por el evidente peligro que ello supone para las personas, para la
+circulación de vehículos y para las propias mascotas. Pasee con sus perros
+llevándolos atados. Consulte la Ordenanza de perros, mascotas y animales
+domésticos. Preste atención a sus perros si se quedan solos durante el día,
+que no se escapen ni anden sueltos por la urbanización.
+
+El Ayuntamiento tiene contratada una empresa para la recogida de animales
+abandonados y perdidos. Estos son trasladados a una instalación específica
+de donde se pueden recuperar abonando unas tasas significativas. La Ley
+actual ordena el sacrificio cero, es decir que ningún animal perdido o
+abandonado es sacrificado. Si usted ha decidido que no puede o no quiere
+mantener su mascota, nunca la abandone. Se considera maltrato animal y está
+penado por Ley. Existen diversas organizaciones y redes sociales para
+adoptarlos.
+
+*** 35. Ladridos molestos
+
+*Son frecuentes las protestas de vecinos colindantes a causa de perros que
+ladran en exceso.*
+
+Prevea esta circunstancia y evite dejar solos a los perros en las parcelas
+durante tiempo prolongado. Evite que por la noche molesten a los vecinos si
+se trata de perros propensos a ladrar.
+
+*** 36. Excrementos
+
+*El propietario de cada animal debe hacerse responsable de la recogida de
+los excrementos.*
+
+Consulte la Ordenanza de perros, mascotas y animales domésticos. Lleve
+consigo la bolsa de plástico que facilita la retirada del excremento.
+
+*** 37. Alimentación de gatos
+
+*En Ciudad Santo Domingo existe una relevante colonia de gatos
+asilvestrados.*
+
+Tanto asociaciones de amigos de los animales, como el ayuntamiento, realizan
+de forma constante tareas de captura y esterilización de estos gatos. Si
+usted es un amante de los gatos y desea alimentarlos, debe obtener el carnet
+de alimentador/a de animales que expide de forma gratuita el ayuntamiento
+solicitándolo en la Tenencia de Alcaldía. Con ello usted acredita el derecho
+a hacerlo sin ser amonestado por otros vecinos.
+
+** En materia de sanidad
+
+*** 38. Botiquín
+
+*La comunidad de propietarios mantiene a disposición de los vecinos un
+botiquín de primeros auxilios.*
+
+Está situado en la planta baja del edificio de la comunidad, al fondo del
+centro comercial junto al parque infantil. Comparte espacio con el
+consultorio de la seguridad social. El botiquín abre por las tardes a partir
+de las 15,00 h hasta las 8,00 h del día siguiente y durante las 24 h de
+todos los fines de semana y festivos. Está atendido por una ATS y tiene
+capacidad de resolver primeros auxilios como golpes y cortes, reacciones
+alérgicas, etc. así como otras funciones como inyectar viales, tomar la
+tensión, etc. Es un servicio de la comunidad muy consolidado y apreciado por
+los vecinos. Si acude al botiquín y estuviera cerrado, seguramente se debe a
+que la enfermera/o se encuentra atendiendo una urgencia domiciliaria. Llame
+entonces al teléfono indicado: Tel. 916 221 974 / 647 518 075. Una vez
+prestado el servicio, se le preguntará su nombre, DNI y domicilio. El
+servicio es gratuito.
+
+*** 39. Consultorio de la seguridad social
+
+*Ciudad Santo Domingo cuenta con un consultorio médico de atención primaria
+de la Seguridad Social.*
+
+En horario de mañanas, de lunes a viernes, entre las 8,30 h y las 14,00 h, el
+consultorio está atendido por un facultativo y una ATS. Es necesario
+concertar cita previa. Se puede realizar por teléfono en el teléfono
+916 182 454 pero las líneas suelen estar saturadas, por lo que resulta
+recomendable concertar la cita mediante la App Cita Sanitaria de Salud
+Madrid o en la web
+[[https://www.comunidad.madrid/servicios/salud/cita-sanitaria][https://www.comunidad.madrid/servicios/salud/cita-sanitaria]].
+Este consultorio depende directamente de la Comunidad de Madrid, no del
+Ayuntamiento de Algete ni de la comunidad de propietarios.
+
+*** 40. Consultorio privado
+
+*Ciudad Santo Domingo cuenta con un consultorio médico privado.*
+
+Situado en el Centro Comercial, zona sur (la que está enfrente de la
+iglesia) este centro trabaja para diversas sociedades médicas como
+Adeslas/SegurCaixa o Sanitas. También atiende consultas privadas. En él se
+ofrecen diversas especialidades como medicina general, pediatría,
+traumatología, dermatología, consulta psicológica, radiología, urología,
+podología, nutrición y dietética, ginecología, oftalmología, fisioterapia,
+entre otras, además de un servicio de enfermería.
+[[https://www.centromedicosantodomingo.com/es/][https://www.centromedicosantodomingo.com/es/]]
+*Tel. 918 319 219*
+
+** Nota final, repercusión a terceros…
+
+*** 41. Extensión a trabajadores
+
+*La gran mayoría de los consejos y normas aquí tratadas afectan a terceros.*
+
+Como pueden ser el personal que trabaja en las casas, ya se trate de
+servicio doméstico o de profesionales (jardineros, fontaneros, albañiles,
+pintores, electricistas, etc.), incluso en el caso de inquilinos de un
+inmueble. Por favor, si es usted propietario de una parcela, actúe como
+«correa de transmisión» hacia estas personas, informándoles y requiriéndolas
+para que se respeten las normas y costumbres de Ciudad Santo Domingo.
+
+* Conoce Ciudad Santo Domingo
+:PROPERTIES:
+:EXPORT_FILE_NAME: conoce-csd
+:EXPORT_LATEX_CLASS: csd-compendio
+:END:
+
+# Compendio. Cada ** es un capítulo con portadilla (salvo :PORTADILLA: no).
+# Los capítulos que también son dosieres sueltos NO se copian: se incluyen con
+# #+INCLUDE desde su propio subárbol, así se editan en un solo sitio.
+# Las partes se marcan con  #+latex: \csdparte{…}  al final del capítulo previo.
+
+** Carta del presidente
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Estimado Copropietario:
+
+Ciudad Santo Domingo es un gran sitio para vivir. Fundada en 1976, sobre una
+parcela de 702 Ha en el Municipio de Algete, con cerca de un millar de casas y
+más de 28 km de calles, nuestra urbanización es, junto con otras
+urbanizaciones de gran prestigio, un referente indiscutible en la Comunidad de
+Madrid.
+
+Durante los últimos años se ha venido produciendo un «relevo generacional»
+con la incorporación de un número significativo de nuevos propietarios cada
+año; por lo general, familias jóvenes que optan por compartir nuestro estilo
+de vida.
+
+Desde la Junta de la Comunidad de propietarios constatamos que muchos de los
+nuevos propietarios no conocen en detalle nuestra urbanización ni los
+servicios comunes que en ella se proveen. Por ello, se ha elaborado el
+documento al que precede esta carta, titulado «CONOCE CIUDAD SANTO DOMINGO».
+Este documento se aborda desde una perspectiva eminentemente práctica y sirve
+de ayuda, no solo para nuestros nuevos vecinos, sino para quienes llevamos en
+Ciudad Santo Domingo muchos años.
+
+El documento aporta información de gran utilidad sobre, por ejemplo, qué
+asuntos son competencia de la urbanización y cuáles dependen del ayuntamiento
+de Algete o de la Comunidad de Madrid. También explica los servicios y
+suministros que gestionamos desde la comunidad de propietarios, como es todo
+el proceso de suministro y depuración de agua de nuestra concesión de pozos, o
+el sistema de seguridad. Se explican, igualmente, los modos de tarificación y
+facturación de los costes que asumimos los comuneros. Y se aporta, entre otros
+valiosos contenidos, una sección de gran interés que desglosa consejos
+prácticos para la vida en la urbanización y un extenso directorio de contactos
+útiles. La información de este documento resulta también accesible en nuestra
+web [[https://ciudadsantodomingo.org][ciudadsantodomingo.org]].
+
+En representación de la junta de propietarios, te transmito nuestros más
+atentos saludos.
+
+#+begin_flushright
+El Presidente de la Comunidad de Propietarios
+#+end_flushright
+
+** Directorio de interés
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+***** SERVICIOS PÚBLICOS
+
+#+attr_latex: :align p{.62\linewidth}r
+| CONTROL DE SEGURIDAD                   | *916 221 507*               |
+| OFICINAS DE LA COMUNIDAD               | *916 221 511*               |
+| POLICÍA LOCAL                          | *916 280 137*               |
+| POLICÍA PROXIMIDAD                     | *659 625 379*               |
+| FARMACIA                               | *916 221 233*               |
+| CORREOS                                | *916 222 193*               |
+| BOTIQUÍN                               | *916 221 974 / 682 660 408* |
+| PARROQUIA                              | *916 221 493*               |
+| CENTRO SALUD ALGETE                    | *916 282 286*               |
+| OFICINA CENTRO COMERCIAL SANTO DOMINGO | *916 220 800*               |
+| TENENCIA ALCALDÍA DE SANTO DOMINGO     | *916 220 406*               |
+| AYUNTAMIENTO DE ALGETE                 | *916 204 900*               |
+
+***** SALUD
+
+#+attr_latex: :align p{.62\linewidth}r
+| CLÍNICA DENTAL HERNANDENT                    | *916 222 075*               |
+| CLÍNICA DENTAL SANTO DOMINGO                 | *916 237 596 / 659 159 316* |
+| CENTRO MÉDICO SANTO DOMINGO                  | *918 314 921*               |
+| CLÍNICA VETERINARIA: 916 221 269 / URGENCIAS | *639 141 764*               |
+
+***** RESTAURACIÓN
+
+#+attr_latex: :align p{.62\linewidth}r
+| VERDEJO CASA DE COMIDAS          | *916 237 911* |
+| GASTROBAR M                      | *916 221 133* |
+| VERMUTERÍA VERMUT PIRIPI         | *910 842 070* |
+| TUTTO'S PIZZERÍA HAMBURGUESERÍA  | *910 253 852* |
+| LA TAZA MÁGICA, MÁS QUE CAFÉ     | *916 288 377* |
+| LA MIA NONNA, TRATTORIA & BISTRO | *611 406 428* |
+
+***** ESTÉTICA
+
+#+attr_latex: :align p{.62\linewidth}r
+| A3 ESPACIO DE BELLEZA          | *916 221 709 / 678 325 016* |
+| SANTO DOMINGO NAILS Y ESTÉTICA | *911 544 016 / 644 878 637* |
+| CUCOS PELUQUERÍA Y ESTÉTICA    | *916 220 578*               |
+| CARLOS CONDE PELUQUEROS        | *916 220 646*               |
+
+***** FIANZAS Y SEGUROS
+
+#+attr_latex: :align p{.62\linewidth}r
+| BANCO SANTANDER                      | *915 556 576* |
+| EURO ASSURANCE CORREDURÍA DE SEGUROS | *916 222 122* |
+
+***** ALIMENTACIÓN
+
+#+attr_latex: :align p{.62\linewidth}r
+| LA PLAZA DE DÍA                        | *620 268 382*               |
+| PANADERÍA PASTELERÍA MARTÍN            | *916 220 690*               |
+| FRUTERÍA RUIZ Y GONZÁLEZ               | *689 398 876*               |
+| LAS SECCIONES L&R / SERVICIO DOMICILIO | *916 222 069 / 630 802 959* |
+
+***** COMERCIOS
+
+#+attr_latex: :align p{.62\linewidth}r
+| LA CASITA                                 | *916 221 794*               |
+| LA MERCERÍA DE CARMEN                     | *916 220 966*               |
+| LOS PEÑOTES FLOR                          | *658 554 763*               |
+| GARDEN POOL SANTO DOMINGO                 | *916 222 000*               |
+| GIRASOL LIBRERÍA                          | *912 557 326 / 639 221 558* |
+| ESCUELA DE DANZA CRISTINA SANTOS          | *662 948 845*               |
+| CONSTRUCCIONES ALCAÑIZ DE LA GUÍA         | *627 951 330*               |
+| ESTANCO                                   | *916 221 959*               |
+| LOTERÍAS Y APUESTAS DEL ESTADO, PAPELERÍA | *689 398 876*               |
+| MD DECORACIÓN E INTERIORISMO              | *620 887 577*               |
+
+***** AUTOMÓVIL
+
+#+attr_latex: :align p{.62\linewidth}r
+| SERVICE CAR SANTO DOMINGO | *916 222 476* |
+
+***** INMOBILIARIA
+
+#+attr_latex: :align p{.62\linewidth}r
+| ABETO COCHES & CASAS           | *916 221 790* |
+| GILMAR CONSULTING INMOBILIARIA | *916 236 650* |
+
+#+INCLUDE: "./documentos.org::*Consejos prácticos para la vida en Ciudad Santo Domingo" :minlevel 2
+
+** Tabla de competencias principales
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+#+begin_center
+*¿QUÉ CORRESPONDE A QUIÉN?*
+#+end_center
+
+#+attr_latex: :environment longtable :align p{.29\linewidth}p{.33\linewidth}p{.29\linewidth} :font \small
+| *COMUNIDAD de PROPIETARIOS CSD*                                            | *AYUNTAMIENTO y EMPRESA GESERAL*                                        | *OTRAS ENTIDADES*                                                    |
+|----------------------------------------------------------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------|
+| Red de pozos, Red de agua, red de aguas residuales y depuradora (EDAR)     | Gestiones municipales en Tenencia de Alcaldía (padrón, registro, etc.)  | Iglesia – Cáritas Diocesana                                          |
+| Botiquín de primeros auxilios                                              | Policía Municipal, Policía de proximidad                                | Suministro agua de CYII                                              |
+| Oficinas de la Comunidad: Administración, facturación a propietarios, etc. | Alumbrado público                                                       | Suministro eléctrico Iberdrola                                       |
+| Mantenimiento de pluviales soterradas                                      | Mantenimiento Viario                                                    | Telefónica, Movistar, Orange, etc. calidad de la señal de móviles    |
+| Pantalla Leds para anuncios                                                | Parques Infantiles y zonas verdes                                       | Residencia de 3ª edad y apartamentos asistidos                       |
+| Seguridad privada: Patrullas, vigilancia perimetral y caseta de entrada    | Mantenimiento de pluviales en superficie y cunetas                      | Club Deportivo                                                       |
+| Página web                                                                 | Servicio recogida residuos sólidos urbanos (Cubos de basura individual) | Centro Comercial, comercios, restauración, supermercado, banco, etc. |
+| Plantas generadoras Fotovoltaicas                                          | Recogida de Poda                                                        | Río y riberas del Río Confederación Hidrográfica del Tajo            |
+| Teléfono de emergencias Control                                            | Recogida puntos acopio reciclaje (vidrio, papel y cartón)               | Accesos desde A1, glorieta y puente Mº Fomento                       |
+|                                                                            | Punto limpio (C/ Vivero)                                                | Asociación contra el ruido de aviones                                |
+|                                                                            | Mantenimiento plantas del viario, alcorques, riego, poda…               | Cooperativa del Gas                                                  |
+|                                                                            | Señalización y regulación del tráfico                                   | Colegio Público Comunidad de Madrid                                  |
+|                                                                            | Ordenanza de animales – Recogida de animales – Maycan                   | Consultorio Sociedades Médicas privadas                              |
+|                                                                            | Ordenanzas urbanísticas – Licencias de obra                             | Asistencia Primaria de la Seguridad Social                           |
+|                                                                            | Autorizaciones de tala de árboles                                       | Asociación de animales                                               |
+|                                                                            | Autorizaciones actividades en vía pública                               | Movimiento de Scouts                                                 |
+|                                                                            | Línea Verde App                                                         | Asociación Cultural                                                  |
+|                                                                            | Asfaltado                                                               | Asociación artística                                                 |
+
+** Nuestra urbanización
+
+*Ciudad Santo Domingo* es una urbanización situada al noreste de Madrid, a la
+que se accede directamente desde la carretera nacional N1, en la *salida del
+Km 28*.
+
+Fue fundada en 1976 por un conjunto de ingenieros de caminos –de ahí su
+nombre– con una indudable visión técnica y de futuro, que le ha permitido
+convertirse en el actual conjunto residencial, muy apreciado y consolidado, y
+que, actualmente, *integran un millar de chalets.*
+
+Ciudad Santo Domingo cuenta con su *propio equipo de seguridad 24/7 y
+vigilancia perimetral*, así como con la presencia de una *patrulla policía
+municipal de proximidad.*
+
+#+begin_fotos
+#+attr_latex: :width .48\linewidth :center nil
+[[file:pdf/img/conoce-urbanizacion-caseta-policia.jpg]] [[file:pdf/img/conoce-urbanizacion-control-acceso.jpg]]
+#+end_fotos
+
+Mediante un sistema de pozos, regulados informáticamente con energía
+fotovoltaica, Santo Domingo, *dispone de red propia de abastecimiento y
+distribución de agua*, junto con su ciclo completo de depuración (EDAR). El
+suministro se complementa con una segunda *red de agua del Canal CYII*.
+
+La urbanización está dotada de un *punto limpio* y de un sistema de *recogida
+de poda*, ambos de titularidad Municipal.
+
+La Comunidad mantiene un *botiquín* de primeros auxilios abierto todas las
+tardes y noches del año.
+
+#+begin_fotos
+#+attr_latex: :width .48\linewidth :center nil
+[[file:pdf/img/conoce-urbanizacion-banco.jpg]] [[file:pdf/img/conoce-urbanizacion-restaurante.jpg]]
+#+end_fotos
+
+#+begin_fotos
+#+attr_latex: :width .48\linewidth :center nil
+[[file:pdf/img/conoce-urbanizacion-supermercado.jpg]] [[file:pdf/img/conoce-urbanizacion-edificio.jpg]]
+#+end_fotos
+
+#+begin_fotos
+#+attr_latex: :width .58\linewidth :center nil
+[[file:pdf/img/conoce-urbanizacion-parque-infantil.jpg]]
+#+end_fotos
+
+En su *zona comercial*, sin salir de la urbanización, los vecinos de Ciudad
+Santo Domingo encuentran múltiples servicios: *supermercado, frutería,
+pescadería, banco, librería, estanco, tiendas de complementos, peluquerías,
+taller mecánico, agencias inmobiliarias, clínica veterinaria, consultorio de
+seguros médicos, oficina de correos, centro médico de atención primaria de la
+Seguridad Social*, entre otros, así como una amplia oferta de *hotelería*.
+
+La *parroquia de Santo Domingo de la Calzada* dota de servicios religiosos con
+su iglesia dentro de la urbanización.
+
+El *ayuntamiento de Algete* dispone igualmente de una *oficina de atención al
+vecino* en la propia urbanización.
+
+#+begin_fotos
+#+attr_latex: :width .32\linewidth :center nil
+[[file:pdf/img/conoce-urbanizacion-soportales.jpg]] [[file:pdf/img/conoce-urbanizacion-farmacia.jpg]] [[file:pdf/img/conoce-urbanizacion-pista-deportiva.jpg]]
+#+end_fotos
+
+El conjunto residencial se complementa con varios *parques y encinares* de
+gran extensión; y para los más jóvenes: un *parque infantil y deportivo y un
+skate park*.
+
+La gobernanza de la comunidad de propietarios se gestiona desde una *junta
+gestora* y mediante *asambleas anuales*.
+
+La Comunidad mantiene abiertas durante todo el año sus *oficinas para atención
+del propietario*.
+
+#+attr_latex: :width .8\linewidth
+[[file:pdf/img/conoce-urbanizacion-tenencia-alcaldia.jpg]]
+
+#+latex: \newpage
+#+attr_latex: :height .46\textheight
+[[file:pdf/img/conoce-mapa-urbanizacion.jpg]]
+
+1. Acceso a la urbanización desde N1. Caseta de Control, Caseta de Policía
+   Municipal
+2. Acceso por la Calle Vivero
+3. Zona Comercial: Tiendas, supermercado, farmacia, banco, restaurantes,
+   Consultorio salud privado, etc. Norte y Sur
+4. Iglesia. Parroquia de Santo Domingo y de la Inmaculada Concepción
+5. CEIP Santo Domingo. Colegio Público
+6. Residencia ORPEA de Mayores y apartamentos asistidos
+7. Club Deportivo
+8. Oficina de Correos
+9. Consultorio de la Seguridad Social. Atención Primaria y Botiquín
+10. Parque Skate e instalaciones deportivas
+11. Parque de Vivero
+12. Parque de la Barranca
+13. Depuradora EDAR e Instalación Fotovoltaica
+14. Punto Limpio
+15. Depósito Central de agua e Instalación Fotovoltaica
+16. Tenencia de Alcaldía. Ayuntamiento de Algete
+17. Oficinas de la Comunidad de Propietarios
+
+#+latex: \newpage
+#+attr_latex: :height .56\textheight
+[[file:pdf/img/conoce-mapa-zona-centro.jpg]]
+
+1. Acceso a la urbanización desde N1. Caseta de Control, Caseta de Policía
+   Municipal
+3. [@3] Zona Comercial: Tiendas, supermercado, farmacia, banco, restaurantes,
+   Consultorio salud privado, etc. Norte y Sur
+4. Iglesia. Parroquia de Santo Domingo y de la Inmaculada Concepción
+5. CEIP Santo Domingo. Colegio Público
+6. Residencia ORPEA de Mayores y apartamentos asistidos
+7. Club Deportivo
+8. Oficina de Correos
+9. Consultorio de la Seguridad Social. Atención Primaria y Botiquín
+10. Parque Skate e instalaciones deportivas
+16. [@16] Tenencia de Alcaldía. Ayuntamiento de Algete
+17. Oficinas de la Comunidad de Propietarios
+
+#+latex: \newpage
+#+attr_latex: :height .56\textheight
+[[file:pdf/img/conoce-mapa-entorno.jpg]]
+
+1. Ciudad Santo Domingo
+2. Urbanización Ciudalcampo. RACE. Club de Golf
+3. Circuito del Jarama
+4. Club de Golf La Moraleja
+5. Urbanización Fuente del Fresno
+6. Real Sociedad Hípica Española Club de Campo
+7. Urbanización Club de Campo
+8. Casco Urbano Algete
+9. N1 Salida 28
+10. Urbanización Prado Norte
+11. Fuente el Saz de Jarama
+
+** Historia de Ciudad Santo Domingo
+
+*** Historia
+
+Ciudad Santo Domingo se fundó en 1976 por iniciativa de un grupo de Ingenieros
+de Caminos, de ahí el nombre en honor a su patrón Santo Domingo de la Calzada.
+
+Se empezó a poblar a principios de los 70, y este movimiento fue muy rápido ya
+que entre las obligaciones de los nuevos propietarios figuraba la obligación
+de construir dentro del primer año para evitar a los compradores
+especulativos de parcelas. Está totalmente desarrollada desde mediados de
+los 80.
+
+#+attr_latex: :width .75\linewidth
+[[file:pdf/img/conoce-historia-vista-aerea-1.jpg]]
+
+*** Ubicación
+
+Ciudad Santo Domingo está situada en el Km 28 directamente accesible desde la
+N1, en frente del Circuito del Jarama, a 17 Km del Aeropuerto, a 16 Km de
+Algete y a 5 Km de San Agustín del río Guadalix.
+
+#+attr_latex: :width .75\linewidth
+[[file:pdf/img/conoce-historia-vista-aerea-2.jpg]]
+
+*** Datos Básicos
+
+Ciudad Santo Domingo cuenta con una extensión de 752 Ha y 28 Km de calles. Es
+un núcleo de población 100 % residencial con 950 parcelas unifamiliares, 8
+subcomunidades de pisos, un CEIP con capacidad para 350 alumnos, una
+residencia con capacidad para 300 residentes de tercera edad asistidos más 124
+apartamentos para no asistidos, 2 centros comerciales, parroquia, centro de
+salud, etc. En total, Ciudad Santo Domingo alberga a más de 4.500 residentes
+permanentes.
+
+*** Constitución
+
+La Comunidad de Propietarios se constituye como «Sociedad Civil» el 22 de
+julio de 1970 ante el Notario de Madrid D. Enrique Giménez Arnau, aunque nos regimos por la Ley de
+Propiedad Horizontal.
+
+#+latex: \csdparte{I. Asuntos de la Comunidad de Propietarios}
+
+** Gestión del agua
+
+Junto con la seguridad, la gestión del agua es un «activo» fundamental de la
+Ciudad Santo Domingo. Extraemos agua de once pozos propios gracias a una
+concesión oficial de 2.071.611 m³ anuales que cubren nuestras necesidades.
+
+La extracción de agua está monitorizada en tiempo real por ordenador y
+optimiza los niveles de extracción. Las bombas de extracción se abastecen de
+energía producida por dos parques fotovoltaicos propios. El agua se almacena
+en un gran depósito, situado en la calle alta, y se suministra, por gravedad,
+a las parcelas mediante una red de distribución propia.
+
+Las aguas residuales se recogen y depuran en nuestra propia depuradora, y son
+vertidas al río Guadalix. La calidad de depuración está constantemente
+vigilada por un laboratorio externo.
+
+La legislación actual recomienda no utilizar nuestra agua de pozos para
+consumo humano por contener exceso de arsénico. Por esta razón, la
+urbanización dispone de una segunda red abastecida con agua del Canal de
+Isabel II.
+
+#+INCLUDE: "./documentos.org::*Gestión del agua" :only-contents t :minlevel 3
+
+** Nuestra seguridad
+
+Ciudad Santo Domingo cuenta con un servicio de seguridad privada las
+veinticuatro horas del día y todos los días del año. El servicio gestiona el
+acceso a la urbanización y de forma automatizada, graba en vídeo todas las
+salidas y entradas de vehículos. Un conjunto de patrullas dotadas de coches
+eléctricos circula constantemente por las calles de la urbanización. Los
+vigilantes van armados. El sistema de seguridad integra además un circuito de
+cámaras, incluida visión nocturna, que vigila el perímetro externo de la
+urbanización. La instalación de seguridad se completa con un nodo de alarmas
+tecnológicamente muy avanzado. Nuestro jefe de seguridad y el conjunto del
+equipo humano de seguridad han recibido varios reconocimientos públicos por
+parte de la Guardia Civil y de la Policía Municipal, con quienes se trabaja en
+estrecha coordinación. La actuación de nuestros «guardas de seguridad» se
+extiende a intervenciones de muy diversa índole, como, por ejemplo, infartos,
+caídas, incendios, accidentes; circunstancias en las que, por su proximidad,
+se personan en muy escasos minutos.
+
+#+INCLUDE: "./documentos.org::*Seguridad" :only-contents t :minlevel 3
+
+** Estatutos de la Comunidad de Propietarios
+
+*** Capítulo I. Denominación, objeto y domicilio
+
+*Artículo 1.º* La Comunidad de Propietarios de Ciudad Santo Domingo está
+integrada por los propietarios de parcelas y terrenos en la Urbanización
+Residencial Ciudad Santo Domingo. Su domicilio se fija en la propia Ciudad
+Santo Domingo, término municipal de Algete, de la provincia de Madrid.
+
+*Artículo 2.º* Sus fines son:
+
+- a) Atender a la utilización, conservación, reparación y mejora de servicios
+  comunes de la Ciudad, sufragando sus gastos en forma estatutaria. Crear, en
+  su caso, otros servicios nuevos.
+- b) Cuidar del cumplimiento de las normas y ordenanzas aplicables a la
+  Ciudad, manteniéndola dentro del carácter para el que fue concebida.
+- c) Integrar a los propietarios para resolver sus problemas comunes
+  representándoles ante el Estado, Provincia, Municipio o Entidades oficiales
+  y personas físicas y jurídicas de toda índole, así como ante los Tribunales
+  de Justicia.
+- d) Armonizar las diferencias que surjan entre los distintos propietarios.
+
+*Artículo 3.º* Se consideran servicios comunes de la Ciudad los siguientes:
+
+1. Acceso, puente, viaducto, avenidas, calles, callejones, plazas, paseo,
+   aceras y parques y jardines de dominio público.
+2. Los desagües, cunetas, colectores, tuberías de saneamiento, registros,
+   estación depuradora, etc., etc., que constituyen las instalaciones de
+   saneamiento.
+3. La instalación de alumbrado público constituida por la correspondiente red
+   eléctrica y los postes con sus luminarias.
+4. Señalización y balizamiento.
+5. Limpieza general de todos los servicios comunes.
+6. Consumo de energía eléctrica de los servicios comunes.
+7. Consumo de agua en bocas de riego de los servicios comunes.
+8. Servicios de guardería, vigilancia, organización y funcionamiento de los
+   servicios comunes.
+9. Obras de fábrica de los servicios comunes y su decoración.
+10. Recogida y eliminación de basuras de la Ciudad.
+11. Cualquier otro servicio que acuerde crear la Comunidad.
+
+*Artículo 4.º* Quedarán en la titularidad patrimonial de la Promotora hasta
+que ésta haga en su caso las adscripciones de titularidad que estime
+adecuadas:
+
+- a) La zona deportiva.
+- b) Las zonas comerciales.
+- c) Las zonas cultural y cultual.
+- d) La zona rural.
+- e) Todas las instalaciones de suministro de agua de la Ciudad. El conjunto
+  de estas instalaciones lo forman diversos pozos, tuberías de elevación y
+  distribución, depósitos, grupos elevadores, líneas eléctricas e
+  instalaciones y obras de fábrica anejas.
+
+*Artículo 5.º* El resto de las instalaciones eléctricas, comprendidas
+subestaciones y centros de transformación con sus obras de fábrica, quedará en
+la titularidad de Hidroeléctrica Española.
+
+*Artículo 6.º* Se entiende por Ciudad Santo Domingo exclusivamente aquella
+zona urbanizada que resulta delimitada en el plano unido a estos Estatutos
+formando parte de los mismos. Si cualquier propietario de predio de Ciudad
+Santo Domingo, situado en las lindes de la Ciudad, adquiriese por cualquier
+título algún derecho sobre terrenos ajenos a la Ciudad no podrá utilizar la
+posible colindancia de estos terrenos a su predio para extender a aquellos la
+cualidad de zona perteneciente a la Ciudad. El cumplimiento de esta
+prohibición faculta a la Comunidad para, además de ejercitar las acciones
+legales pertinentes, privar al propietario de la utilización de los servicios
+comunes de la Ciudad.
+
+Esta Comunidad se constituye con plena personalidad jurídica como Sociedad
+Civil.
+
+*Artículo 7.º* Los derechos y obligaciones de los propietarios en la Comunidad
+vendrán determinados por la superficie de los predios que posean en la Ciudad.
+A estos efectos, a cada mil metros cuadrados o fracción de mil metros
+cuadrados dentro de cada predio residencial se le asigna una cuota de
+participación.
+
+A los predios no residenciales se les asigna globalmente, según zonas que se
+citan, las siguientes cuotas de participación:
+
+- Zona deportiva: 20 cuotas.
+- Zonas comerciales: 30 cuotas.
+- Zona cultural y cultual: 10 cuotas.
+- Zona rural: 10 cuotas.
+
+quedando facultada la Promotora para distribuir estas cuotas en caso de
+fraccionamiento de las correspondientes zonas, asignando a cada fracción
+resultante la correspondiente cuota de participación en la Comunidad.
+
+*Artículo 8.º* Los propietarios de terrenos tipo A para vivienda plurifamiliar
+deberán necesariamente constituirse en Comunidad de Propietarios de acuerdo
+con la Ley de Propiedad Horizontal de 21 de julio de 1960. El representante
+legal de esta Comunidad de Propietarios será el único legitimado activa y
+pasivamente para actuar ante la Comunidad de Propietarios de Ciudad Santo
+Domingo.
+
+*** Capítulo II. De los órganos de la Comunidad
+
+*Artículo 9.º* Serán órganos de la Comunidad la Asamblea General, la Junta
+Gestora y el Presidente, que lo será de ésta y de la Asamblea. El Presidente
+será elegido por la Asamblea en el acto fundacional y su mandato será de dos
+años, pudiendo ser reelegido por periodos iguales.
+
+*Artículo 10.º* La Asamblea General de Propietarios estará integrada por la
+totalidad de los que se mencionan en el artículo 1.º de los presentes
+Estatutos.
+
+La Asamblea General se reunirá cuando menos una vez al año dentro de su primer
+trimestre, designando entre los componentes su Presidente y los propietarios
+que integrarán la Junta Gestora.
+
+Corresponderá a la Asamblea General las siguientes funciones:
+
+- a) Aprobar el censo de propietarios incorporados a la Comunidad.
+- b) Aprobar los presupuestos y los índices definitivos con arreglo a los
+  cuales se realicen los repartos de cargas.
+- c) Aprobar los planes anuales, conforme a los cuales hayan de realizarse las
+  actividades previstas en el artículo 2.º de estos Estatutos.
+- d) Sancionar las cuentas y justificantes presentados por la Junta Gestora,
+  comprensivas de los pagos y cobros realizados.
+
+*Artículo 11.º* Los acuerdos se adoptarán por mayoría de cuotas de
+participación en la Comunidad y obligarán a todos los propietarios. Será
+necesario, no obstante, el voto favorable de las dos terceras partes de las
+cuotas totales de participación tomado en Asamblea General Extraordinaria
+convocada al efecto para la disposición y enajenación de bienes y la
+modificación de los Estatutos.
+
+*Artículo 12.º* Cada propietario tendrá tantos votos como cuotas de
+participación en la Comunidad posea.
+
+La Asamblea General, en los asuntos que se sometan a su consideración y que,
+naturalmente, se refieran al objeto y fines de la Comunidad, tendrá plena
+soberanía en sus resoluciones, que serán obligatorias para todos los
+propietarios, aun para los ausentes o disidentes.
+
+*Artículo 13.º* La Asamblea General, tanto ordinaria como extraordinaria,
+quedará válidamente constituida en primera convocatoria cuando concurran a
+ella, presentes o representadas, la mayoría de las cuotas de participación en
+la Comunidad y en su segunda convocatoria, cualquiera que sea el número de
+cuotas concurrentes presentes o representadas. Entre la convocatoria y el día
+señalado para la celebración de la Asamblea General en primera convocatoria
+habrán de mediar al menos quince días. Haciéndose constar en el anuncio la
+fecha en la que, si procediera, se reunirá la Asamblea General en segunda
+convocatoria, sin que entre una y otra reunión pueda mediar un plazo inferior
+a veinticuatro horas.
+
+Los anuncios de convocatoria se harán mediante carta o circular dirigida a los
+propietarios en el domicilio que figure en los archivos de la Comunidad.
+
+*Artículo 14.º* La Junta Gestora estará integrada por el Presidente de la
+Comunidad y seis propietarios, uno de los cuales actuará de Secretario de la
+Junta y de la Asamblea General.
+
+La Asamblea General podrá nombrar ---con independencia de los miembros de la
+Junta Gestora--- un Vicepresidente ejecutivo, que asistirá a las Juntas con
+voz y voto y ejercerá las funciones de Presidente en caso de enfermedad o
+ausencia del titular. En cuanto a su nombramiento y a la vigencia de su cargo
+regirán las mismas normas que las establecidas para el Presidente.
+
+*Artículo 15.º* Los miembros de la Junta Gestora serán elegidos por la
+Asamblea General ordinaria, y se renovarán por terceras partes cada año,
+pudiendo ser reelegidos.
+
+La Junta Gestora se reunirá como mínimo una vez al mes, haciendo el Presidente
+la convocatoria a los componentes de la misma al menos con siete días de
+anticipación.
+
+Para que la Junta Gestora se reúna válidamente será necesaria la concurrencia
+personal de al menos cuatro de sus miembros.
+
+Los acuerdos adoptados por mayoría de miembros concurrentes serán válidos y el
+voto del Presidente será de calidad, decidiendo en caso de empate.
+
+Las decisiones de la Junta Gestora versarán sobre las normales operaciones
+implicadas en la administración y conservación de los elementos e
+instalaciones comunes, tales como contratación y supervisión del personal,
+obras y servicios, abono de las cantidades adeudadas por estos conceptos y, en
+general, sobre cualesquiera otras no atribuidas especialmente a la Asamblea
+General.
+
+Para la realización de las funciones materiales de administración podrá
+contratarse los servicios de un Administrador y del personal auxiliar que se
+estime necesario, e incluso podrá contratarse toda la labor de administración
+con persona o empresa especializada.
+
+*Artículo 16.º* Corresponderá especialmente a la Junta Gestora el reparto
+entre los distintos propietarios de los costos producidos como consecuencia de
+los acuerdos adoptados por la Asamblea y de su gestión administradora, de
+conformidad con los índices establecidos y formando para ello listas
+cobratorias, con arreglo a las cuales habrá de realizarse la recaudación.
+
+La Junta Gestora, por medio de su Presidente o del miembro de la misma que
+designe, ostentará la representación de la Comunidad, la defensa de sus
+derechos y el ejercicio de sus acciones, pudiendo otorgar los poderes que
+estime oportunos, incluidos poderes especiales o generales para pleitos.
+
+*Artículo 17.º* Tanto los acuerdos de la Asamblea General como los de la Junta
+Gestora serán reflejados en un libro de Actas, del que podrán expedirse
+certificaciones a petición de cualquier propietario refrendadas por el
+Secretario, con el visto bueno del Presidente.
+
+*Artículo 18.º* Para la ejecución de los acuerdos de la Asamblea General y de
+la Junta Gestora, y siempre que éstas no hayan nombrado representante
+especial, el Presidente de la Comunidad, y en su caso quien le sustituya, será
+su representante ante toda clase de personas y organismos en todo lo relativo
+a la Comunidad, velará por los intereses de la Ciudad y actuará en nombre de
+ésta ante los Órganos de la Administración Local, pudiendo proponer a las
+Autoridades de este ámbito la imposición de sanciones por el incumplimiento de
+las disposiciones vigentes en materia de policía administrativa. También podrá
+comparecer ante Notario público, otorgando en nombre de la Comunidad poderes
+generales para pleitos a favor de Procuradores de los Tribunales de cualquier
+jurisdicción.
+
+*** Capítulo III. De los miembros de la Comunidad
+
+*Artículo 19.º* Serán miembros de la Comunidad los propietarios de predios
+situados en Ciudad Santo Domingo, los que se considerarán incorporados a la
+misma por el solo hecho de adquirir dicha calidad de propietarios.
+
+La cualidad de miembro de la Comunidad se perderá automáticamente por la
+enajenación, conocida o comunicada, de los predios con base a los cuales se
+procedió a integrar en la Comunidad al propietario.
+
+*Artículo 20.º* Los propietarios integrados en la Comunidad tendrán derecho a
+participar, de la forma prevista en estos Estatutos, en los órganos de
+administración de la Comunidad y a disfrutar de los servicios comunes de la
+Ciudad y demás beneficios que a través de ella puedan obtenerse.
+
+*Artículo 21.º* Los propietarios vendrán obligados a cumplir los acuerdos de
+la Asamblea General y/o de la Junta relativos a la utilización y disfrute de
+los servicios, instalaciones y elementos comunes, así como las decisiones que
+sin violar lo establecido en disposiciones de carácter general adopte dicha
+Asamblea y/o Junta para facilitar la convivencia dentro de la Ciudad.
+
+*** Capítulo IV. Del régimen económico
+
+*Artículo 22.º* Los propietarios vendrán especialmente obligados a aportar las
+cantidades que les correspondan para el levantamiento de los gastos comunes.
+Estos gastos se distribuirán una vez aprobado el presupuesto anual en
+proporción a la cuota de participación en la Comunidad de cada propietario,
+conforme a lo establecido en el artículo 7.º de estos Estatutos.
+
+La aprobación del presupuesto anual compete especialmente a la Asamblea
+General, la cual podrá asimismo alterar la cuantía de las aportaciones y
+determinar las extraordinarias que procedan en virtud de casos y fines
+concretos.
+
+*Artículo 23.º* Si los propietarios no atendiesen voluntariamente al pago de
+las aportaciones que les hubieran sido asignadas, según las cuotas de
+participación que correspondan a sus predios, la Junta Gestora podrá optar
+entre ceder al Ayuntamiento del término municipal los derechos que
+correspondan a la Comunidad por tal concepto o hacerlos efectivos por conducto
+de los órganos jurisdiccionales competentes; en el primer supuesto, la
+Corporación Municipal tendrá plena libertad para aceptar la gestión de
+cobranza en las condiciones que libremente estipule con la Comunidad. Todo
+ello de acuerdo con lo establecido en el artículo 211 de la Ley del Suelo y
+sin perjuicio de las demás acciones que en virtud de los presentes Estatutos
+competen a la Comunidad.
+
+*Artículo 24.º* El propietario que no atienda al pago de sus aportaciones
+perderá automáticamente todo derecho a la utilización de los servicios comunes
+de la Ciudad que se mencionan en el artículo 3.º de los presentes Estatutos y
+cualquiera otros creados en beneficio de la Comunidad.
+
+En su virtud la Comunidad queda facultada para actuar de hecho o de derecho de
+la forma que estime conveniente a los efectos de privar al propietario moroso
+de los citados servicios comunes.
+
+También la Comunidad queda facultada para instar de la Promotora o de
+Hidroeléctrica Española y en general de cualquier entidad o persona proveedora
+de servicios o suministros, como pudieran ser los de agua, luz, etc., que
+éstos le sean negados al propietario moroso.
+
+*Artículo 25.º* La adquisición de alguna propiedad en la Urbanización CIUDAD
+SANTO DOMINGO llevará consigo la integración del adquirente en la Comunidad y
+su subrogación de los derechos y obligaciones de aquel de quien traiga causa.
+Para conocimiento de los adquirentes, los miembros de la Comunidad quedan
+obligados, en caso de transmisión, a que se hagan constar esa integración y
+subrogación en los documentos en los cuales la transmisión se formalice.
+
+*Artículo 26.º* Con objeto de dotar a la Comunidad de un capital inicial de
+maniobra, cada propietario efectuará una aportación inicial de mil pesetas
+(1.000 pesetas) por cada cuota de participación que se menciona en el
+artículo 7.º de estos Estatutos y ascenderá en total a 2.431.000 pesetas.
+
+Los presupuestos anuales por gastos de conservación y entretenimiento serán
+fijados para cada ejercicio por la Asamblea General ordinaria.
+
+Las aportaciones que deben entregar los propietarios de acuerdo con sus cuotas
+de participación se recaudarán por trimestres naturales, debiendo ser pagadas
+en la primera quincena de cada trimestre.
+
+La morosidad o incumplimiento de la obligación de pago de las aportaciones,
+además de las acciones que según los presentes Estatutos competen a la
+Comunidad, producirá sin necesidad alguna de intimación la obligación de
+abonar intereses de demora a razón del 12 por 100 anual a favor de la
+Comunidad. Serán además de cargo del moroso todos los gastos y costes
+judiciales que se pudieran producir.
+
+*** Capítulo V. De las Ordenanzas de Ciudad Santo Domingo
+
+*Artículo 27.º* Todos los planos y documentos del Plan Parcial de CIUDAD SANTO
+DOMINGO forman parte de las presentes Ordenanzas.
+
+Son vinculantes con total fuerza de obligar para los propietarios las normas y
+disposiciones de los Órganos urbanísticos del Ayuntamiento de Algete, de la
+Promotora y de la Comunidad de Propietarios.
+
+*Artículo 28.º* Todos y cada uno de los terrenos y parcelas de la Ciudad son
+recíprocamente predios dominantes y sirvientes de servidumbres de paso, de
+conducciones de agua potable y residuales, redes de suministro de energía
+eléctrica y en general cualquier servicio de la Urbanización y de sus
+accesorios para su instalación, conservación, reparación y mejora y de paso
+del personal que esté al cuidado de dichos servicios o deba realizar las
+correspondientes obras.
+
+*Artículo 29.º* Cada uno de los terrenos o parcelas de la Ciudad es predio
+dominante de una servidumbre continua en orden al uso y utilización de los
+servicios y elementos comunes de la Ciudad que se mencionan en el artículo 3.º
+de los presentes Estatutos. Los gastos de utilización, conservación,
+reparación y mejora de dichos servicios y elementos comunes serán de cuenta
+del titular del predio dominante de acuerdo con la cuota de participación en
+los gastos comunes que se establecen en el artículo 7.º de estos Estatutos.
+
+*Artículo 30.º* Los propietarios quedan obligados:
+
+- a) A respetar las instalaciones y obras generales o en provecho de otro
+  propietario, que interfieran, atraviesen, sobrevuelen su predio o de
+  cualquier otra forma le afecte.
+- b) A consentir la ejecución en su predio de las obras que a juicio de la
+  Comunidad sean convenientes para la utilización, conservación, reparación o
+  mejora de los servicios e instalaciones de la Ciudad.
+- c) A permitir la entrada en su predio a los efectos previstos en los
+  apartados anteriores.
+- d) A no dedicar el predio a otros usos que el de vivienda, con autorización
+  de ejercicio de la profesión del titular propietario. Lo establecido en este
+  apartado no tendrá aplicación a los predios correspondientes a zonas de
+  afección especial según el Plan Parcial (deportiva, comercial, cultural,
+  etc.).
+- e) A observar la diligencia debida en el uso del predio y en sus relaciones
+  con los demás titulares de la Ciudad y a responder ante la Comunidad de
+  Propietarios de las infracciones ocasionadas por quien ocupe su predio, sin
+  perjuicio de las acciones directas que procedan.
+- f) A sufragar las aportaciones que fije la Comunidad.
+
+*Artículo 31.º* Para ejecutar cualquier obra dentro de la Ciudad se precisa un
+permiso que, después de merecer el visto bueno de la Dirección Técnica de
+Control del Plan Parcial, nombrada por la Promotora para vigilancia del
+cumplimiento del Plan Parcial, se solicitará en su caso por intermedio de ésta
+del Ayuntamiento de Algete.
+
+Todos los proyectos de edificios o reforma constarán de memoria, planos,
+presupuesto, mediciones y pliego de condiciones, debiendo estar visados por el
+Colegio de Arquitectos e indicándose en la memoria los materiales a emplear,
+su calidad y su colocación.
+
+*Artículo 32.º* Serán objeto de permiso de obra:
+
+1. Todas las nuevas construcciones sobre tierra y subterráneas, incluidas las
+   excavaciones para caja de cimientos, etc. También se considera como
+   construcción los cercados de deslinde a las calles y a los vecinos, pozos
+   muertos, instalaciones de clarificación, tuberías de agua y desagüe,
+   depósitos, barandillas, pérgolas, toldos, astas, grupos electrógenos, etc.
+   Todos los andamios y cercados de obra.
+2. En edificios ya existentes la construcción o el cambio de elementos
+   cargados (paredes, pilares, techos, construcciones de hierro), de elementos
+   o cuerpos construidos que sobresalgan de los muros exteriores, aperturas de
+   ventanas, puertas, escaleras, y de pozos para luz o ventilación y
+   elevadores, de hogares, chimeneas, hogares de gas y demás modificaciones y
+   cambios en comunicación de la construcción, líneas de alta tensión, montaje
+   de motores, la modificación de pozos vaciadores, retretes o también la
+   modificación y el cambio de cercados de terraza y de los linderos, la
+   reconstrucción o el cambio del estado anterior de una obra destruida por
+   incendio o por otra causa.
+3. En edificios que sirvan para comercio, cada cambio de la disposición
+   arquitectónica anterior.
+
+*Artículo 33.º* Se entiende por volumen legal de edificación el volumen
+teórico de los paralelepípedos cuyas bases son las superficies construidas en
+cada planta, limitadas por las caras exteriores de los cerramientos y cuya
+altura es la mínima libre permitida entre forjado y forjado.
+
+En esta cubicación se excluyen las construcciones por debajo del forjado de la
+primera planta, los voladizos sin cerramiento de fábrica, al igual que los
+sótanos y las terrazas.
+
+A efectos de cubicación se consideran, pues, las alturas como las mínimas
+permitidas (3 metros libres en la planta comercial y 2,50 metros en la planta
+de vivienda).
+
+La superficie legal se corresponde con los volúmenes dimensionados con los
+anteriores criterios.
+
+En los edificios complementarios de interés público que tengan una
+justificación excepcional se podrá proponer un aumento en el volumen prefijado
+de hasta un 20 por 100.
+
+*Artículo 34.º* En la superficie edificable se distingue la fundamental y la
+secundaria.
+
+La superficie fundamental está constituida por la vivienda en sí y el despacho
+profesional.
+
+La superficie secundaria por el garaje y las instalaciones accesorias
+deportivas y ocupará como máximo un 20 por 100 de la fundamental teórica.
+
+Ambas superficies se consideran en el desarrollo total del área construida
+(eliminadas las terrazas y patios habitables y las superficies de sótano no
+habitables).
+
+Parcelas unifamiliares aisladas.
+
+La superficie edificable será un 15 por 100 para los primeros 2.000 metros
+cuadrados de parcela y un 10 por 100 para los restantes metros a partir de los
+2.000.
+
+Parcelas plurifamiliares o aisladas en cadena.
+
+Se distinguen dos tipos de edificabilidad:
+
+- Tipo 1 - 0,20 m² de construcción por m² de parcela.
+- Tipo 2 - 0,30 m² de construcción por m² de parcela.
+
+*Artículo 35.º* Queda prohibido:
+
+- a) La decoración exterior de los edificios mediante elementos estilísticos
+  inadecuados.
+- b) Los materiales de revestimiento deleznables, así como los colores
+  detonantes.
+- c) Los elementos por encima de la última planta permitidos en esta Ordenanza
+  (depósitos de agua, cajas de escalera, etc.) se harán con los mismos
+  materiales de la fachada, cuidando de que su composición arquitectónica se
+  incorpore a la del resto del edificio.
+
+*Artículo 36.º* Se considerarán aceptables todas las buenas técnicas de la
+construcción actual.
+
+Los materiales de construcción pueden ser todos los idóneos de la técnica
+actual, pero su presentación exterior en fachadas será especialmente cuidada,
+rechazándose los materiales de rápido envejecimiento y todos los deleznables
+cuyo desprendimiento estropee el aspecto plástico de la fachada y suponga un
+riesgo para los peatones.
+
+*Artículo 37.º* Las cercas de las lindes que den frente a las calles deberán
+hacerse obligatoriamente según el modelo que facilite la Dirección Técnica de
+Control del Plan Parcial.
+
+Las cercas entre parcelas en sus últimos cinco metros a partir de la fachada
+de calle también deberán realizarse según el mismo diseño.
+
+Las cercas entre parcelas a partir de los cinco metros deberán hacerse
+libremente de común acuerdo ambos colindantes, con la única condición de que
+su altura maciza no sobrepase los dos metros.
+
+*Artículo 38.º* En la Ciudad se distinguirán cuatro tipos de parcelas
+residenciales:
+
+Tipo «A». Parcelas comunes para viviendas plurifamiliares o unifamiliares en
+cadena. En el Plan Parcial sólo figura la disposición de la zona, debiendo
+reparcelarse en el momento de proyectar los bloques de edificios.
+
+Dentro de las viviendas unifamiliares aisladas se distingue:
+
+- Tipo «B».---Estas parcelas tienen una superficie que oscila entre los 1.000
+  y 2.000 m².
+- Tipo «C».---Cuya superficie oscila entre los 2.000 y los 4.000 m².
+- Tipo «D».---Cuya superficie es superior a los 4.000 m².
+
+Retranqueo mínimo a frente de calle:
+
+- Parcela tipo «A» (comunales), el retranqueo mínimo será de 7 m.
+- Parcela tipo «B» (de 1.000 a 2.000 m²), 7 m.
+- Parcelas «C» y «D» (de 2.000 m² en adelante), 10 m.
+
+Retranqueos a laterales y fondos:
+
+Para altura de edificación: hasta 3,50 m.
+
+- Parcela tipo «A»: 5 m.
+- Parcela tipo «B»: 5 m.
+- Parcelas «C» y «D»: 6 m.
+
+Por cada 0,50 por encima de los 3,50 m. se aumentará la separación de los
+linderos a 1 m.
+
+Las unidades reunidas por escalera o entrada comunes podrán ir adosadas por
+las medianerías, formando composiciones en cadena. Cada uno de estos conjuntos
+constituirá un bloque cuyos retranqueos laterales y fondos serán equivalentes
+a los de las viviendas de tipo B.
+
+Las parcelaciones que figuran en el plano correspondiente del Plan Parcial en
+el momento en que quedan replanteados sobre el terreno y registrados serán
+invariables.
+
+*Artículo 39.º* Se prohíben las instalaciones de fosas sépticas o vertidos
+directos al terreno, admitiéndose como único vertido de las aguas residuales
+de las parcelas el empalme a la red general de alcantarillado.
+
+Se prohíbe el utilizar los terrenos de la Ciudad para vertido de basuras,
+debiéndose evacuar éstas en su totalidad mediante el servicio de recogida que
+se ocupará de su incineración.
+
+De ninguna manera se podrán hacer viviendas aisladas o agrupadas sin que
+tengan, al menos, una habitación con dos horas de asoleo el 21 de diciembre.
+
+*Artículo 40.º* Se prohíbe construir con carácter permanente almacenes o
+depósitos de materiales; éstos tendrán de duración el tiempo en que se
+realicen las obras en el predio.
+
+*Artículo 41.º* Queda prohibido el aparcamiento de automóviles de forma
+permanente en las calles de la Ciudad.
+
+*Artículo 42.º* Las piscinas irán necesariamente dotadas de instalación
+completa de depuración.
+
+*** Capítulo VI. Disolución y liquidación de la Comunidad
+
+*Artículo 43.º* Ningún propietario podrá separarse de la Comunidad si no es
+desprendiéndose a la vez de la titularidad del predio del que es propietario.
+
+Tampoco el propietario podrá accionar la división de la cosa común dado que
+por su propia naturaleza el condominio que por la presente Comunidad se
+reglamenta es indivisible e inseparable de la propiedad individualizada sobre
+el correspondiente predio.
+
+En su virtud la disolución de la Comunidad sólo podrá efectuarse por acuerdo
+unánime de todos los miembros, adoptado en Asamblea General extraordinaria
+convocada al efecto, la que entonces dictará las normas precisas para llevar a
+cabo la disolución.
+
+*** Capítulo VII. Disposiciones finales
+
+*Artículo 44.º* Si algunos propietarios de Ciudad Santo Domingo acordasen
+constituirse en cualquier tipo de Asociación con personalidad jurídica, al
+amparo de la Ley de Asociaciones, Ley del Suelo u otro Cuerpo legal, con fines
+análogos a los perseguidos por la Comunidad, ésta podrá acordar con dicha
+Asociación su forma de actuación conjunta.
+
+*Artículo 45.º* Los fines que atiende la Comunidad benefician sin excepción a
+todos los propietarios de predios en Ciudad Santo Domingo. Por ello la
+obligación de contribuir al pago de las cargas vincula a todos los citados
+propietarios, sin que sea válido para intentar eximirse de esta obligación el
+alegar desinterés en la Comunidad, puesto que la calidad de miembro de la
+Comunidad es inseparable por propia naturaleza de la propiedad del predio, o
+la no utilización de servicios e instalaciones comunes cuya conservación,
+reparación y mejora corresponde según su cuota de participación al propietario
+del predio, cuyo valor económico depende precisamente del buen estado de
+dichos servicios e instalaciones y no del grado de utilización que de los
+mismos haga el propietario.
+
+*Artículo 46.º* Para todos los asuntos relativos a la Comunidad, los
+propietarios renuncian a su fuero propio y se someten expresamente a la
+jurisdicción de los Juzgados y Tribunales de Madrid.
+
+#+begin_flushright
+*Los presentes Estatutos figuran insertos en el protocolo del Notario de*\\
+*Madrid don Enrique Giménez Arnau y Gran, bajo el número 4.391,*\\
+*según escritura de 22 de julio de 1970*
+#+end_flushright
+
+** Junta Gestora y Gerencia
+
+*** Viene definida en los artículos 9 y siguientes de nuestros estatutos
+
+*Art. 9.* Serán órganos de la Comunidad la Asamblea General, la Junta Gestora
+y el presidente, que lo será de ésta y de la Asamblea. El presidente será
+elegido por la Asamblea en el acto fundacional y su mandato será de dos años,
+pudiendo ser reelegido por periodos iguales.
+
+*Art. 14.* La Junta Gestora estará integrada por el presidente de la Comunidad
+y seis propietarios, uno de los cuales actuará de Secretario de la Junta y de
+la Asamblea General.
+
+La Asamblea General podrá nombrar ---con independencia de los miembros de la
+Junta Gestora--- un Vicepresidente ejecutivo, que asistirá a las Juntas con
+voz y voto y ejercerá las funciones de presidente en caso de enfermedad o
+ausencia del titular. En cuanto a su nombramiento y a la vigencia de su cargo
+regirán las mismas normas que las establecidas para el presidente.
+
+*Art. 15.* Los miembros de la Junta Gestora serán elegidos por la Asamblea
+General ordinaria, y se renovarán por terceras partes cada año, pudiendo ser
+reelegidos.
+
+La Junta Gestora se reunirá como mínimo una vez al mes, haciendo el presidente
+la convocatoria a los componentes de la misma al menos con siete días de
+anticipación.
+
+Para que la Junta Gestora se reúna válidamente será necesaria la concurrencia
+personal de al menos cuatro de sus miembros.
+
+Los acuerdos adoptados por mayoría de miembros concurrentes serán válidos y el
+voto del presidente será de calidad, decidiendo en caso de empate.
+
+Las decisiones de la Junta Gestora versarán sobre las normales operaciones
+implicadas en la administración y conservación de los elementos e
+instalaciones comunes, tales como contratación y supervisión del personal,
+obras y servicios, abono de las cantidades adeudadas por estos conceptos y, en
+general, sobre cualesquiera otras no atribuidas especialmente a la Asamblea
+General.
+
+Para la realización de las funciones materiales de administración podrá
+contratarse los servicios de un Administrador y del personal auxiliar que se
+estime necesario, e incluso podrá contratarse toda la labor de administración
+con persona o empresa especializada.
+
+*** Gerencia
+
+La Junta Gestora está facultada para contratar los servicios de una gerencia
+con las siguientes facultades:
+
+- Organización, coordinación y seguimiento de las distintas áreas de la
+  Comunidad de Ciudad Santo Domingo:
+  - Administración
+  - Seguridad
+  - Saneamiento y Agua
+  - Depuración
+  - Botiquín
+- Control y gestión de la Contabilidad, elaboración y presentación de los
+  estados contables.
+- Impuestos y Tributos.
+- Presupuestos y Tesorería: Elaboración y seguimiento de los presupuestos
+  trimestrales y anuales, comparativa y costes.
+- Bancos y Caja: Establecimiento y mantenimiento de los distintos servicios,
+  domiciliaciones, gestión de cobro, pago de pensiones, etc.
+- Recursos Humanos: Control y supervisión de todas las áreas y tareas
+  relacionadas con nóminas, gestión de personal, seguros sociales y relaciones
+  con empresas de gestión.
+- Seguros en general.
+- Proveedores: Supervisión y gestión de los mismos.
+- Auditoría: Preparación y elaboración de la auditoría anual junto con los
+  auditores, así como el estudio de las recomendaciones.
+- Relaciones internas y externas, con Comuneros, Bancos/Cajas, Seguros,
+  Proveedores, etc.
+- Representar a la Comunidad ante la Administración y Tribunales de Justicia.
+
+** Reglamento de la Asamblea General de la Comunidad de Propietarios
+
+Sin perjuicio de la regulación de la misma que se contiene en los artículos 10
+a 13 de los Estatutos de la Comunidad, y lo dispuesto en la Ley de Propiedad
+Horizontal, se acuerdan este Reglamento a fin de dar respuesta reglada a
+aquéllas otras cuestiones que en la práctica pueden provocar problemas en la
+celebración de la Junta.
+
+*** Artículo 1. La Asamblea General
+
+La Asamblea General estará integrada por la totalidad de los propietarios de
+parcelas y terrenos en la Urbanización Residencial Ciudad Santo Domingo.
+
+Se reunirá al menos una vez al año con carácter ordinario, y será convocada
+dentro del primer trimestre del ejercicio, si bien supeditada a tener
+finalizada la auditoría de los estados financieros del ejercicio anterior, y
+tendrá como facultades:
+
+- a) La elección entre los comuneros del Presidente de la Comunidad de
+  Propietarios y de los miembros de la Junta Gestora.
+- b) La aprobación de las cuentas anuales del ejercicio anterior
+- c) La aprobación del presupuesto para el siguiente ejercicio
+- d) La aprobación del censo de propietarios miembros de la Comunidad
+- e) La aprobación de los planes anuales para atender a los fines de la
+  Comunidad.
+
+Además podrá reunirse con carácter extraordinario siempre que el Presidente de
+la Comunidad de Propietarios lo considere necesario. También podrá reunirse
+cuando sea solicitado así por al menos el 25% de los propietarios, o un número
+de éstos que representen al menos el 25% de las cuotas de participación. En
+este caso, deberán previamente requerir al Presidente la convocatoria, y sólo
+en el caso de que éste no atienda su petición, podrán proceder a la
+convocatoria por su cuenta.
+
+Cualquier comunero podrá solicitar del Presidente la inclusión en el Orden del
+día de los asuntos que considere de interés general. No obstante, será a
+criterio del Presidente su inclusión o no, sin perjuicio de que el asunto se
+suscite en el punto de ruegos y preguntas. Esta solicitud deberá hacerse antes
+de la convocatoria a Junta.
+
+*** Artículo 2. Convocatoria
+
+La convocatoria a la Asamblea deberá hacerse al menos con quince días
+naturales de antelación, debiendo señalarse el orden del día, la fecha de la
+primera y segunda convocatoria, y el lugar de la reunión. Además se incluirá
+en la convocatoria el listado de comuneros morosos en ese momento, con la
+cantidad debida, y que estarán privados de voto.
+
+Las comunicaciones con la convocatoria se harán mediante carta dirigida al
+domicilio de cada comunero que figure en los archivos de la Comunidad, y en su
+defecto, a la parcela de la que sea propietario.
+
+Sin perjuicio de lo anterior, la convocatoria se publicará en el tablón de
+anuncios de la Comunidad y en la página web de la misma.
+
+*** Artículo 3. Documentación y derecho de información
+
+Con la convocatoria a la Asamblea se adjuntará la documentación que por la
+Junta Gestora se considere necesaria para la información de los comuneros.
+
+Además, cualquier comunero interesado podrá consultar la documentación
+contable, o cualquier otra propia de la Comunidad, en las oficinas de la
+misma, dentro de su horario habitual y hasta el día anterior a la celebración
+de la Asamblea incluido. Se permitirá que saque fotocopias pero a su costa. No
+obstante, se podrán restringir las copias a aquéllos documentos que por la
+normativa de protección de datos, así se considere por la Junta Gestora.
+
+*** Artículo 4. Asistencia y representación
+
+La asistencia a la Asamblea General será individual por cada parcela, de
+manera que en caso de haber varios copropietarios de una parcela, deberán
+ponerse de acuerdo entre ellos sobre quién asistirá en su nombre a la
+Asamblea.
+
+Sólo se admitirá en la Junta la intervención y voto de un solo copropietario o
+representante por parcela, no obstante, se permitirá la asistencia como
+oyentes de aquéllos otros interesados (otros copropietarios, abogados,
+técnicos, etc).
+
+Podrá otorgarse la representación a un tercero, sea o no comunero, para la
+asistencia a la Asamblea, delegando en él el derecho a intervenir y al voto.
+Para acreditar dicha representación servirá un poder notarial al respecto,
+incluso con carácter general para todas las Asambleas, o un simple escrito que
+sólo se referirá a la Asamblea en cuestión, firmado por el representado, que
+deberá acreditarlo fehacientemente.
+
+En caso de que algún comunero comparezca acompañado de un notario para que
+levante acta de la Asamblea, o pretenda grabar la misma, deberá plantearlo al
+inicio de la misma, siendo sometida a la votación de los presentes si se
+autoriza o no.
+
+*** Artículo 5. Constitución de la Asamblea
+
+La Asamblea General quedará válidamente constituida en primera convocatoria
+cuando concurran a ella, presentes o representadas, la mayoría de las cuotas
+de participación de la Comunidad; y en segunda convocatoria, cualquiera que
+sea el número de cuotas concurrentes.
+
+*** Artículo 6. Mesa de la Asamblea. Presidencia y dirección de debates
+
+La Asamblea General estará presidida por el Presidente de la Comunidad de
+Propietarios y en su caso por el Vicepresidente, en caso de enfermedad o
+ausencia del titular.
+
+En los casos en que no haya Presidente ni Vicepresidente, por la razón que
+fuese, la Asamblea será presidida por el comunero asistente de mayor edad.
+
+El Presidente de la Asamblea dirigirá el transcurrir de la misma,
+introduciendo los puntos del orden del día y concediendo la palabra a los
+comuneros que quieran intervenir. Igualmente dispondrá el fin de las
+intervenciones, ordenando la votación correspondiente a cada punto del orden
+del día.
+
+Junto con el Presidente, la mesa de la Asamblea estará compuesta por el
+Secretario de la Comunidad de Propietarios. En caso de ausencia de éste, será
+sustituido por cualquier miembro de la Junta Gestora, y en su defecto, por el
+comunero asistente de menor edad.
+
+*** Artículo 7. Desarrollo de la Asamblea
+
+Antes del inicio de la misma, se elaborará una lista de asistentes, expresando
+en la misma los siguientes datos: nombre y apellidos del comunero, parcela, y
+en su caso nombre y apellido del representante.
+
+Dicha lista deberá actualizarse a lo largo de la Asamblea, indicándose los
+comuneros que concurran más tarde de su inicio, o la salida de los que no se
+queden hasta el final, expresándose el momento en que entraron o salieron.
+
+Los turnos de palabra los concederá el Presidente de la Asamblea según su
+criterio, permitiendo en todo caso que tomen la palabra al menos tres
+comuneros por cada sentido del voto de la cuestión tratada.
+
+Los intervinientes deberán guardar el respeto a los demás asistentes, tanto en
+sus palabras como en sus formas, pudiendo el Presidente retirar la palabra a
+quien incumpla estas normas básicas de convivencia.
+
+En cualquier caso, el Presidente podrá retirar la palabra a quien se exceda en
+el tiempo de su intervención. Previamente deberá en cada caso señalar qué
+tiempo concede para ello, a fin de evitar discrepancias al respecto.
+
+También podrá retirar la palabra a quien no se ajuste al punto del orden del
+día debatido, sin perjuicio de que pueda reiterarse lo que se desee en el
+punto final de ruegos y preguntas.
+
+Excepcionalmente, el Presidente podrá conceder el turno de palabra a quien no
+sea comunero ni intervenga como representante, como puede ser a técnicos o
+abogados que expongan el parecer de la Junta Gestora o de un comunero.
+
+*** Artículo 8. Votaciones
+
+Están privados de voto los comuneros en situación de morosidad al comienzo de
+la Asamblea. Previamente, en la convocatoria se habrá indicado qué comuneros
+deben cantidades a la Comunidad y en qué cuantía, pudiendo acreditar el pago
+al inicio de la Asamblea a fin de que se les reconozca el derecho al voto. No
+obstante, se les reconoce el derecho a intervenir en los debates.
+
+El voto deberá ser público, expresando de forma oral si se aprueba o no el
+acuerdo, o en su caso se abstiene, e indicando su nombre y parcela de la que
+es propietario o a la que representa. Excepcionalmente el Presidente y de
+acuerdo con la opinión mayoritaria de los presentes y representados, podrá
+optar por que el voto sea secreto mediante papeletas y urna.
+
+*** Artículo 9. Adopción de acuerdos
+
+Cada comunero tendrá tantos votos como cuotas de participación.
+
+Los acuerdos se adoptarán por mayoría de cuotas de participación de los
+asistentes a la Asamblea, y obligarán a todos los comuneros. Será necesario,
+no obstante, el voto favorable de las dos terceras partes de las cuotas
+totales para acordar: la disposición y enajenación de bienes de la Comunidad.
+
+Será necesaria la unanimidad para acordar la disolución de la Comunidad, así
+como modificación de estatutos.
+
+*** Artículo 10. Finalización de la Asamblea
+
+Una vez proclamado el resultado de las votaciones, y del punto sobre ruegos y
+preguntas, el Presidente podrá dar por finalizada la Asamblea, levantando la
+sesión.
+
+Por razones excepcionales, antes de su finalización el Presidente podrá
+acordar la suspensión temporal de la Asamblea, que deberá volver a
+constituirse tan pronto como cese la causa de la suspensión.
+
+*** Artículo 11. Acta de la Asamblea
+
+El Secretario de la Asamblea levantará acta de la misma, que deberá recoger al
+menos los siguientes datos:
+
+- a) La fecha y lugar de celebración.
+- b) El autor de la convocatoria, y en su caso, los propietarios que la
+  hubieren promovido.
+- c) Su carácter ordinario o extraordinario, y si se celebró en primera o
+  segunda convocatoria.
+- d) Relación de los asistentes y sus respectivos cargos, así como de los
+  propietarios representados, con indicación en todo caso de sus cuotas de
+  participación.
+- e) El orden del día de la reunión.
+- f) Los acuerdos adoptados, indicando el resultado de las votaciones, con
+  relación de los votos favorables, en contra, y abstenciones, mencionando el
+  voto de cada comunero.
+
+El acta deberá cerrarse con las firmas del Presidente y del Secretario al
+terminar la reunión o dentro de los treinta días naturales siguientes. Desde
+su cierre los acuerdos adoptados serán ejecutivos.
+
+El acta se comunicará a los comuneros de la misma forma que la convocatoria a
+la Asamblea, publicándose siempre en la web de la Comunidad de Propietarios.
+
+Serán subsanables los defectos o errores del acta, antes de la siguiente
+reunión de la Asamblea, que deberá ratificar la subsanación y el texto
+definitivo del acta anterior.
+
+Los acuerdos adoptados se reflejarán en un libro de actas diligenciado por el
+Registrador de la Propiedad. El Secretario custodiará los libros de actas, y
+deberá conservar durante el plazo de cinco años las convocatorias,
+comunicaciones, apoderamientos y demás documentos relevantes de las reuniones.
+
+*** Artículo 12. Interpretación y modificación de este Reglamento
+
+La interpretación de este Reglamento corresponde a la Junta Gestora, quien
+asimismo podrá proponer a la Asamblea General modificaciones al mismo cuando
+lo considere necesario.
+
+*** Artículo 13. Aprobación y vigencia
+
+Este Reglamento será de aplicación una vez que resulte aprobado por la
+Asamblea general, bastando para ello la mayoría simple de las cuotas de
+participación de los asistentes.
+
+#+latex: \csdparte{II. Asuntos municipales}
+
+** Asuntos municipales
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Ciudad Santo Domingo se ubica en el Municipio de Algete (21.000 habitantes).
+Sus calles no son, por tanto, privadas, sino de carácter urbano. El
+ayuntamiento provee el conjunto de los servicios públicos comunes como:
+alumbrado, limpieza de vías públicas, recogida de basuras, policía local,
+punto limpio, así como el marco legal de convivencia ciudadana y urbanismo. A
+excepción del agua y el servicio de seguridad, que gestiona la comunidad de
+propietarios, la urbanización está afecta a la gestión municipal de Algete.
+Puede acceder a la web del ayuntamiento en
+[[https://aytoalgete.es/][aytoalgete.es]].
+
+La LÍNEA VERDE es un eficaz instrumento para comunicar al ayuntamiento
+incidencias de todo tipo (de seguridad, urbanísticas, de orden público,
+medioambientales, etc.). Esta APP permite además la geolocalización del
+problema: [[http://www.lineaverdealgete.com/][Acceso a Línea Verde Algete]].
+
+** Tenencia de Alcaldía
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Para cualquier otro asunto relacionado con el ayuntamiento, como puede ser
+empadronamientos, solicitud de licencias de obras, permisos de tala de
+árboles, liquidación y aplazamiento de impuestos, presentación de escritos en
+el registro municipal, etc. puede usted personarse de lunes a viernes, de 10
+a 14 h por la TENENCIA DE ALCALDÍA del Ayuntamiento de Algete.
+
+*Teléfono: 916 220 406*\\
+*E-mail: [[mailto:mmontouto@aytoalgete.com][mmontouto@aytoalgete.com]]*
+
+#+attr_latex: :width .8\linewidth
+[[file:pdf/img/conoce-tenencia-alcaldia.jpg]]
+
+** Policía de urbanizaciones
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Esta unidad se creó en febrero de 2022. Integrada por dos agentes dotados de
+un vehículo, patrullan en el ámbito geográfico de Ciudad Santo Domingo y de
+Prado Norte. Esta unidad cuenta con un teléfono móvil propio con el que
+pueden comunicar los vecinos: *659 625 379*.
+
+#+attr_latex: :width .8\linewidth
+[[file:pdf/img/conoce-policia-urbanizaciones.jpg]]
+
+*** Policía Comunitaria de Prado Norte y Santo Domingo
+
+La Unidad de Policía Comunitaria de la Policía Local de Algete se creó en
+febrero de 2022. Esta nueva unidad policial está integrada por dos agentes
+que, dotados de un vehículo, patrullan en el ámbito geográfico de la
+Urbanización Santo Domingo y de Prado Norte. Esta unidad cuenta con un
+teléfono móvil propio con el que pueden comunicar los vecinos: 659 625 379.
+
+El modelo de Policía Comunitaria es un cambio en el paradigma del modelo
+policial, pasando del clásico esquema reactivo en el que el policía
+permanecía ajeno al entorno social para intervenir únicamente cuando se
+detectaba una infracción, a un modelo eminentemente proactivo donde el
+policía es conocedor específico de los problemas sociales que están teniendo
+lugar a su alrededor. Pasa a formar parte del paisaje de cada comunidad,
+involucrándose con los interesados en la búsqueda de soluciones a los
+problemas de convivencia que les afectan.
+
+Hoy en día la seguridad exige un tratamiento muy diferente: desde políticas
+represivas a nivel nacional e internacional para enfrentarse a los fenómenos
+relacionados con el crimen organizado (terrorismo, tráfico de seres humanos,
+drogas ilegales, etc.) hasta la atención de las demandas ciudadanas a nivel
+vecinal o familiar, lo cual precisa de actuaciones de cariz más asistencial
+que policial en el sentido clásico del término. En este contexto podemos
+observar cómo las distintas instituciones policiales van prodigando
+esfuerzos para superar las barreras cognitivas que les separan del
+ciudadano.
+
+Existen muchas campañas de publicidad institucional con consejos sobre
+seguridad doméstica y creación de unidades policiales específicamente
+dedicadas a la interacción con los colectivos más vulnerables, campañas de
+prevención ante diversas situaciones, etc., y todo ello es digno de alabanza,
+pero para llegar a ser un referente comunitario no es suficiente, se
+requiere algo mucho más profundo: redefinir el rol de la policía y ahondar en
+la perspectiva de la comunicación real con el ciudadano. He aquí donde entra
+en escena el modelo de Policía Comunitaria que se va a instaurar en las dos
+urbanizaciones alejadas del casco urbano de Algete.
+
+La filosofía del modelo policial de Policía Comunitaria se basa en principios
+básicos de actuación como son: Descentralización del mando y autonomía de
+gestión; Proximidad a la comunidad; Impulso de participación ciudadana en la
+seguridad; corresponsabilidad del ciudadano con los problemas existentes;
+resolución de problemas, prevención y proactividad, identificación con el
+territorio; multidisciplinariedad de servicios, integración social y
+reconocimiento de capacidades o perfiles adecuados del policía para
+desempeñar las funciones. Con esta filosofía, la figura del Policía
+Comunitario incorpora un importante incremento en la percepción de seguridad
+y de la calidad de vida de la población, así como la cohesión y solidaridad
+social. Uno de los fundamentos principales que define esta nueva Unidad es el
+conocimiento y cercanía que la población tenga de los agentes, lo que se
+consigue con la invarianza de los propios agentes de la Unidad.
+
+Las funciones GENERALES de la policía de proximidad son las encomendadas en
+la legislación policial destacando otras, como: promover y establecer una
+relación más cercana entre la ciudadanía y la Policía Local; aumentar la
+confianza mediante la intervención de la Policía Local orientada al
+conocimiento del entorno y prevención de sus posibles riesgos que permita
+atender las demandas de los habitantes, logrando a su vez la participación
+de la Comunidad; y mejora de la percepción de seguridad en las
+urbanizaciones.
+
+Entre las funciones ESPECÍFICAS de esta patrulla destacan: Realización de la
+entrada y salida de los menores en los centros escolares, de cara a
+colaborar en la prevención y lucha contra el absentismo escolar, prevención y
+lucha con el consumo/tráfico de sustancias ilegales y garantizar una
+convivencia pacífica del alumnado; control de los vertidos vegetales, o de
+otra naturaleza; Intervención en el centro escolar a demanda de la Unidad
+Agente Tutor; comprobación de requisitos y autorización en los rodajes en la
+vía pública, así como del estacionamiento de sus vehículos; control y
+retirada de los vehículos en estado de abandono; reuniones periódicas con
+las autoridades municipales de las urbanizaciones para el buen
+funcionamiento de los servicios policiales; control y supervisión del
+perfecto estado de la señalización vial, farolas, marquesinas de autobús,
+etc.; realización de campañas de la DGT como «control de velocidad»,
+«distracciones al volante, aparcamiento correcto...»; colaboración habitual
+con la Unidad Canina; aumento de los niveles de seguridad y confianza en los
+servicios policiales en el entorno comercial; mantener un contacto diario y
+próximo con la ciudadanía en el mismo espacio geográfico favoreciendo la
+relación con la población; elaborar planes de prevención en materia de
+seguridad ciudadana, Intervención en casos detectados de maltrato animal;
+asistencia y «colaboración temprana» con la Seguridad Privada; actuación
+reguladora en caso de inclemencias atmosféricas o siniestros; apoyo al
+arquitecto municipal en la vigilancia de obras; vigilancia específica de los
+parques públicos y su uso ilícito; vigilancia y actuación policial en el caso
+de sorprender a infractores realizando pintadas o acciones vandálicas.
+
+#+INCLUDE: "./documentos.org::*Procedimiento de recogida de podas" :minlevel 2
+
+** Recogida de basuras
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Igualmente, en la sección de RECOGIDA DE BASURAS, puede usted informarse de
+la normativa vigente para la recogida de residuos urbanos.
+
+*** Anexo 4. Depósito y recogida de residuos vegetales en espacios públicos
+
+**** 1. Objeto
+
+El presente anexo tiene por objeto establecer las condiciones que han de
+regir el depósito y la recogida de restos vegetales producidos durante la
+temporada de poda en el municipio de Algete.
+
+**** 2. Duración
+
+Como norma general, el periodo de poda en el municipio de Algete dura desde
+el 1 de noviembre hasta el 30 de abril de cada año. El Ayuntamiento podrá
+variar este periodo de tiempo informando de ello a los vecinos utilizando
+los medios de comunicación municipales.
+
+**** 3. Condiciones de depósito temporal de restos poda en la vía pública
+
+Durante todo el año los vecinos de Algete podrán llevar restos vegetales a
+los puntos limpios del municipio y depositarlos en los contenedores
+habilitados para ello. El depósito se realizará directamente en el interior
+de los contenedores habilitados para ello, sin utilizar ningún tipo de
+embalaje y evitando, en todo momento, que los restos vegetales vayan
+mezclados con otro tipo de residuos. La cantidad máxima que se puede
+depositar por vecino y por día son 3 bolsas de 240 litros.
+
+***** 3.1. Régimen y frecuencia de prestación del servicio
+
+Dentro del término municipal de Algete existen varias urbanizaciones entre
+las que destaca como un caso particular Santo Domingo por tratarse de en su
+práctica totalidad de parcelas muy grandes con gran cantidad de arbolado y de
+plantas de gran porte establecidas hace muchos años. Por lo tanto la
+prestación del servicio será establecida de la siguiente manera en función
+de las necesidades establecidas bajo criterio técnico:
+
+*3.1.1. Urbanización Santo Domingo*
+
+El servicio consistirá en la retirada y transporte de un número limitado de
+sacas de 1 m³, por temporada de poda y por propiedad, según el protocolo que
+establezca el Ayuntamiento en el proceso de licitación del contrato para la
+*recogida de los restos de poda.*
+
+- Las sacas deben estar llenas, pero sin sobresalir los restos para poderlas
+  manejar en la recogida y transporte. Las sacas medio llenas deben
+  permanecer dentro de las parcelas hasta que estén llenas y listas para la
+  recogida.
+- En las sacas no se pueden depositar restos de talas (ramas de más de 20 cm
+  de diámetro), ni otros residuos que no sean recortes de poda, hojas y
+  hierbas.
+- Los días de recogida serán establecidos por zonas y por decenas del mes
+  según protocolo establecido entre los servicios municipales y la empresa
+  que realice el servicio.
+- No se podrán depositar ramas que excedan 1,5 m de longitud (sin sobresalir
+  de la saca) ni 20 cm de diámetro requiriendo, en este segundo caso, de
+  autorización municipal.
+
+*3.1.2. Prado Norte, Sector 5 y Valderrey*
+
+Los vecinos podrán depositar los restos vegetales en el contenedor de obra
+que será colocado a tal efecto dentro de las urbanizaciones.
+
+Cada vecino podrá depositar restos de poda 1 vez por temporada.
+
+No se podrán depositar ramas que excedan 1,5 m de longitud ni 20 cm de
+diámetro requiriendo, en este segundo caso, de autorización municipal.
+
+*3.1.3. Solicitud del Servicio de Recogida.*
+
+La solicitud de este servicio municipal especial de recogida deberá hacerse
+telefónicamente o por cualquier otro medio de comunicación con el Servicio
+de atención al ciudadano que tiene establecido el Ayuntamiento de Algete para
+las Urbanizaciones o cualquier otra que quede establecida por los Servicios
+Municipales. Así mismo corresponde al usuario del servicio depositar los
+residuos vegetales en el lugar que el servicio le haya indicado, respetando
+las fechas, horarios y protocolos de recogida que se hayan establecido.
+
+*DILIGENCIA DE SECRETARIA Para hacer constar que:*
+
+La presente Modificación de Ordenanza se ha aprobado inicialmente, por el
+Ayuntamiento Pleno, en sesión celebrada el día 29 de julio de 2021, con el
+quórum legal de la mayoría absoluta, para que así conste en su exposición al
+público a través de anuncio en el BOCM, página web, en el tablón de edictos
+de la Casa Consistorial y de la sede electrónica, durante el plazo de
+treinta días hábiles, con plazo común para consultar el expediente y
+formular alegaciones.
+
+[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/Modificacion_Ordenanza_Residuos.pdf][Normativa de residuos (PDF, Ayto. de Algete)]]
+
+** Desbroce de parcelas
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Los propietarios de parcelas están obligados a mantenerlas desbrozadas en
+evitación de incendios estivales.
+
+[[https://ciudadsantodomingo.org/docs/desbroce-parcelas.pdf][Bando municipal sobre desbroce de parcelas (PDF)]]
+
+** Ordenanzas de convivencia
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+La convivencia ciudadana en el municipio se regula mediante la
+correspondiente ordenanza municipal que puede usted consultar y descargar en
+la sección ORDENANZA MUNICIPAL DE CONVIVENCIA CIUDADANA.
+
+[[https://ciudadsantodomingo.org/docs/ordenanza-convivencia.pdf][Ordenanza municipal de convivencia (PDF)]]
+
+** Ordenanza de ruidos
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+El nivel de ruido es un factor de gran repercusión en la calidad de vida de
+las personas. Por esta razón, los ayuntamientos han promulgado ordenanzas
+protectoras y reguladoras para garantizar el respeto de los niveles sonoros
+adecuados para cada área, como puedan ser residencial, hospitalaria,
+educativa, comercial, industrial, etc.
+
+El territorio de Algete se rige por la ORDENANZA DE RUIDOS DE ALGETE
+publicada en el B.O.C.M el 20 de marzo de 2009, Nº 67. Al tratarse de un
+texto público, todos los ciudadanos pueden acceder a esta ordenanza, si bien
+su contenido resulta extenso y de carácter muy técnico.
+
+Resumimos a continuación algunas nociones básicas con relación a la medición
+del ruido así como a la referida ordenanza.
+
+La repercusión sonora se mide, entre otras métricas, con decibelios. En
+acústica, el decibelio es la medida utilizada para expresar el nivel de
+potencia o el nivel de intensidad del sonido. No es una expresión lineal,
+sino logarítmica. Un aumento de tres decibelios en el nivel de sonido
+representa una duplicación de la intensidad del ruido. Por ejemplo, una
+conversación normal puede ser de aproximadamente 60 dB y, por lo general, un
+grito es de 80 dB. Aunque la diferencia es de tan sólo 20 dB, el grito es 30
+veces más intenso. Un aumento de tres decibelios en el nivel de sonido ya
+representa una duplicación de la intensidad del ruido. Su escala logarítmica
+es adecuada para representar el espectro auditivo del ser humano, ya que
+además de la intensidad, es necesario controlar el tiempo que nos exponemos
+a él.
+
+Ld: Es un indicador de ruido asociado al día, que puede definirse como el
+nivel sonoro medio a largo plazo determinado a lo largo de todos los
+períodos diurnos de un año, donde al día le corresponden 12 horas, en el
+período que se extiende desde las 7 hasta las 19 horas.
+
+Le: Es un indicador del nivel sonoro durante la tarde, definido como el
+nivel sonoro medio a largo plazo determinado a lo largo de todos los
+períodos vespertinos de un año, donde a la tarde le corresponden 4 horas, en
+el período que se extiende desde las 19 hasta las 23 horas.
+
+Ln: Los niveles sonoros nocturnos han demostrado ser más molestos para las
+personas debido a las alteraciones que pueden provocar en el sueño. Ln es un
+indicador del nivel sonoro durante la noche, período especialmente protegido
+por corresponder habitualmente a horas de descanso, razón por la que los
+límites máximos del período noche son siempre inferiores a los de los
+períodos día y tarde. Se define como el nivel sonoro medio a largo plazo
+según todos los períodos nocturnos de un año, donde a la noche le
+corresponden 8 horas, en el período que se extiende desde las 23 hasta las 7
+horas, que podría variar según las ordenanzas.
+
+Para zonas residenciales, el índice acústico máximo se fija en:
+
+#+begin_quote
+Ld: 66 dB\\
+Le: 65 dB\\
+Ln: 55 dB
+#+end_quote
+
+En el interior de las viviendas este índice se reduce a:
+
+#+begin_quote
+Para las estancias: Ld: 45 dB; Le: 40 dB y Ln: 35 dB\\
+Y para los dormitorios: Ld: 40 dB; Le: 40 dB y Ln: 30 dB
+#+end_quote
+
+Determinadas áreas geográficas pueden verse afectadas por lo que se denomina
+«servidumbre acústica». Este es el caso, por ejemplo, de zonas afectadas por
+las infraestructuras aeroportuarias o ferroviarias.
+
+Determinadas actividades puntuales como la organización de conciertos al
+aire libre, ferias u otros eventos, que prevean rebasar los niveles
+permitidos, deben solicitar autorización en el ayuntamiento.
+
+Queda igualmente restringido el uso de sirenas o bocinas excepto para
+circunstancias de atropello o inminente colisión, o bien para vehículos
+autorizados como ambulancias, policía o bomberos.
+
+Con carácter general, se prohíbe el uso de sistemas de reclamo o
+reproducción de sonido que no haya sido previamente autorizado. Igualmente,
+la maquinaria de trabajo, o corta césped deben cumplir la normativa vigente
+y su correspondiente homologación industrial.
+
+En el Artículo 28 de la Ordenanza del ayuntamiento de Algete se refiere al
+Comportamiento de los ciudadanos en la vía pública y en la convivencia
+diaria. Y dice así:
+
+Art. 28. La generación de ruidos en las vías públicas y en zonas de pública
+concurrencia, como calles, plazas y parques, y en el interior de los
+edificios, deberá ser mantenida dentro de unos límites que exige la
+convivencia ciudadana y, en todo caso, nunca deberá sobrepasar los niveles
+de ruidos que se establecen con carácter general.
+
+2. [@2] Principalmente en el horario nocturno (entre las 23.00 y las 7.00
+   horas), se tendrá especial cuidado en evitar el ruido producido por:
+   - a) Los tonos excesivamente altos de voz humana y los ruidos procedentes
+     de la actividad directa de las personas.
+   - b) Ruidos y sonidos emitidos por animales domésticos.
+   - c) Utilización de instrumentos y aparatos musicales y acústicos.
+
+Art. 29. Actividades prohibidas en el interior de las viviendas.
+
+En el interior de las viviendas queda expresamente prohibido:
+
+- a) Realizar trabajos y reparaciones domésticas entre las 22.00 y las 8.00
+  horas del día siguiente.
+- b) Realizar trabajos de bricolaje de forma asidua cuando los ruidos
+  producidos durante su ejecución superen los máximos niveles establecidos
+  con carácter general.
+- c) Cantar, gritar u organizar fiestas o reuniones sin la debida
+  autorización cuando el ruido producido supere lo establecido con carácter
+  general.
+- d) Los aparatos de radio, televisión y otros instrumentos musicales
+  deberán ajustar su volumen de forma que no sobrepasen los niveles de ruido
+  establecidos con carácter general. Asimismo, la utilización de
+  instrumentos musicales y acústicos deberá ajustarse a dichos niveles.
+
+Art. 30. Actividades prohibidas en espacios abiertos.
+
+En espacios abiertos queda expresamente prohibido:
+
+- a) Cantar, gritar, vociferar de manera reiterada y que ocasione molestias
+  a terceras personas.
+- b) Utilizar altavoces u otros dispositivos sonoros con fines de
+  propaganda, publicidad o reclamo.
+- c) Utilizar aparatos o instrumentos musicales o acústicos de forma que
+  puedan ocasionar molestias a terceras personas.
+- d) La organización de fiestas, espectáculos o actos similares cuando
+  sobrepasen los niveles de ruido que se establecen con carácter general.
+  Por razones de organización de actos tradicionales o con especial
+  proyección oficial, cultural o de naturaleza análoga, el alcalde u órgano
+  en quien delegue podrá adoptar las medidas necesarias para modificar, con
+  carácter temporal y en determinadas zonas, los niveles de ruidos
+  admisibles.
+- e) El uso de cohetes y petardos de acuerdo con la normativa vigente.
+- f) Quedan asimismo prohibidos, de forma general genérica, la realización
+  de cualquier actividad o comportamiento, individual o colectivo, que
+  conlleve una perturbación por ruidos para el vecindario, evitable con la
+  observancia de una conducta cívica.
+
+Existen normas específicas para bares, tabernas, cafeterías y restaurantes.
+
+El artículo 56 regula las Autorizaciones para manifestaciones, fiestas, actos
+culturales, etcétera. Y dispone:
+
+1. Las manifestaciones populares en la vía pública o en espacios abiertos de
+   carácter comunal o vecinal derivadas de la tradición, como verbenas,
+   fiestas, ferias, etcétera; los actos cívicos, culturales o recreativos
+   excepcionales, y todas las otras que tengan un carácter parecido deberán
+   disponer de autorización municipal expresa, la cual impondrá condiciones
+   en atención a la posible incidencia por ruidos en la vía pública según la
+   zona donde tenga lugar.
+2. Ante el incumplimiento de lo que establece el apartado anterior, el
+   personal acreditado del Ayuntamiento podrá proceder a paralizar
+   inmediatamente el acto, sin perjuicio de la correspondiente sanción.
+
+Por último, mencionar que existe un régimen sancionador para los
+incumplimientos en cualquiera de las obligaciones que prevé la ordenanza.
+Cualquier vecino podrá instar denuncia si se siente afectado o detecta
+agresiones sonoras. Las sanciones pueden calificarse de leves, con multas de
+hasta 600 €, graves, con multas que pueden alcanzar hasta los 12.000 € y muy
+graves, que se podrían llegar a sancionar con 300.000 €.
+
+[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM%20Ordenanza%20de%20ruidos%20Algete.pdf][Ordenanza municipal de ruidos (PDF, Ayto. de Algete)]]
+
+** Ordenanzas sobre animales
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+Los animales, ya sean mascotas o animales que viven en libertad, constituyen
+una materia de constante atención por parte de los ayuntamientos. A este
+respecto, el territorio de Algete se rige por la ORDENANZA REGULADORA DE LA
+TENENCIA Y PROTECCIÓN DE ANIMALES publicada en el B.O.C.M el 17 de diciembre
+de 2021, Nº 300. Al tratarse de un texto público, todos los ciudadanos
+pueden acceder a esta ordenanza.
+
+La ordenanza, muy detallada y completa, debe ser conocida por todas las
+personas responsables de animales domésticos o alimentadores de animales en
+libertad. Puede consultarse en el enlace que figura al final de este
+apartado. En Ciudad Santo Domingo, por tratarse de una zona residencial con
+jardines y colindante con campo abierto, son muy numerosas las casas en las
+que habitan mascotas, que suelen ser un miembro más de la familia y es
+frecuente haberse encontrado con situaciones que nos provocan dudas respecto
+a cómo se debe actuar, cuáles son nuestras obligaciones, nuestros derechos y
+los recursos que el ayuntamiento destina a esta materia.
+
+El principio fundamental que subyace a la ordenanza es la prohibición
+absoluta de cualquier acto de maltrato, crueldad o práctica que pueda
+producir sufrimiento, daños o muerte a los animales. Y, derivado de esta
+idea nuclear, se determinan las prohibiciones y obligaciones que se deben
+respetar en la tenencia de animales. Estas normas tienen lógicamente en
+cuenta las responsabilidades frente a terceros y en relación con los
+espacios públicos.
+
+A continuación reproducimos el índice de las principales materias que se
+pueden consultar en la ordenanza.
+
+- Normas para la tenencia de animales en el domicilio y en otros espacios
+  privados
+- Documentación de la que debe disponer el propietario de animales
+- Obligación de colaborar con la administración para la protección de los
+  animales
+- Controles sanitarios, identificación de los animales y seguros
+- Observación antirrábica y agresiones a personas o entre los animales
+- Animales potencialmente peligrosos
+- Animales silvestres, exóticos y de explotación
+- Animales abandonados, extraviados y vagabundos
+- Focos felinos-colonias de gatos ferales
+- Animales heridos, enfermos y muertos
+- Desalojo y retirada de Animales
+- Regulación de los Centros y empresas de animales de compañía
+- Prohibiciones generales respecto a los animales
+- Inspecciones municipales
+- Infracciones y Sanciones
+
+El texto completo de la ordenanza no se reproduce en este documento; puede
+consultarse en la web del Ayuntamiento de Algete:
+[[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM_ORDENANZA_TENENCIA_ANIMALES_2021.pdf][Ordenanza municipal de tenencia y protección de animales (PDF, Ayto. de Algete)]].
+
+** Ordenanzas del Plan Parcial de Ordenación
+:PROPERTIES:
+:PORTADILLA: no
+:END:
+
+# RESUMEN REDACTADO — revisar
+Las Ordenanzas del Plan Parcial de Ordenación de Ciudad Santo Domingo fueron
+aprobadas por la Comisión de Planeamiento y Coordinación del Área
+Metropolitana de Madrid el 31 de enero de 1968 (B.O. de la Provincia de 23
+de octubre de 1968), con una modificación aprobada por el Consejo de
+Ministros el 6 de junio de 1980 (B.O.E. de 11 de agosto de 1980). Regulan su
+contenido y vigencia, los permisos de obra, la zonificación y los usos del
+suelo (zonas, sectores, zonas verdes públicas y viales), así como las
+condiciones de parcelación y edificación de las parcelas residenciales y no
+residenciales. Para ejecutar cualquier obra dentro del ámbito del Plan
+Parcial se precisa un permiso que se solicita al Ayuntamiento.
+
+[[https://ciudadsantodomingo.org/docs/Otros/Ordenanzas.pdf][Ordenanzas del Plan Parcial de Ordenación (PDF)]]
+

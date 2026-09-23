@@ -1,0 +1,121 @@
+#+TITLE: Informe de la revisión de estilo de la web y los dosieres
+#+DATE: 23 de septiembre de 2026
+#+LANGUAGE: es
+#+STARTUP: showall
+
+* Objetivo y criterios acordados
+
+La web y los PDF tienen dos fines de igual peso: informar a los vecinos y
+servir de escaparate de la urbanización. El estilo debe reforzar la buena
+imagen sin resultar excesivo, porque el exceso suscita sospechas. Por tanto:
+información exacta y útil, lenguaje claro y profesional, sin inventar nada
+que no esté ya en las dos fuentes (=index.org= y =documentos.org=).
+
+Criterios concretos acordados el 23 de septiembre de 2026:
+
+1. *Un registro común.* La web bajaba hacia el folleto («exclusiva
+   urbanización», «calidad de vida excepcional», «absoluta prioridad»,
+   «magnífica oferta», «rigurosa ordenanza») y los dosieres subían desde la
+   circular interna («+/-1.000 parcelas», «…etc», «Atentos saludos»). Se
+   igualan en un registro descriptivo y concreto, sin superlativos ni
+   adjetivos de relleno.
+2. *Tratamiento de usted* en todo, incluida la carta del presidente y las
+   páginas legales.
+3. *Los textos legales y oficiales no se reescriben por estilo*: Estatutos,
+   Reglamento de la Asamblea, resúmenes de ordenanzas, aviso legal y política
+   de privacidad. Solo erratas y tratamiento de usted.
+4. *Los datos que no cuadran entre las fuentes no se tocan.* Se anotan en el
+   anexo A y los aclara la Junta.
+5. *Agua de los pozos.* El compendio dice que la normativa recomienda no beber
+   el agua de pozo por exceso de arsénico; la web lo evitaba con un eufemismo
+   («para una mayor comodidad y en total cumplimiento de las directrices
+   sanitarias»). Se adopta una redacción neutra e idéntica en web y PDF: el
+   agua de pozo se destina a usos distintos del consumo humano y el agua de
+   boca llega del Canal de Isabel II.
+6. *Perspectiva temporal.* Los textos escritos desde 2022 («en 2020 hemos
+   contratado», «temporada 21/22») pasan a pretérito neutro y se quita la
+   referencia a la temporada del protocolo de poda. La fecha de portada de
+   los dosieres se actualiza.
+7. *Forma de trabajo.* Se editan directamente los dos =.org= por fases (web;
+   dosieres sueltos; capítulos propios del compendio). Este informe recoge
+   solo los cambios de fondo; las erratas se corrigen de oficio y no se
+   listan. No se hace commit hasta que el usuario lo indique.
+
+Criterios menores aplicados de oficio:
+
+- «Dosier» (grafía de la RAE) en lugar de «dossier».
+- «Policía Local» de Algete en todos los casos; la web alternaba con «Policía
+   Municipal».
+- Los enlaces de descarga llevan el título real del documento entre comillas
+  («Descargar «Gestión del agua» (PDF)») en lugar de descripciones vagas.
+
+* Advertencia para la Junta: la cita de la portada
+
+La portada de la web cierra su presentación con esta cita atribuida a la
+Junta Gestora:
+
+#+begin_quote
+Somos una gran comunidad en la que impera una convivencia ordenada y
+tranquila aunque, desde el punto de vista de gestión, no exenta de
+complejidad e inquietudes.
+#+end_quote
+
+La segunda mitad («no exenta de complejidad e inquietudes») introduce una
+nota negativa en la primera pantalla que ve cualquier visitante. No se ha
+tocado. Opciones: dejarla, retirarla o recortarla a la primera frase. Se
+decidirá en la Junta.
+
+* Fase 1: web (=index.org=) — hecha
+
+Se han reescrito todos los textos de presentación de las cuatro páginas
+públicas (Inicio, Asuntos de la Comunidad, Asuntos Municipales, Área
+Privada). En el aviso legal y la política de privacidad solo se ha pasado el
+tuteo a usted. Cambios de fondo, es decir, los que van más allá de quitar
+adjetivos:
+
+| Página / sección                   | Cómo aparecía                                                                                                   | Cómo queda                                                                                                          | Por qué                                                                                   |
+|------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------|
+| Inicio, red de agua                | «...se complementa de forma independiente con el suministro del CYII, garantizando la máxima calidad de servicio» | «Una segunda red, independiente, suministra el agua de consumo del Canal de Isabel II.»                              | Criterio 5.                                                                               |
+| Asuntos Comunidad, gestión del agua | «Para una mayor comodidad y en total cumplimiento de las directrices sanitarias, ... segunda red de agua sanitaria» | «De acuerdo con la normativa sanitaria, el agua de los pozos se destina a usos distintos del consumo humano. Para el agua de boca...» | Criterio 5.                                                                               |
+| Asuntos Comunidad, gestión del agua | «distribución eficiente por gravedad a toda la urbanización»                                                    | «se distribuye por gravedad a la mayor parte de la urbanización»                                                    | El dosier dice que dos sectores se abastecen con grupos de presión.                       |
+| Asuntos Comunidad, gestión del agua | «Las estaciones de bombeo se nutren de energía sostenible procedente de dos parques fotovoltaicos»              | «se alimentan en parte con energía de dos parques fotovoltaicos propios»                                            | El dosier no afirma que toda la energía sea solar. El número de parques queda en el anexo A. |
+| Inicio, gobernanza                 | «Junta Gestora ... ratificada en sus asambleas generales»                                                       | «Junta Gestora elegida por la Asamblea General»                                                                     | Es lo que dicen Estatutos y Reglamento.                                                   |
+| Inicio, línea 166                  | Un solo punto de lista colgado bajo la línea 171                                                                | Subsección propia «Línea 166 — enlace con Metro»                                                                    | Legibilidad.                                                                              |
+| Inicio, galería                    | Pies «Servicios religiosos», «Centro salud», «Servicio postal»                                                  | «Parroquia», «Consultorio médico», «Oficina de Correos»                                                             | Nombres reales de lo que muestra la foto; el texto habla de consultorio, no de centro de salud. |
+| Asuntos Comunidad, consejos        | «hemos elaborado una serie de recomendaciones prácticas para asegurar una convivencia respetuosa»               | Enumera los capítulos del documento (competencias, seguridad e incendios, tráfico, residuos, ruidos, animales, sanidad) | Dice al lector qué va a encontrar.                                                        |
+| Asuntos Comunidad, directorio      | Título «Servicios públicos»                                                                                     | «Teléfonos de interés»                                                                                              | La tabla incluye farmacia, parroquia y centro comercial, que no son servicios públicos.  |
+| Asuntos Comunidad, compendio       | Sección «Documento de referencia» con descripción genérica                                                      | Sección «Conoce Ciudad Santo Domingo» que enumera el contenido (historia, servicios, estatutos, reglamento, normativa municipal) | Ídem.                                                                                     |
+| Asuntos Municipales, ordenanzas    | Descripciones retóricas («El civismo y el respeto mutuo están regulados...», «vela por el sosiego acústico»)     | Qué regula cada norma, tomado del capítulo correspondiente del compendio                                            | Precisión.                                                                                |
+| Asuntos Municipales, policía       | Solo el teléfono                                                                                                | Se añade el horario (lunes a viernes, 8:00 a 14:00), que ya figuraba en Inicio                                       | Utilidad; el dato ya estaba en la fuente.                                                 |
+| Área Privada, presentación         | «consultar ... sus datos registrados en el censo comunitario y gestionar sus trámites»                          | «consultar de forma privada sus datos, sus facturas y las comunicaciones de la Comunidad»                            | El tutorial dice que los cambios de datos se piden por correo: no hay trámites en la plataforma. |
+| Área Privada, registro             | «requiere un registro de usuario previo y validado»                                                             | Se indica que hacen falta el número de contrato y el importe de la última factura, que figuran en los recibos        | Dato del tutorial; evita que el vecino empiece sin lo necesario.                          |
+| Área Privada, soporte              | «incidencia técnica durante el alta o consultas de acceso»                                                      | Se añade «o necesita actualizar sus datos»                                                                          | El tutorial remite a ese correo para actualizar datos.                                    |
+| Inicio, enlace «Área Privada»      | URL absoluta a ciudadsantodomingo.org/oficina-virtual/                                                          | Enlace interno =abs:/oficina-virtual/=                                                                              | En la vista previa de GitHub Pages el enlace absoluto salía del sitio.                    |
+
+** Dudas de contenido detectadas en la web (no cambiadas)
+
+- Inicio dice que en la Oficina Virtual se consultan «actas de las
+  asambleas, estatutos vigentes, presupuestos anuales y tarifas». El tutorial
+  solo menciona datos personales, parcela, facturas, matrículas y circulares.
+  Conviene confirmar qué ofrece realmente la plataforma.
+- Inicio: «Fundada en 1976». Véase el anexo A.
+
+* Fase 2: dosieres sueltos (=documentos.org=) — pendiente
+
+* Fase 3: capítulos propios del compendio — pendiente
+
+* Anexo A. Datos que no cuadran entre las fuentes
+
+No se ha cambiado ninguno. Para aclarar en la Junta.
+
+| Dato                    | Web / compendio                                              | Dosier «Gestión del agua» u otro capítulo                                                 |
+|-------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------|
+| Concesión anual de agua | 2.071.611 m³ (web y capítulo «Gestión del agua» del compendio) | 2.084.228 m³ (dosier)                                                                     |
+| Pozos                   | «once pozos propios»                                         | 11 perforados, 8 plenamente operativos                                                    |
+| Parques fotovoltaicos   | dos                                                          | «3 parques solares» contratados en 2020; el mismo párrafo cierra con «Ambos parques»       |
+| Superficie              | 702 Ha (carta del presidente)                                | 752 Ha (capítulo «Historia», datos básicos)                                               |
+| Residentes              | «casi 4.500» (consejos prácticos), «más de 4.500» (historia) | «+/-5.000» (dosier de agua)                                                               |
+| Parcelas                | «cerca de un millar» (web), «950» (historia)                 | «+/-1.000» (dosier de agua)                                                               |
+| Fundación / constitución | Fundada en 1976 (web, carta, historia)                      | Comunidad constituida en 1966 (dosier de agua); constituida como sociedad civil el 22-7-1970 (historia); «se empezó a poblar a principios de los 70», antes de la fundación |
+| Acceso por carretera    | A-1 (web)                                                    | N1 (compendio)                                                                            |
+| Concesión, vigencia     | —                                                            | «hasta octubre de 2038» (solo en el dosier)                                               |

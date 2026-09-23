@@ -1,0 +1,214 @@
+#+TITLE: Informe de cambios: nombres propios y contenidos retirados de la web y los PDF
+#+DATE: 23 de septiembre de 2026
+#+LANGUAGE: es
+#+STARTUP: showall
+
+* Alcance y criterio
+
+Revisión de nombres de personas en:
+
+- la web (fuente =index.org=);
+- los dosieres PDF nuevos (fuente =documentos.org=);
+- los PDF que hoy se publican en =docs/= (y =docs/Otros/=, que no enlaza la web).
+
+Criterio acordado:
+
+1. Se retiran los nombres de personas ligados a un cargo que cambia con el
+   tiempo (empleados, agentes, miembros de la Junta). Se sustituyen por el
+   cargo o se eliminan. Los correos de servicios públicos se mantienen.
+2. Se retira completo el recuadro con la composición de la Junta Gestora.
+3. Se retira todo lo relativo al partido político Unión Santo Domingo (USD).
+4. Se mantienen las firmas de cargos públicos en documentos oficiales y los
+   nombres que forman parte de documentos históricos escaneados.
+5. En «Conoce Ciudad Santo Domingo» se retiran el capítulo sobre el ruido de
+   los sobrevuelos de aviones y el párrafo que describe los sobrevuelos y los
+   litigios, para no perjudicar la imagen de la urbanización ante quien no la
+   conoce. Se mantienen la Asociación contra el ruido de aviones en la tabla de
+   competencias (es una asociación vecinal más) y el consejo sobre drones.
+6. Se retiran del compendio los datos fechados en 2021-2022 (presupuesto,
+   auditoría, cuotas y tarifas), pendientes de que la Junta decida qué
+   publicar.
+7. No se reproducen en el compendio los textos legales completos (Plan
+   Parcial, Ordenanza de animales): se resumen y se enlaza el texto oficial.
+
+Estado: todos los cambios están *hechos* en las fuentes (=index.org= y
+=documentos.org=), incluido el compendio «Conoce Ciudad Santo Domingo», que
+ya está migrado (85 páginas frente a 143) y se genera en
+=pdf/build/conoce-csd.pdf=. Hasta que se publiquen los PDF nuevos (=make pdf-docs=) y
+se despliegue la web, los ficheros publicados siguen conteniendo los textos
+antiguos.
+
+* Nombres retirados
+
+** Web (=index.org=)
+
+Sin nombres que retirar. (El correo de la Tenencia se retiró y se ha
+vuelto a poner: es el correo público del servicio; ver «Nombres que se
+mantienen».)
+
+** Dosier «Seguridad» (=documentos.org=, =seguridad.pdf=) — hecho
+
+| Dónde                          | Cómo aparecía                                                                                                                       | Cómo queda                                                                                                          |
+|--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------|
+| Consejos genéricos, 2.º punto  | «La Comunidad tiene en plantilla un Director de Seguridad: D. Ernesto Cerrato. Consúltele todas sus dudas, él podrá asesorarle y le prestará el apoyo que necesite.» | «La Comunidad cuenta en plantilla con un Director de Seguridad. Consúltele todas sus dudas: podrá asesorarle y le prestará el apoyo que necesite.» |
+
+** Dosier «Recogida de podas» (=documentos.org=, =recogida-podas.pdf=) — hecho
+
+| Dónde                                  | Cómo aparecía                                                                                                  | Cómo queda                                                                                   |
+|----------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------|
+| Protocolo, punto 5                     | «Se deben solicitar las sacas en la Tenencia de Alcaldía (Srta. Myriam) ya sea presencialmente, por teléfono o por e mail.» | «Se deben solicitar las sacas en la Tenencia de Alcaldía ya sea presencialmente, por teléfono o por e-mail.» |
+
+** Tutorial «Oficina Virtual» (=documentos.org=, =tutorial-oficina-virtual.pdf=) — hecho
+
+| Dónde                          | Cómo aparecía                                                                                                          | Cómo queda                                                                                              |
+|--------------------------------+------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------|
+| Factura de ejemplo (imagen)    | Nombre y calle de una vecina bajo «Dirección postal», tachados con rotulador pero *legibles* a resolución completa.     | Tapados con bloques opacos, igual que razón social, n.º de recibo, IBAN y n.º de contrato.               |
+
+** Compendio «Conoce Ciudad Santo Domingo» (=conoce-csd.pdf=) — hecho
+
+| Página | Cómo aparecía                                                                                                                                                  | Cómo quedará                                                                                                           |
+|--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
+|      5 | Firma de la «Carta del presidente»: «Jaime del Barrio / Presidente de la Comunidad de Propietarios»                                                           | «El Presidente de la Comunidad de Propietarios»                                                                         |
+|     26 | Capítulo «Unión Santo Domingo», que termina: «…por los vecinos y miembros de la junta gestora: Gonzalo Fernández Atela y Óscar Vega Arribas.»                  | Capítulo eliminado completo (ver «Secciones retiradas»).                                                               |
+|     50 | «Director de Seguridad: D. Ernesto Cerrato» (mismo texto que el dosier «Seguridad»)                                                                            | Igual que en el dosier: «un Director de Seguridad», sin nombre.                                                        |
+|     69 | Recuadro «Junta Gestora resultado de la Asamblea de 14 de mayo de 2022»: presidente Jaime del Barrio Pisón; vicepresidente Jesús Coca Gradin; vocales Óscar Vega Arribas, Gonzalo Fernández Atela, Jorge Barrondo Carvalhao-Novais, María Fustero San Agustín, Antonio Zulueta Taboada, Ignacio Asín Aldoma. | Recuadro eliminado completo. El capítulo «Junta Gestora y Gerencia» conserva el extracto de los estatutos y las funciones de la Gerencia. |
+|     84 | Policía urbanizaciones: «Esta nueva unidad policial está integrada por dos agentes concretos: el inspector Fran Martínez y el agente Félix Francia, quienes, dotados de un vehículo, patrullan en el ámbito geográfico de la Urbanización Santo Domingo y de Prado Norte.» | «Esta nueva unidad policial está integrada por dos agentes que, dotados de un vehículo, patrullan en el ámbito geográfico de la Urbanización Santo Domingo y de Prado Norte.» |
+|     87 | «Tenencia de Alcaldía (Srta. Myriam)»                                                                                                                          | «Tenencia de Alcaldía» (igual que el dosier «Recogida de podas»).                                                      |
+
+* Nombres que se mantienen
+
+| Nombre                                   | Dónde                                                                                   | Por qué se mantiene                                                                                                                                      |
+|------------------------------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Estrella Pereda, Concejal de Medio Ambiente | Firma de la carta del dosier «Recogida de podas» (=documentos.org=); también =docs/Otros/PROTOCOLO-PODA-…-firmado.pdf= | Cargo público que firma un comunicado oficial del Ayuntamiento, fechado (octubre 2021). *Nota:* el protocolo es de la temporada 21/22; al actualizarlo cambiará la firma. |
+| D. Saturnino Polanco Prieto              | Imagen escaneada de la concesión de aguas de 2001 («Gestión del agua», y =conoce-csd.pdf= p. 43) | Documento oficial histórico de la Confederación Hidrográfica, dirigido a él como representante de la Comunidad. Se puede tapar si se prefiere.               |
+| Juan Jesús Valle García, alcalde-presidente | Firma de =docs/desbroce-parcelas.pdf= (bando) y de =docs/ordenanza-convivencia.pdf= (BOCM, p. 16) | Documentos oficiales del Ayuntamiento, publicados tal cual; no se modifican.                                                                           |
+| D. Enrique Giménez Arnau y Gran, notario | =conoce-csd.pdf= p. 37 y 66 (Estatutos)                                                 | Dato jurídico de la escritura de los Estatutos (22 de julio de 1970); forma parte del documento legal.                                                  |
+| =mmontouto@aytoalgete.com=               | Web (Asuntos municipales › Tenencia de Alcaldía), dosier «Recogida de podas» (datos de contacto), =conoce-csd.pdf= p. 83 y 89 | Es el correo público de atención de la Tenencia de Alcaldía (servicio público). Se retiró en la primera pasada y se ha restaurado.               |
+| Adolfo Suárez                            | =conoce-csd.pdf= p. 96                                                                  | Solo como nombre del aeropuerto («Adolfo Suárez Madrid-Barajas»).                                                                                        |
+| Nombres de negocios con nombre propio («Carlos Conde Peluqueros», «La Mercería de Carmen», «Escuela de Danza Cristina Santos», «Frutería Ruiz y González», «Construcciones Alcañiz de la Guía») | =index.org=, Directorio de servicios | Son nombres comerciales, y además esas líneas están comentadas: no se publican.                                                                          |
+
+* Secciones retiradas
+
+** Por neutralidad política (USD) y privacidad
+
+| Sección                                      | Dónde                              | Qué se retira                                                                                                               | Estado                   |
+|----------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------------------|
+| Unión Santo Domingo                          | =conoce-csd.pdf= p. 26             | Capítulo completo: presentación del partido, su historia, su papel en el gobierno municipal y sus dos concejales.           | Hecho   |
+| Entrada «Unión Santo Domingo» del índice     | =conoce-csd.pdf= p. 3              | La línea del índice (el índice nuevo se genera solo).                                                                       | Hecho   |
+| Junta Gestora: composición                   | =conoce-csd.pdf= p. 69             | Recuadro con los ocho nombres y cargos.                                                                                     | Hecho   |
+
+** Por el ruido de aviones
+
+| Sección / párrafo                             | Dónde                                | Cómo aparecía                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Cómo queda                                                                                                                                                                                                                                                              | Estado                 |
+|-----------------------------------------------+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------|
+| Capítulo «Ruido de aviones»                   | =conoce-csd.pdf= p. 53-56 y índice p. 3 | Capítulo completo: historia de las ampliaciones de Barajas, configuración Sur, asociación contra el ruido, sentencias del Tribunal Supremo y «avances logrados».                                                                                                                                                                                                                                                                                                                                                                                              | Capítulo y entrada del índice eliminados.                                                                                                                                                                                                                              | Hecho |
+| «Ordenanzas de ruidos», 2.º párrafo            | =conoce-csd.pdf= p. 96                  | «Determinadas áreas geográficas pueden verse afectadas por lo que se denomina “servidumbre acústica”. Este es el caso, por ejemplo de zonas afectadas por las infraestructuras aeroportuarias o ferroviarias. En el caso de Ciudad Santo Domingo, la urbanización no se encuentra oficialmente afecta por ninguna servidumbre aeronáutica. Sin embargo, se da la circunstancia de que cuando el aeropuerto Adolfo Suarez - Madrid Barajas opera en configuración Sur […] se producen centenares de sobrevuelos diarios sobre la urbanización […] Este hecho ha sido denunciado en los tribunales […] el daño, a pesar de resultar manifiestamente ilegal, persiste hoy en día.» | «Determinadas áreas geográficas pueden verse afectadas por lo que se denomina «servidumbre acústica». Este es el caso, por ejemplo, de zonas afectadas por las infraestructuras aeroportuarias o ferroviarias.» Se eliminan la frase «En el caso de Ciudad Santo Domingo, la urbanización no se encuentra oficialmente afecta…» y todo lo que sigue sobre sobrevuelos y litigios. | Hecho |
+
+Se mantienen:
+
+- *Web, tabla de competencias*: «Asociación contra el ruido de aviones» (se
+  retiró en una primera pasada y se ha restaurado: es una asociación vecinal
+  como las demás de la lista). Igual en la tabla de competencias del
+  compendio (p. 25).
+- *«Consejos prácticos», 28. Drones* (dosier y compendio p. 20): texto
+  original sin cambios («…un área afectada por el aeropuerto de Madrid
+  Barajas…»). Se reescribió en una primera pasada y se ha restaurado.
+- =docs/Otros/ruido-aviones.pdf=: se mantiene en el repositorio (se llegó a
+  borrar y se ha restaurado). Nota: la web no lo enlaza, pero =make assets=
+  copia =docs/= entero a =public/=, así que se sube al servidor y es accesible
+  en =/docs/Otros/ruido-aviones.pdf= para quien conozca la dirección.
+- =conoce-csd.pdf= p. 36, «Ubicación»: «…a 17 Km del Aeropuerto…», dato de
+  situación.
+
+** Datos fechados en 2021-2022 (pendiente de decisión de la Junta)
+
+Se retiran del compendio para que no se publiquen datos caducados. *Pregunta
+para la Junta:* ¿se publican con datos actualizados, se enlazan desde la
+Oficina Virtual o se omiten?
+
+| Sección                               | Dónde                  | Contenido retirado                                                                                                   |
+|---------------------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------|
+| Presupuesto                            | =conoce-csd.pdf= p. 75-76 | Portadilla y tabla «Presupuestos 2022».                                                                              |
+| Informe de auditoría                   | =conoce-csd.pdf= p. 77-78 | Dos páginas escaneadas del informe de auditoría del ejercicio 2021.                                                  |
+| Cuotas de mantenimiento y precios      | =conoce-csd.pdf= p. 79-80 | Cuotas por tipo de parcela (920 parcelas) y tarifas del agua de la red propia, con importes de 2022.                 |
+
+** Textos legales completos y secciones vacías
+
+| Sección                                          | Dónde                     | Qué se hace                                                                                                            |
+|--------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------|
+| Ordenanzas del Plan Parcial de Ordenación         | =conoce-csd.pdf= p. 98-113  | No se reproduce el texto completo (16 págs.). Se enlaza el PDF (=docs/Otros/Ordenanzas.pdf=) o el texto oficial.       |
+| Ordenanza municipal de los animales de compañía   | =conoce-csd.pdf= p. 114-140 | No se reproduce el texto completo (27 págs.). Se mantiene el resumen propio «Ordenanzas sobre animales» (p. 141) y se enlaza el texto oficial del Ayuntamiento. |
+| Circulares y comunicaciones                      | =conoce-csd.pdf= p. 142     | Portadilla sin contenido: se elimina.                                                                                  |
+| Facturas de la Comunidad                          | =conoce-csd.pdf= p. 143     | Portadilla sin contenido: se elimina.                                                                                  |
+| Ordenanzas del Plan Parcial (dosier aparte)       | =docs/Otros/Ordenanzas.pdf= | No se migra a =documentos.org= (lo de =Otros/= no se migra). El PDF original se mantiene.                              |
+
+* Párrafos sueltos que quedan
+
+- =conoce-csd.pdf= p. 31, capítulo «Nuestra urbanización», última frase:
+  «El partido político vecinal e independiente Unión Santo Domingo, ha
+  representado a la urbanización en el consistorio de Algete de forma
+  continuada.» — *Se eliminará* al migrar el compendio.
+- =conoce-csd.pdf= p. 69: al quitar el recuadro de la Junta, el capítulo
+  «Junta Gestora y Gerencia» pasa directamente del extracto de los Estatutos
+  al apartado «Gerencia». Queda coherente; no hace falta texto puente.
+- =conoce-csd.pdf= p. 26, penúltimo párrafo del capítulo USD («Debemos tener
+  en cuenta que, excepto el agua y nuestra seguridad privada, el resto de las
+  competencias … son competencia exclusiva del ayuntamiento de Algete.»): es
+  información útil y neutra que se pierde con el capítulo. Ya está cubierta
+  por «Consejos prácticos», punto 1 «Competencias», y por la «Tabla de
+  competencias» del compendio.
+- =conoce-csd.pdf= p. 96: tras recortar el párrafo de la servidumbre
+  acústica, queda una frase genérica que enlaza bien con el párrafo
+  siguiente («Determinadas actividades puntuales como la organización de
+  conciertos…»).
+- En la web (=index.org=) no queda ninguna mención a USD ni a miembros de la
+  Junta: solo referencias genéricas a la «Junta Gestora» (portada y «Asuntos
+  de la Comunidad») y a la patrulla de Policía Local, sin nombres.
+
+* Otros cambios de redacción en el compendio
+
+| Dónde                                  | Cómo aparecía                                                                         | Cómo queda                                                                                                   | Motivo                                                   |
+|----------------------------------------+---------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------|
+| Carta del presidente (p. 5)             | «…accesible en nuestra web www.ciudadsantodomingo.es»                                  | «…accesible en nuestra web ciudadsantodomingo.org» (con enlace)                                               | .es no funciona hoy; el dominio activo es .org (se está comprobando si hay otros contratados). |
+| Asuntos municipales (p. 82)             | «Pulsando sobre el logotipo puede acceder a la web del ayuntamiento.»                  | «Puede acceder a la web del ayuntamiento en aytoalgete.es.» (con enlace; se añade también el de Línea Verde)   | Los logotipos no se reproducen.                          |
+| Desbroce de parcelas (p. 93)            | Bando municipal escaneado (con la firma del alcalde)                                   | Enlace al bando: =docs/desbroce-parcelas.pdf=                                                                 | No se reproducen documentos municipales completos.       |
+| Ordenanzas de convivencia (p. 94)       | Cabecera escaneada del BOCM                                                           | Enlace a =docs/ordenanza-convivencia.pdf=                                                                     | Ídem.                                                    |
+| Ordenanza de ruidos (p. 95-97)          | —                                                                                     | Se añade al final el enlace a la ordenanza oficial (el mismo que usa la web).                                 | Ídem.                                                    |
+| Recogida de basuras (p. 91-92)          | —                                                                                     | Se añade al final el enlace a la normativa de residuos (el mismo que usa la web).                             | Ídem.                                                    |
+| Ordenanzas sobre animales (p. 141)      | «Puede leerse en el documento adjunto.»                                               | «Puede consultarse en el enlace que figura al final de este apartado.» + enlace a la ordenanza oficial        | La ordenanza completa ya no va adjunta.                  |
+| Ordenanzas del Plan Parcial (p. 98-113) | Texto completo (16 págs.)                                                             | Resumen de un párrafo (fechas de aprobación y contenido) + enlace a =docs/Otros/Ordenanzas.pdf=               | *Resumen redactado nuevo: revisar.*                      |
+| «Gestión del agua» y «Nuestra seguridad» | Introducciones propias del compendio (p. 40 y 48)                                     | Se mantienen como introducción del capítulo; el resto del capítulo es el dosier correspondiente, sin copiarlo | Un solo texto para dosier y compendio.                   |
+
+* Dudas de contenido detectadas al transcribir (sin cambiar)
+
+- Superficie: la Carta del presidente dice 702 Ha y «Datos básicos» 752 Ha.
+- Fecha de fundación: «Historia» dice que se fundó en 1976, pero la
+  Comunidad se constituyó en 1970 y se empezó a poblar a principios de los 70.
+- Concesión de aguas: 2.071.611 m³ en la introducción del capítulo del agua
+  frente a 2.071.661 m³ en el dosier; y 2.084.228 m³ en la descripción de la
+  red.
+- Longitud de calles: «cincuenta y ocho kilómetros» (Consejos, punto 2)
+  frente a «28 km» (punto 23).
+- Teléfono de la Policía de urbanizaciones: el texto dice 659 625 379 y el
+  distintivo de la p. 85 decía 689 41 47 50.
+- Enlace de Cita Sanitaria (Consejos, punto 39): la dirección estaba partida
+  en el original; comprobar que funciona.
+- Ordenanza de ruidos: «un grito [80 dB] es 30 veces más intenso» que una
+  conversación [60 dB] (serían 100 veces).
+- Directorio: «LA MIA NONNA, TRATTORIA&BRISTO» se ha escrito «Trattoria &
+  Bistro».
+- Protocolo de podas: es el de la temporada 21/22 (fechas y firma).
+
+* Pendiente para que los cambios sean efectivos
+
+1. =make pdf-docs= para sustituir en =docs/= los PDF de «Seguridad»,
+   «Recogida de podas», «Consejos prácticos» y, sobre todo, el tutorial de la Oficina Virtual
+   (factura con datos de una vecina).
+2. Commit de los cambios (la web, =index.org=, queda como estaba).
+3. Revisar =pdf/build/conoce-csd.pdf= y publicarlo con =make pdf-docs=.
+   Hasta entonces, el PDF publicado conserva todos los nombres, la sección de
+   USD, el capítulo del ruido de aviones y los datos de 2022.
+4. Consultar a la Junta qué hacer con el presupuesto, la auditoría y las
+   cuotas y tarifas.
+5. Los PDF antiguos siguen en el historial de git y pueden seguir en cachés o
+   buscadores durante un tiempo.

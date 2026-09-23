@@ -28,6 +28,9 @@ The repository root IS the `site/` project (no parent wrapper). A read-only
 | `make build CSD_BASE_URL=/csd-preview` | Build with a URL prefix (GitHub Pages of a project repo).               |
 | `make serve`                           | Builds and serves on http://localhost:8080.                             |
 | `make clean`                           | Wipes `public/`.                                                        |
+| `make pdf`                             | Builds the PDF dossiers from `documentos.org` → `pdf/build/*.pdf` (needs LuaLaTeX, latexmk, Inkscape). |
+| `make pdf DOC=gestion-del-agua`        | Builds only that dossier.                                               |
+| `make pdf-docs`                        | `make pdf` + copies the results into `docs/` (what the web links to).   |
 | `./import-assets.sh`                   | (Re-)copies images and PDFs from `../ciudadsantodomingo.org/wp-content/uploads/` into `img/` and `docs/`. Idempotent. |
 
 ## CSD_BASE_URL
@@ -108,6 +111,21 @@ Resolved by name only. To use an image: place it in `img/`, reference it as
 `[[abs:/img/NAME.ext]]`. The Makefile copies `img/`, `docs/`, and `css/`
 into `public/` on each build. Image and PDF naming convention is kebab-case
 ASCII (no spaces, no accents, no size suffixes like `-1024x768`).
+
+### PDF dossiers (documentos.org)
+
+The downloadable PDFs the Comunidad writes itself are generated from a
+second single source, **`documentos.org`**, one top-level subtree per PDF
+(`:EXPORT_FILE_NAME:` = name in `docs/` without `.pdf`, `:EXPORT_DATE:`,
+`:ETIQUETA:` = label in the page header). `publish-pdf.el` exports each
+subtree to `pdf/build/NAME.tex` and compiles it with latexmk/LuaLaTeX,
+running from the repo root so image links like `[[file:pdf/img/foo.jpg]]`
+work both in Emacs and in LaTeX. The look (cover, header, fonts, colours,
+`recuadro`/`destacado`/`aviso`/`fotos` special blocks) lives in
+`pdf/csd-dossier.sty`. Logos are converted from the SVGs in `img/` by the
+Makefile. PDFs are built locally and committed into `docs/` (CI has no
+TeX). External documents (municipal ordinances, bandos, vendor manuals)
+stay as plain files in `docs/`.
 
 ## What's intentionally NOT in the site
 
