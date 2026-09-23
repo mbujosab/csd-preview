@@ -2,6 +2,11 @@
 #+DATE: 23 de septiembre de 2026
 #+LANGUAGE: es
 #+STARTUP: showall
+#+LATEX_HEADER: \usepackage[a4paper,margin=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage{xltabular}
+#+LATEX_HEADER: \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+#+OPTIONS: toc:nil
 
 * Alcance y criterio
 
@@ -49,24 +54,28 @@ mantienen».)
 
 ** Dosier «Seguridad» (=documentos.org=, =seguridad.pdf=) — hecho
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Dónde                          | Cómo aparecía                                                                                                                       | Cómo queda                                                                                                          |
 |--------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------|
 | Consejos genéricos, 2.º punto  | «La Comunidad tiene en plantilla un Director de Seguridad: D. Ernesto Cerrato. Consúltele todas sus dudas, él podrá asesorarle y le prestará el apoyo que necesite.» | «La Comunidad cuenta en plantilla con un Director de Seguridad. Consúltele todas sus dudas: podrá asesorarle y le prestará el apoyo que necesite.» |
 
 ** Dosier «Recogida de podas» (=documentos.org=, =recogida-podas.pdf=) — hecho
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Dónde                                  | Cómo aparecía                                                                                                  | Cómo queda                                                                                   |
 |----------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------|
 | Protocolo, punto 5                     | «Se deben solicitar las sacas en la Tenencia de Alcaldía (Srta. Myriam) ya sea presencialmente, por teléfono o por e mail.» | «Se deben solicitar las sacas en la Tenencia de Alcaldía ya sea presencialmente, por teléfono o por e-mail.» |
 
 ** Tutorial «Oficina Virtual» (=documentos.org=, =tutorial-oficina-virtual.pdf=) — hecho
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Dónde                          | Cómo aparecía                                                                                                          | Cómo queda                                                                                              |
 |--------------------------------+------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------|
 | Factura de ejemplo (imagen)    | Nombre y calle de una vecina bajo «Dirección postal», tachados con rotulador pero *legibles* a resolución completa.     | Tapados con bloques opacos, igual que razón social, n.º de recibo, IBAN y n.º de contrato.               |
 
 ** Compendio «Conoce Ciudad Santo Domingo» (=conoce-csd.pdf=) — hecho
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Página | Cómo aparecía                                                                                                                                                  | Cómo quedará                                                                                                           |
 |--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------|
 |      5 | Firma de la «Carta del presidente»: «Jaime del Barrio / Presidente de la Comunidad de Propietarios»                                                           | «El Presidente de la Comunidad de Propietarios»                                                                         |
@@ -78,6 +87,7 @@ mantienen».)
 
 * Nombres que se mantienen
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Nombre                                   | Dónde                                                                                   | Por qué se mantiene                                                                                                                                      |
 |------------------------------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Estrella Pereda, Concejal de Medio Ambiente | Firma de la carta del dosier «Recogida de podas» (=documentos.org=); también =docs/Otros/PROTOCOLO-PODA-…-firmado.pdf= | Cargo público que firma un comunicado oficial del Ayuntamiento, fechado (octubre 2021). *Actualización (revisión de estilo):* la carta se ha retirado del dosier por estar ligada a la temporada 21/22 y queda comentada en =documentos.org=; el nombre ya no se publica. Véase =informe-estilo.org=. |
@@ -92,6 +102,7 @@ mantienen».)
 
 ** Por neutralidad política (USD) y privacidad
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYY :font \small
 | Sección                                      | Dónde                              | Qué se retira                                                                                                               | Estado                   |
 |----------------------------------------------+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+--------------------------|
 | Unión Santo Domingo                          | =conoce-csd.pdf= p. 26             | Capítulo completo: presentación del partido, su historia, su papel en el gobierno municipal y sus dos concejales.           | Hecho   |
@@ -100,6 +111,7 @@ mantienen».)
 
 ** Por el ruido de aviones
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYYY :font \small
 | Sección / párrafo                             | Dónde                                | Cómo aparecía                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Cómo queda                                                                                                                                                                                                                                                              | Estado                 |
 |-----------------------------------------------+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------|
 | Capítulo «Ruido de aviones»                   | =conoce-csd.pdf= p. 53-56 y índice p. 3 | Capítulo completo: historia de las ampliaciones de Barajas, configuración Sur, asociación contra el ruido, sentencias del Tribunal Supremo y «avances logrados».                                                                                                                                                                                                                                                                                                                                                                                              | Capítulo y entrada del índice eliminados.                                                                                                                                                                                                                              | Hecho |
@@ -127,6 +139,7 @@ Se retiran del compendio para que no se publiquen datos caducados. *Pregunta
 para la Junta:* ¿se publican con datos actualizados, se enlazan desde la
 Oficina Virtual o se omiten?
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Sección                               | Dónde                  | Contenido retirado                                                                                                   |
 |---------------------------------------+------------------------+----------------------------------------------------------------------------------------------------------------------|
 | Presupuesto                            | =conoce-csd.pdf= p. 75-76 | Portadilla y tabla «Presupuestos 2022».                                                                              |
@@ -135,6 +148,7 @@ Oficina Virtual o se omiten?
 
 ** Textos legales completos y secciones vacías
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Sección                                          | Dónde                     | Qué se hace                                                                                                            |
 |--------------------------------------------------+---------------------------+------------------------------------------------------------------------------------------------------------------------|
 | Ordenanzas del Plan Parcial de Ordenación         | =conoce-csd.pdf= p. 98-113  | No se reproduce el texto completo (16 págs.). Se enlaza el PDF (=docs/Otros/Ordenanzas.pdf=) o el texto oficial.       |
@@ -168,6 +182,7 @@ Oficina Virtual o se omiten?
 
 * Otros cambios de redacción en el compendio
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYY :font \small
 | Dónde                                  | Cómo aparecía                                                                         | Cómo queda                                                                                                   | Motivo                                                   |
 |----------------------------------------+---------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------|
 | Carta del presidente (p. 5)             | «…accesible en nuestra web www.ciudadsantodomingo.es»                                  | «…accesible en nuestra web ciudadsantodomingo.org» (con enlace)                                               | .es no funciona hoy; el dominio activo es .org (se está comprobando si hay otros contratados). |

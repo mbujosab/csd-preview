@@ -2,6 +2,11 @@
 #+DATE: 23 de septiembre de 2026
 #+LANGUAGE: es
 #+STARTUP: showall
+#+LATEX_HEADER: \usepackage[a4paper,margin=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{lmodern}
+#+LATEX_HEADER: \usepackage{xltabular}
+#+LATEX_HEADER: \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+#+OPTIONS: toc:nil
 
 * Objetivo y criterios acordados
 
@@ -119,6 +124,7 @@ Privada). En el aviso legal y la política de privacidad solo se ha pasado el
 tuteo a usted. Cambios de fondo, es decir, los que van más allá de quitar
 adjetivos:
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYY :font \small
 | Página / sección                   | Cómo aparecía                                                                                                   | Cómo queda                                                                                                          | Por qué                                                                                   |
 |------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------|
 | Inicio, red de agua                | «...se complementa de forma independiente con el suministro del CYII, garantizando la máxima calidad de servicio» | «Una segunda red, independiente, suministra el agua de consumo del Canal de Isabel II.»                              | Criterio 5.                                                                               |
@@ -157,6 +163,7 @@ Todas las imágenes, recuadros, tablas y bloques LaTeX se conservan.
 
 Cambios de fondo:
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYY :font \small
 | Dosier / apartado                     | Cómo aparecía                                                                                                                     | Cómo queda                                                                                                                        | Por qué                                                                                                        |
 |---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------|
 | Agua, parques solares                 | «En 2020 hemos contratado 3 parques solares ... Ambos parques están plenamente operativos»                                        | «En 2020 se contrataron tres parques solares ... Los parques están plenamente operativos»                                         | Criterio 6 (pretérito neutro). El «tres/ambos» queda en el anexo A.                                            |
@@ -229,6 +236,7 @@ una sección concreta desde cualquier otro sitio si hiciera falta.
 
 Resultado del cotejo (además de los teléfonos del anexo A):
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYY :font \small
 | Consejo                     | Dosier                                                                                     | Web                                                                                   | Observación                                                                          |
 |-----------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------|
 | 4, policía de proximidad    | «patrulla los cinco días laborables, todas las mañanas y en horarios concretos de tardes, noches y fines de semana» | «de lunes a viernes, de 8:00 a 14:00 h, sin perjuicio de otras actuaciones fuera de ese horario» | Compatibles, pero el dosier promete más presencia de la que la web concreta. Decidir una redacción. |
@@ -250,6 +258,7 @@ el Reglamento de la Asamblea no se tocan.
 
 Hecho:
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYYY :font \small
 | Capítulo                    | Cómo aparecía                                                                                                                  | Cómo queda                                                                                                                  | Por qué                                                                                                   |
 |-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------|
 | Directorio de interés       | Tabla de servicios públicos más 45 comercios y profesionales en ocho apartados (salud, restauración, estética, finanzas, alimentación, comercios, automóvil, inmobiliaria) | «Directorio de servicios»: la tabla «Teléfonos de interés» de la web, con sus mismos enlaces (12 entradas, incluida la línea 171), y el enlace al directorio del centro comercial | Modelo de la web: un directorio comercial es imposible de mantener al día. Los teléfonos del botiquín y del centro médico privado desaparecen con él. |
@@ -280,6 +289,7 @@ No se ha cambiado ninguno. Para aclarar en la Junta. Los cuatro teléfonos
 son lo más urgente: un número equivocado en un documento público perjudica al
 vecino.
 
+#+ATTR_LATEX: :environment xltabular :width \linewidth :align YYY :font \small
 | Dato                    | Web / compendio                                              | Dosier «Gestión del agua» u otro capítulo                                                 |
 |-------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------|
 | Concesión anual de agua | 2.071.611 m³ (web y capítulo «Gestión del agua» del compendio) | 2.084.228 m³ (dosier)                                                                     |
