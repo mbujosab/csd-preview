@@ -40,6 +40,20 @@ Criterios concretos acordados el 23 de septiembre de 2026:
    dosieres sueltos; capítulos propios del compendio). Este informe recoge
    solo los cambios de fondo; las erratas se corrigen de oficio y no se
    listan. No se hace commit hasta que el usuario lo indique.
+8. *Enlaces en los PDF.* Los dosieres llevan los mismos enlaces externos que
+   publica la web (ordenanzas y páginas del Ayuntamiento, consultorio, bando de
+   desbroce, dosieres propios), no enlaces a secciones de la web. Única
+   excepción: en el tutorial de la Oficina Virtual, «Acceso Área Privada»
+   enlaza a esa página de la web, a petición del usuario.
+9. *Botiquín.* El servicio ha desaparecido (indicación del usuario, 23 de
+   septiembre de 2026). Se retira toda mención en la web y en los PDF.
+10. *Todas las discrepancias* entre fuentes, o entre un PDF y la web, van al
+    anexo A para aclararlas en la Junta.
+11. *Compendio.* Su referencia son la web y los dosieres. Cuando un capítulo
+    duplica una sección de la web, se adopta el texto de la web. El
+    directorio comercial se sustituye, como en la web, por la tabla de
+    teléfonos de interés y el enlace al directorio del centro comercial, que
+    es imposible de mantener al día.
 
 Criterios menores aplicados de oficio:
 
@@ -49,7 +63,9 @@ Criterios menores aplicados de oficio:
 - Los enlaces de descarga llevan el título real del documento entre comillas
   («Descargar «Gestión del agua» (PDF)») en lugar de descripciones vagas.
 
-* Advertencia para la Junta: la cita de la portada
+* Cuestiones para la Junta
+
+** La cita de la portada de la web
 
 La portada de la web cierra su presentación con esta cita atribuida a la
 Junta Gestora:
@@ -62,8 +78,38 @@ complejidad e inquietudes.
 
 La segunda mitad («no exenta de complejidad e inquietudes») introduce una
 nota negativa en la primera pantalla que ve cualquier visitante. No se ha
-tocado. Opciones: dejarla, retirarla o recortarla a la primera frase. Se
-decidirá en la Junta.
+tocado. Opciones: dejarla, retirarla o recortarla a la primera frase.
+
+** El texto sobre la «Policía Comunitaria» en el compendio
+
+Se deja como estaba (decisión del usuario, 23 de septiembre de 2026). En el
+capítulo «Policía de urbanizaciones», tras el párrafo que coincide con la
+web, hay unas 80 líneas de corte institucional sobre el modelo de policía
+comunitaria (cambio de paradigma, crimen organizado, terrorismo, funciones
+generales y específicas). Parece texto del Ayuntamiento, no de la Comunidad.
+La web se limita al párrafo breve y al enlace oficial. La Junta decide si se
+mantiene, se resume o se sustituye por el enlace.
+
+** Datos que no cuadran
+
+Véase el anexo A. Los cuatro teléfonos discrepantes son lo más urgente.
+
+* Pendientes técnicos (no requieren a la Junta)
+
+- Publicar los PDF nuevos: =make pdf-docs=, commit y despliegue. Hasta
+  entonces =docs/= sigue conteniendo los PDF antiguos, incluido el tutorial
+  con la factura legible (véase =informe-nombres.org=).
+- =index.org= conserva, comentado, el antiguo directorio comercial con
+  teléfonos (bloque bajo «Otros servicios»). No se publica; puede borrarse
+  cuando se dé por bueno el modelo del enlace al centro comercial.
+- =documentos.org= conserva comentados la carta de la concejala (dosier de
+  podas) y el anexo 4 de la ordenanza de residuos (compendio), por si la
+  Junta los recupera. Si no, pueden borrarse.
+- El resumen del Plan Parcial del compendio sigue marcado «revisar» en
+  =documentos.org=: se redactó nuevo en la sesión anterior y nadie lo ha
+  cotejado aún con el texto original.
+- Las anclas =CUSTOM_ID= de =index.org= no se usan desde ningún sitio. Son
+  inocuas; se pueden dejar o quitar.
 
 * Fase 1: web (=index.org=) — hecha
 
@@ -100,13 +146,139 @@ adjetivos:
   Conviene confirmar qué ofrece realmente la plataforma.
 - Inicio: «Fundada en 1976». Véase el anexo A.
 
-* Fase 2: dosieres sueltos (=documentos.org=) — pendiente
+* Fase 2: dosieres sueltos (=documentos.org=) — hecha
 
-* Fase 3: capítulos propios del compendio — pendiente
+Reescritos los cinco dosieres que se descargan desde la web: «Gestión del
+agua», «Seguridad», «Procedimiento de recogida de podas», «Oficina Virtual»
+y «Consejos prácticos para la vida en Ciudad Santo Domingo». Los tres
+primeros y el último se incluyen también en el compendio, así que los
+cambios se propagan. Fecha de portada de los cinco: septiembre de 2026.
+Todas las imágenes, recuadros, tablas y bloques LaTeX se conservan.
+
+Cambios de fondo:
+
+| Dosier / apartado                     | Cómo aparecía                                                                                                                     | Cómo queda                                                                                                                        | Por qué                                                                                                        |
+|---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------|
+| Agua, parques solares                 | «En 2020 hemos contratado 3 parques solares ... Ambos parques están plenamente operativos»                                        | «En 2020 se contrataron tres parques solares ... Los parques están plenamente operativos»                                         | Criterio 6 (pretérito neutro). El «tres/ambos» queda en el anexo A.                                            |
+| Agua, financiación de los parques     | «La idea era acudir a un préstamo bancario que se amortizará fácilmente con los ahorros»                                          | «La inversión se planteó financiarla con un préstamo bancario amortizable con los ahorros generados»                              | La fuente solo describe el plan; no se afirma cómo se financió finalmente.                                     |
+| Agua, Canal de Isabel II              | «para consumo «de boca»»; «Concluida esta fase se firma un nuevo convenio»                                                        | «destinada al consumo humano»; pretérito                                                                                          | Criterios 5 y 6.                                                                                               |
+| Seguridad, cita inicial               | «Si todas las viviendas dispusieran de su alarma conectada a la central, nuestra urbanización sería inexpugnable»                  | «Cuantas más viviendas tengan su alarma conectada a la central, más segura será la urbanización»                                  | Criterio 1: «inexpugnable» es una promesa que nadie puede cumplir.                                             |
+| Seguridad, tarjeta de teléfonos       | Lema «¡estamos para ayudarle!»                                                                                                    | «estamos para ayudarle»                                                                                                           | Sin exclamaciones.                                                                                             |
+| Seguridad, panel final                | «La Comunidad ha realizado un gran esfuerzo inversor ... Nuestro presupuesto anual en seguridad es muy importante»                | «La Comunidad ha invertido de forma importante en sistemas y comunicaciones de seguridad»                                         | Criterio 1.                                                                                                    |
+| Podas, carta de la concejala          | Carta de presentación fechada en octubre de 2021 y firmada por la concejala de Medio Ambiente, ligada a la temporada 21/22 y con pasajes sobre la «situación insostenible» en las calles y el colapso por Filomena | Retirada. Se conserva comentada en =documentos.org= por si la Junta quiere recuperarla. La sustituye una introducción breve de la Comunidad con los mismos datos útiles (servicio municipal desde hace años, sacas desde 2021-2022, 5 m³ por parcela, talas y excedentes a cargo del propietario) | Criterio 6: la carta no puede hacerse atemporal sin reescribir un texto firmado por un cargo público. Además, sus pasajes negativos no aportan al vecino. |
+| Podas, protocolo                      | «PROTOCOLO ... TEMPORADA 21/22», «1 DE DICIEMBRE 2021 HASTA EL 30 DE ABRIL DE 2022»                                              | «durante la temporada de poda, que fija cada año. Con carácter general, la Ordenanza de Residuos la sitúa entre el 1 de noviembre y el 30 de abril» | Criterio 6. Las fechas concretas quedan en el anexo A (la ordenanza y el protocolo no coinciden).               |
+| Podas, sanciones                      | «serán denunciados y sancionados por la POLICÍA LOCAL con importes económicos significativos (hasta 3.000 €)»                     | «puede ser denunciado y sancionado por la Policía Local con multas de hasta 3.000 €»                                              | Mismo dato, sin mayúsculas ni tono amenazante.                                                                 |
+| Podas, resumen final                  | Recuadro en mayúsculas: «SE RUEGA LA MÁXIMA COLABORACIÓN...», «SOLICITAR MIS SACAS...»                                            | Cuatro frases en primera persona, sin mayúsculas                                                                                  | Criterio 1.                                                                                                    |
+| Oficina Virtual, todo el texto        | Redactado en tercera persona desde la oficina («Les solicita un nº contrato», «Desde administración les daría de alta», «Atentos saludos») | Redactado al propietario, de usted, con los requisitos del alta en una lista                                                       | Criterio 2 y claridad. Ningún dato nuevo.                                                                      |
+| Consejos, introducción                | «1.500.000 vehículos anuales, pocas cosas resultan obvias»                                                                        | «un millón y medio de vehículos al año, conviene tenerlas por escrito»                                                            | Tono.                                                                                                          |
+| Consejos, títulos de capítulo         | «Conocer las competencias y para hacer reclamaciones…», «En materia de seguridad e incendios…», etc.                              | «Competencias y reclamaciones», «Seguridad e incendios», «Seguridad vial», «Gestión de residuos y limpieza», «Respeto colectivo», «Animales», «Sanidad», «Nota final: repercusión a terceros» | Títulos limpios; en el compendio son portadillas de capítulo.                                                  |
+| Consejos 1, competencias              | «Se ha elaborado un cuadro detallado de competencias»                                                                             | «Existe un cuadro detallado de competencias, disponible en la web y en el compendio»                                              | En el dosier suelto no hay ningún cuadro; se dice dónde está.                                                  |
+| Consejos 6, grafitis                  | «Actualmente, ningún municipio está a salvo de los grafiteros» y «de modo que se le pueda detener»                                | «Ningún municipio está a salvo de las pintadas» y «para que pueda ser identificado»                                               | Los vigilantes no detienen; identifican y avisan.                                                              |
+| Consejos 10, velocidad                | «conductores desaprensivos», «patente de corso», «la motivación más bien hay que buscarla en la vanidad personal, la soberbia y en la falta de consideración» | Se mantienen los hechos (atropellos, quejas, furgonetas) y el argumento de los segundos ganados; se retiran los juicios sobre el carácter de los conductores | Criterio 1: un documento de la Comunidad no debe insultar a sus lectores.                                       |
+| Consejos 11, alcohol                  | «Accidentes causados en circunstancias vinculadas a alcohol y otras sustancias, ocurren con cierta frecuencia en Ciudad Santo Domingo» | «El alcohol y otras sustancias también provocan accidentes dentro de la urbanización»                                             | Mismo hecho, sin cuantificar la frecuencia (la fuente tampoco la cuantifica).                                  |
+| Consejos 23, calles                   | «todos los recursos municipales ... son percibidos como insuficientes. Esta cuestión es uno de los debates más intensos con todos los equipos de gobierno municipal legislatura tras legislatura» | «la dotación de recursos municipales para su mantenimiento es un asunto permanente de conversación entre la Comunidad y los sucesivos equipos de gobierno» | Mismo contenido, sin confrontación con el Ayuntamiento en un documento público.                                |
+| Consejos 27, conflictos               | «Son también frecuentes los conflictos entre vecinos»                                                                             | «Las obras y los lindes son una fuente habitual de conflictos entre vecinos»                                                      | Precisa de qué conflictos se habla.                                                                            |
+| Consejos 38, botiquín                 | Consejo completo (ubicación, horario, teléfonos 916 221 974 y 647 518 075)                                                        | Retirado. Los consejos 39-41 pasan a ser 38-40                                                                                     | Criterio 9: el servicio ha desaparecido.                                                                       |
+| Consejos 1, competencias              | «la red de agua de los pozos, la depuradora, la seguridad y el botiquín»                                                          | «la red de agua de los pozos, la depuradora y la seguridad»                                                                       | Criterio 9.                                                                                                    |
+| Consejos 39 (antes 40)                | Título «Consultorio privado»                                                                                                      | «Centro médico privado»                                                                                                           | Es como se llama el centro; evita confusión con el consultorio de la Seguridad Social.                         |
+
+** Dudas de contenido detectadas en los dosieres (no cambiadas)
+
+Además de las del anexo A, que son discrepancias entre fuentes:
+
+- Consejos 5: «uno de los índices de delincuencia más bajos de España». No
+  hay fuente. Conviene poder respaldarlo o rebajarlo a «muy bajo».
+- Consejos 9: «La Comunidad facilita este servicio» (de desbroce). No se
+  dice cómo ni en qué condiciones.
+- Podas, datos de contacto: horario del Punto Limpio («lunes a viernes de
+  11:00 a 14:00; viernes de 17:00 a 20:00; sábados y domingos de 9:00 a
+  14:00»). La web remite al Ayuntamiento para el horario; conviene comprobar
+  que sigue vigente.
+- Seguridad: «Las alarmas de los vecinos se están unificando en un solo
+  operador». Si el proceso terminó, convendría decirlo en pasado.
+
+** Cotejo de los consejos con la web y enlaces añadidos
+
+A petición del usuario (23 de septiembre de 2026) se ha cotejado cada consejo
+con lo publicado en la web. Conforme al criterio 8, los consejos que en la web
+remiten a un documento o página externa llevan ahora el mismo enlace, en una
+línea final «Más información»:
+
+- 4 (policía de proximidad): página de la Policía Local de urbanizaciones del
+  Ayuntamiento.
+- 5 (alarmas): dosier «Seguridad» (PDF).
+- 9 (desbroce): bando municipal de desbroce (PDF).
+- 14, 17 y 22 (residuos): ordenanza municipal de residuos (PDF, Ayuntamiento).
+- 16, 19 y 27 (cubos, talas, licencias de obra): página de la Tenencia de
+  Alcaldía del Ayuntamiento.
+- 18 (poda): dosier «Procedimiento de recogida de podas» (PDF) y ordenanza de
+  residuos.
+- 20 (punto limpio): página de puntos limpios y recogida de residuos del
+  Ayuntamiento, que publica el horario.
+- 24 y 25 (ruidos y fiestas): ordenanza municipal de ruidos (PDF, Ayuntamiento).
+- 33 (animales): ordenanza municipal de tenencia y protección de animales
+  (PDF, Ayuntamiento).
+- 38 (consultorio): ficha del consultorio en el portal de libre elección de
+  la Comunidad de Madrid.
+
+Los enlaces a los PDF propios usan la macro ={{{web(ruta,texto)}}}= definida
+al principio de =documentos.org=, que antepone =https://ciudadsantodomingo.org/=.
+Las secciones de la web llevan ahora un identificador fijo (propiedad
+=CUSTOM_ID= en =index.org=); no se usa desde los PDF, pero permite enlazar a
+una sección concreta desde cualquier otro sitio si hiciera falta.
+
+Resultado del cotejo (además de los teléfonos del anexo A):
+
+| Consejo                     | Dosier                                                                                     | Web                                                                                   | Observación                                                                          |
+|-----------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------|
+| 4, policía de proximidad    | «patrulla los cinco días laborables, todas las mañanas y en horarios concretos de tardes, noches y fines de semana» | «de lunes a viernes, de 8:00 a 14:00 h, sin perjuicio de otras actuaciones fuera de ese horario» | Compatibles, pero el dosier promete más presencia de la que la web concreta. Decidir una redacción. |
+| 20, punto limpio            | No fija límite de poda                                                                     | «restos de poda (máximo dos sacas)»                                                   | El dosier de podas dice «3 bolsas de 240 litros por persona». Tres cifras distintas. |
+| 38, botiquín (retirado)     | Consejo completo con horario y teléfonos                                                   | No aparecía                                                                           | El servicio ha desaparecido. Retirado también del directorio de teléfonos, la tabla de competencias, «Nuestra urbanización», las leyendas de los mapas y las funciones de la Gerencia del compendio. Las imágenes de los mapas del compendio pueden seguir rotulando «Botiquín» en el punto 9; no se han tocado. |
+| 38 (antes 39), consultorio  | «de lunes a viernes, de 8:30 a 14:00 h»                                                    | No indica horario                                                                     | Si el horario es correcto, convendría añadirlo a la web.                              |
+| 16, reposición de cubos     | Derecho a un cubo nuevo cada diez años; se pide en la Tenencia                             | No aparece                                                                            | Solo en el dosier; se enlaza a la Tenencia.                                          |
+| 37, carné de alimentador    | Se solicita en la Tenencia de Alcaldía                                                     | No aparece                                                                            | Solo en el dosier.                                                                   |
+| 5, central de alarmas       | Empresa adjudicataria DRIN, 80 % de parcelas con alarma                                    | La web no cita a la empresa                                                           | Coherente con la política de no citar proveedores en la web. Nada que cambiar.       |
+| 18, sacas de poda           | Se solicitan en la Tenencia y se recogen en el Punto Limpio                                | La web remite al dosier de podas                                                      | Coherente.                                                                           |
+| 33, ordenanza de animales   | BOCM n.º 300, 17-12-2021, y lista de materias                                              | Misma referencia y misma lista                                                        | Coherente.                                                                           |
+
+* Fase 3: capítulos propios del compendio — hecha
+
+Criterio fijado por el usuario el 23 de septiembre de 2026: para el compendio
+la referencia son la web y los dosieres anteriores. Cuando un capítulo
+duplica una sección de la web, se adopta el texto de la web. Los Estatutos y
+el Reglamento de la Asamblea no se tocan.
+
+Hecho:
+
+| Capítulo                    | Cómo aparecía                                                                                                                  | Cómo queda                                                                                                                  | Por qué                                                                                                   |
+|-----------------------------+--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------|
+| Directorio de interés       | Tabla de servicios públicos más 45 comercios y profesionales en ocho apartados (salud, restauración, estética, finanzas, alimentación, comercios, automóvil, inmobiliaria) | «Directorio de servicios»: la tabla «Teléfonos de interés» de la web, con sus mismos enlaces (12 entradas, incluida la línea 171), y el enlace al directorio del centro comercial | Modelo de la web: un directorio comercial es imposible de mantener al día. Los teléfonos del botiquín y del centro médico privado desaparecen con él. |
+| Carta del presidente        | «te transmito»; «titulado «CONOCE CIUDAD SANTO DOMINGO»»; anuncia «los modos de tarificación y facturación de los costes» y «un extenso directorio de contactos útiles» | Usted; se retira la referencia a tarifas (ese contenido salió del compendio con los datos de 2022) y el directorio pasa a ser «de teléfonos de interés»; se añade que recoge Estatutos y Reglamento | La carta prometía contenidos que el documento ya no tiene.                                                 |
+| Tabla de competencias       | Tabla propia, con encabezado «AYUNTAMIENTO y EMPRESA GESERAL» y redacciones distintas de la web                                 | La misma tabla que publica la web                                                                                           | Una sola versión que mantener.                                                                            |
+| Nuestra urbanización        | Texto propio (N1, «hotelería», lista de comercios distinta)                                                                    | Los párrafos de la portada de la web; se conservan todas las fotos y los tres mapas. En las leyendas, «N1» pasa a «A-1»     | Ídem. La A-1 es la denominación actual de la antigua N-I.                                                  |
+| Historia                    | «Ingenieros de Caminos», «San Agustín del río Guadalix», «100 % residencial», «nos regimos»                                    | Estilo; los datos (752 ha, 950 parcelas, 1970, «principios de los 70») no se tocan                                          | Criterio 4; están en el anexo A.                                                                          |
+| Gestión del agua (intro)    | «La legislación actual recomienda no utilizar nuestra agua de pozos para consumo humano por contener exceso de arsénico»       | El mismo texto que la web (criterio 5)                                                                                      | Una sola redacción en web y PDF.                                                                          |
+| Nuestra seguridad (intro)   | Texto propio («nodo de alarmas tecnológicamente muy avanzado», «guardas de seguridad»)                                          | El texto de la web más la coordinación con Guardia Civil y Policía Local y los ejemplos de intervenciones, que solo estaban aquí | Ídem.                                                                                                     |
+| Junta Gestora y Gerencia    | Subtítulo «Viene definida en los artículos 9 y siguientes de nuestros estatutos»; «facultades»                                  | «Junta Gestora (artículos 9 y siguientes de los Estatutos)»; «funciones». Los artículos citados, intactos                   | Estilo.                                                                                                   |
+| Recogida de basuras, anexo 4  | Reproducción íntegra del anexo 4 de la ordenanza de residuos (unas 90 líneas de texto legal sobre restos vegetales)            | Retirado; queda el enlace a la ordenanza. El texto se conserva comentado en =documentos.org=                                | Criterio de no reproducir textos legales; el dosier de podas ya explica el procedimiento. Decisión del usuario. |
+| Ordenanza de ruidos           | Explicación técnica del decibelio, la escala logarítmica y las definiciones de Ld, Le y Ln (unas 40 líneas)                    | Un párrafo: se mide en dB y hay tres periodos (día, tarde y noche) con límites distintos. Se conservan los límites, las zonas, los artículos 28 a 30 y 56, las restricciones y las sanciones | Decisión del usuario: conservar lo útil para el vecino. |
+| Mapas del compendio           | Leyendas con «Atención Primaria y Botiquín»                                                                                    | «Atención Primaria». Las imágenes solo llevan círculos numerados, sin rótulos: no hay nada que retocar en ellas            | Criterio 9.                                                                                               |
+| Asuntos municipales, Tenencia, Policía (primer párrafo), Desbroce, Convivencia, Recogida de basuras (intro) | Textos propios; «la sección ORDENANZA MUNICIPAL DE CONVIVENCIA CIUDADANA», «en la sección de RECOGIDA DE BASURAS» (remitían a secciones de la web que ya no se llaman así) | Los textos de la web, con los mismos enlaces (Tenencia, policía, ordenanza de residuos) y el horario de la policía        | Ídem.                                                                                                     |
+
+Se deja tal como estaba, por decisión del usuario, el texto sobre el modelo
+de «Policía Comunitaria», cuyo recorte corresponde decidir a la Junta (véase
+«Cuestiones para la Junta»). El anexo 4 de la ordenanza de residuos y el
+resumen de ruidos se han tratado según se indica en la tabla. Tampoco se
+tocan los Estatutos, el Reglamento de la Asamblea, el resumen de la ordenanza
+de animales ni el resumen del Plan Parcial (redactado nuevo en la sesión
+anterior y marcado «revisar» en =documentos.org=).
+
 
 * Anexo A. Datos que no cuadran entre las fuentes
 
-No se ha cambiado ninguno. Para aclarar en la Junta.
+No se ha cambiado ninguno. Para aclarar en la Junta. Los cuatro teléfonos
+son lo más urgente: un número equivocado en un documento público perjudica al
+vecino.
 
 | Dato                    | Web / compendio                                              | Dosier «Gestión del agua» u otro capítulo                                                 |
 |-------------------------+--------------------------------------------------------------+-------------------------------------------------------------------------------------------|
@@ -119,3 +291,22 @@ No se ha cambiado ninguno. Para aclarar en la Junta.
 | Fundación / constitución | Fundada en 1976 (web, carta, historia)                      | Comunidad constituida en 1966 (dosier de agua); constituida como sociedad civil el 22-7-1970 (historia); «se empezó a poblar a principios de los 70», antes de la fundación |
 | Acceso por carretera    | A-1 (web)                                                    | N1 (compendio)                                                                            |
 | Concesión, vigencia     | —                                                            | «hasta octubre de 2038» (solo en el dosier)                                               |
+| Teléfono de la Policía de proximidad | 659 62 53 79 (web, dos veces)                            | 619 300 600 (consejo 4)                                                                   |
+| Teléfono del consultorio médico | 916 282 454 (web)                                            | 916 182 454 (consejo 38, antes 39)                                                                  |
+| Teléfono para avisar de fugas de agua | «avise a seguridad: 916 221 511» (consejo 32)          | 916 221 511 es el de la Gerencia; el de seguridad es 916 221 507                          |
+| Teléfono del centro médico privado | 918 314 921 (tabla comentada en =index.org=)              | 918 319 219 (consejo 39, antes 40)                                                                  |
+| Kilómetros de calles    | 28 km (carta, historia, consejo 23)                          | «cincuenta y ocho kilómetros» (consejo 2)                                                 |
+| Vehículos al año        | «1.500.000 vehículos anuales» (introducción de los consejos) | «superan el millón anual» (consejo 12)                                                    |
+| Temporada de poda       | 1 de noviembre a 30 de abril (ordenanza, anexo 4)            | 1 de diciembre a 30 de abril (protocolo 21/22, ahora retirado); «suele iniciarse en noviembre» (consejo 18) |
+| Horario de la Tenencia de Alcaldía | 10:00 a 14:00 (web)                               | «de 9 a 14 h» (datos de contacto del dosier de podas)                                     |
+| Horario de las oficinas de la Comunidad | lunes a jueves 8:00-15:00, viernes 8:00-14:00 (web) | «de 9 a 14 h» (datos de contacto del dosier de podas)                                    |
+| Concesión, cifra en la escritura | 2.071.611 m³ (web)                                  | 2.071.661 m³ (apartado «Concesión de las aguas» del dosier); 2.084.228 m³ (descripción de la red) |
+| Policía de proximidad, presencia | «de lunes a viernes, de 8:00 a 14:00 h» (web)          | «todas las mañanas y en horarios concretos de tardes, noches y fines de semana» (consejo 4) |
+| Punto limpio, límite de poda | «máximo dos sacas» (web)                                | «3 bolsas de 240 litros por persona» (dosier de podas); sin límite (consejo 20)            |
+| Consultorio, horario    | No consta (web)                                              | «de lunes a viernes, de 8:30 a 14:00 h» (consejo 38)                                      |
+| Directorio del compendio, teléfono de Policía Local | 916 280 137 (web y compendio)             | El consejo 4 da otro número para la policía de proximidad: 619 300 600 (véase arriba)      |
+| Responsable de seguridad | «director de seguridad» (web, dosier «Seguridad»)         | «jefe de seguridad» (intro antigua de «Nuestra seguridad» del compendio, ya sustituida) |
+| Policía de proximidad, nombre de la unidad | «Policía de proximidad» / «Policía Local de urbanizaciones» (web) | «Unidad de Policía Comunitaria» (texto institucional del compendio)          |
+| Distancia a Algete       | 16 km (Historia)                                            | El municipio dista menos según los mapas del propio compendio; conviene comprobar la cifra |
+| Segundo teléfono de seguridad | Solo 916 221 507 (web)                                  | 916 221 507 y 646 112 097 (dosier «Seguridad», tarjeta y consejos generales)              |
+| Oficinas de la Comunidad, planta | «edificio del reloj» (web)                            | «planta baja del edificio de la comunidad, al fondo del centro comercial» (consejo 38 antiguo, ya retirado); «17. Oficinas» en los mapas |

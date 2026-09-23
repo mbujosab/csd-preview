@@ -33,7 +33,8 @@ Criterio acordado:
 
 Estado: todos los cambios están *hechos* en las fuentes (=index.org= y
 =documentos.org=), incluido el compendio «Conoce Ciudad Santo Domingo», que
-ya está migrado (85 páginas frente a 143) y se genera en
+ya está migrado (79 páginas frente a 143, tras la revisión de estilo; véase
+=informe-estilo.org=) y se genera en
 =pdf/build/conoce-csd.pdf=. Hasta que se publiquen los PDF nuevos (=make pdf-docs=) y
 se despliegue la web, los ficheros publicados siguen conteniendo los textos
 antiguos.
@@ -79,7 +80,7 @@ mantienen».)
 
 | Nombre                                   | Dónde                                                                                   | Por qué se mantiene                                                                                                                                      |
 |------------------------------------------+-----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Estrella Pereda, Concejal de Medio Ambiente | Firma de la carta del dosier «Recogida de podas» (=documentos.org=); también =docs/Otros/PROTOCOLO-PODA-…-firmado.pdf= | Cargo público que firma un comunicado oficial del Ayuntamiento, fechado (octubre 2021). *Nota:* el protocolo es de la temporada 21/22; al actualizarlo cambiará la firma. |
+| Estrella Pereda, Concejal de Medio Ambiente | Firma de la carta del dosier «Recogida de podas» (=documentos.org=); también =docs/Otros/PROTOCOLO-PODA-…-firmado.pdf= | Cargo público que firma un comunicado oficial del Ayuntamiento, fechado (octubre 2021). *Actualización (revisión de estilo):* la carta se ha retirado del dosier por estar ligada a la temporada 21/22 y queda comentada en =documentos.org=; el nombre ya no se publica. Véase =informe-estilo.org=. |
 | D. Saturnino Polanco Prieto              | Imagen escaneada de la concesión de aguas de 2001 («Gestión del agua», y =conoce-csd.pdf= p. 43) | Documento oficial histórico de la Confederación Hidrográfica, dirigido a él como representante de la Comunidad. Se puede tapar si se prefiere.               |
 | Juan Jesús Valle García, alcalde-presidente | Firma de =docs/desbroce-parcelas.pdf= (bando) y de =docs/ordenanza-convivencia.pdf= (BOCM, p. 16) | Documentos oficiales del Ayuntamiento, publicados tal cual; no se modifican.                                                                           |
 | D. Enrique Giménez Arnau y Gran, notario | =conoce-csd.pdf= p. 37 y 66 (Estatutos)                                                 | Dato jurídico de la escritura de los Estatutos (22 de julio de 1970); forma parte del documento legal.                                                  |

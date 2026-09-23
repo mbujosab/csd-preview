@@ -149,6 +149,9 @@ La Comunidad de Propietarios está gobernada por una *Junta Gestora* elegida por
 ** Servicios principales
 
 *** Seguridad
+:PROPERTIES:
+:CUSTOM_ID: seguridad
+:END:
 
 El servicio de seguridad atiende cualquier incidencia relacionada con la seguridad, la prevención o los viales comunes. Los vigilantes reciben y coordinan las llamadas de auxilio, emergencia médica o conato de incendio, y una patrulla acude al domicilio en pocos minutos.
 
@@ -156,6 +159,9 @@ El servicio de seguridad atiende cualquier incidencia relacionada con la segurid
 - *Horario:* Todos los días del año, 24 horas.
 
 *** Policía de proximidad
+:PROPERTIES:
+:CUSTOM_ID: policia-de-proximidad
+:END:
 
 El Ayuntamiento de Algete dedica una [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&Itemid=666][*patrulla de la Policía Local*]] en exclusiva a las urbanizaciones Ciudad Santo Domingo y Prado Norte. Los agentes realizan labores de prevención y vigilancia *de lunes a viernes, de 8:00 a 14:00 h*, sin perjuicio de otras actuaciones fuera de ese horario.
 
@@ -163,18 +169,27 @@ El Ayuntamiento de Algete dedica una [[https://aytoalgete.es/index.php?option=co
 - *Policía Local de Algete (centralita):* [[tel:+34916281513][916 28 15 13]] — Todos los días del año, 24 horas.
 
 *** Atención primaria (Seguridad Social)
+:PROPERTIES:
+:CUSTOM_ID: atencion-primaria
+:END:
 
 La urbanización cuenta con un [[https://www.libreeleccion.sanidadmadrid.org/Seleccione/CentroAtencionPrimaria.aspx/2214?CONS-SANTO-DOMINGO/][*consultorio de atención primaria*]] de la Seguridad Social, situado en el sector norte de la zona comercial y atendido por un médico y personal de enfermería.
 
 Los vecinos adscritos al consultorio pueden pedir cita en el teléfono [[tel:+34916282454][916 282 454]] o a través de la aplicación oficial *Cita Sanitaria*.
 
 *** Punto limpio
+:PROPERTIES:
+:CUSTOM_ID: punto-limpio
+:END:
 
 El punto limpio municipal está junto al parque de la *calle Vivero*, al final de la Avda. del Guadalix. Admite los residuos domésticos que no van a los contenedores ordinarios: muebles, plásticos voluminosos, pequeños electrodomésticos, cartón, escombros de pequeñas reformas y restos de poda (máximo dos sacas). Su uso está reservado a los vecinos: hay que presentar el DNI o, si acude un profesional, una autorización firmada por el propietario.
 
 *Horario:* consúltelo en la sección *Puntos Limpios Fijos* de este [[https://aytoalgete.es/index.php?Itemid=520&catid=89%3Aservicios&id=166%3Arecogida-residuos&option=com_content&view=article][enlace]].
 
 *** Oficina de correos
+:PROPERTIES:
+:CUSTOM_ID: correos
+:END:
 
 La oficina de Correos de Ciudad Santo Domingo abre de lunes a viernes. Está en el sector norte de la zona comercial, en los locales frente al parque infantil.
 
@@ -182,6 +197,9 @@ La oficina de Correos de Ciudad Santo Domingo abre de lunes a viernes. Está en 
 - *Horario:* consúltelo en este [[https://www.correosoficinas.es/piscinas/oficina-2812001-ciudad-santo-domingo/][enlace]].
 
 ** Transporte público
+:PROPERTIES:
+:CUSTOM_ID: transporte
+:END:
 
 El autobús interurbano conecta la urbanización con Plaza de Castilla y, en su interior, recorre un trayecto circular por la Avenida del Guadalix y la Avenida del Monte.
 
@@ -196,6 +214,9 @@ Consulte recorrido, paradas y horarios en @@html:<a href="https://www.redtranspo
 La línea [[https://www.madridbuses.com/autobuses-interurbanos/horarios-166-madrid-san-sebastian-de-los-reyes-san-agustin-de-guadalix.html][166]], con parada en la A-1 a la altura de la urbanización, enlaza con las estaciones «Hospital Infanta Sofía» y «Reyes Católicos» de la [[https://www.metromadrid.es/es/linea/linea-10][Línea 10]] de Metro, en San Sebastián de los Reyes.
 
 ** Contacte con la Gerencia
+:PROPERTIES:
+:CUSTOM_ID: gerencia
+:END:
 
 Tanto si ya es propietario como si está interesado en adquirir una parcela, la Gerencia le atiende en sus oficinas del edificio del reloj (zona norte del centro comercial, frente al parque infantil).
 
@@ -233,6 +254,9 @@ Tanto si ya es propietario como si está interesado en adquirir una parcela, la 
 Los servicios que gestiona la Comunidad de Propietarios: convivencia, agua, seguridad y directorio de contactos.
 
 ** Consejos prácticos para la vida en Ciudad Santo Domingo
+:PROPERTIES:
+:CUSTOM_ID: consejos
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
@@ -248,6 +272,9 @@ La Comunidad ha reunido en un documento las normas y recomendaciones prácticas 
 #+HTML: </section>
 
 ** Gestión del agua
+:PROPERTIES:
+:CUSTOM_ID: gestion-del-agua
+:END:
 
 #+HTML: <section class="row-section reverse">
 #+HTML: <div class="row-img">
@@ -267,6 +294,9 @@ De acuerdo con la normativa sanitaria, el agua de los pozos se destina a usos di
 #+HTML: </section>
 
 ** Nuestra seguridad
+:PROPERTIES:
+:CUSTOM_ID: nuestra-seguridad
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
@@ -289,6 +319,9 @@ El director de seguridad y su equipo han recibido felicitaciones públicas de la
 #+HTML: </section>
 
 ** Directorio de servicios
+:PROPERTIES:
+:CUSTOM_ID: directorio
+:END:
 
 *** Teléfonos de interés
 
@@ -388,6 +421,9 @@ El [[https://www.centrosantodomingo.com/][Centro Comercial]] publica su propio [
 # | Euro Assurance correduría de seguros      | 916 222 122  |
 
 ** Conoce Ciudad Santo Domingo
+:PROPERTIES:
+:CUSTOM_ID: conoce-csd
+:END:
 
 El compendio «Conoce Ciudad Santo Domingo» reúne en un solo documento la historia de la urbanización, sus servicios, los estatutos y el reglamento de la Comunidad y la normativa municipal de mayor interés para el vecino. Está pensado tanto para los residentes como para quienes se plantean instalarse aquí.
 
@@ -405,6 +441,9 @@ Servicios y normativa del Ayuntamiento de Algete de interés para el vecino.
 Ciudad Santo Domingo pertenece al municipio de Algete (21.000 habitantes). Sus calles son públicas, por lo que el Ayuntamiento presta los servicios urbanos habituales: alumbrado, pavimentos, limpieza viaria, recogida de basuras, Policía Local y punto limpio. La Comunidad de Propietarios gestiona por su cuenta el suministro de agua y la seguridad privada.
 
 ** Línea Verde — app
+:PROPERTIES:
+:CUSTOM_ID: linea-verde
+:END:
 
 #+HTML: <img class="img-natural" src="/img/linea-verde-logo.jpg" alt="Logo Línea Verde" />
 
@@ -413,6 +452,9 @@ Ciudad Santo Domingo pertenece al municipio de Algete (21.000 habitantes). Sus c
 [[http://www.lineaverdealgete.com/][Acceso a Línea Verde Algete]]
 
 ** Cuadro de competencias
+:PROPERTIES:
+:CUSTOM_ID: competencias
+:END:
 
 | Comunidad de Propietarios                                          | Ayuntamiento de Algete                                              | Otras entidades proveedoras                              |
 |--------------------------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------------|
@@ -437,6 +479,9 @@ Ciudad Santo Domingo pertenece al municipio de Algete (21.000 habitantes). Sus c
 |                                                                    | Asfaltado                                                           |                                                          |
 
 ** Ordenanza de convivencia ciudadana
+:PROPERTIES:
+:CUSTOM_ID: convivencia
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
@@ -452,6 +497,9 @@ La convivencia ciudadana en el municipio se rige por la ordenanza municipal corr
 #+HTML: </section>
 
 ** Recogida de poda
+:PROPERTIES:
+:CUSTOM_ID: poda
+:END:
 
 #+HTML: <section class="row-section reverse">
 #+HTML: <div class="row-img">
@@ -467,6 +515,9 @@ El Ayuntamiento organiza la retirada periódica de los restos de poda doméstica
 #+HTML: </section>
 
 ** Recogida de basura
+:PROPERTIES:
+:CUSTOM_ID: basura
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
@@ -482,6 +533,9 @@ La ordenanza municipal de residuos regula la recogida de la basura doméstica y 
 #+HTML: </section>
 
 ** Desbroce de parcelas
+:PROPERTIES:
+:CUSTOM_ID: desbroce
+:END:
 
 #+HTML: <section class="row-section reverse">
 #+HTML: <div class="row-img">
@@ -497,6 +551,9 @@ Para prevenir incendios en verano, los propietarios están obligados a mantener 
 #+HTML: </section>
 
 ** Ruidos
+:PROPERTIES:
+:CUSTOM_ID: ruidos
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
@@ -512,6 +569,9 @@ La ordenanza municipal de ruidos fija los niveles sonoros admisibles en cada tip
 #+HTML: </section>
 
 ** Policía de urbanizaciones
+:PROPERTIES:
+:CUSTOM_ID: policia-de-urbanizaciones
+:END:
 
 #+HTML: <section class="row-section reverse">
 #+HTML: <div class="row-img">
@@ -530,6 +590,9 @@ Esta [[https://aytoalgete.es/index.php?option=com_content&view=article&id=200&It
 #+HTML: </section>
 
 ** Ordenanza de animales
+:PROPERTIES:
+:CUSTOM_ID: animales
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
@@ -566,6 +629,9 @@ El principio básico se fundamenta en *«la prohibición absoluta de cualquier a
 [[http://www.aytoalgete.es/images/reglamentos_ordenanzas/BOCM_ORDENANZA_TENENCIA_ANIMALES_2021.pdf][Descargar ordenanza municipal completa de protección animal (PDF)]]
 
 ** Tenencia de Alcaldía
+:PROPERTIES:
+:CUSTOM_ID: tenencia-de-alcaldia
+:END:
 
 #+HTML: <section class="row-section reverse">
 #+HTML: <div class="row-img">
@@ -592,6 +658,9 @@ La oficina del Ayuntamiento en la urbanización atiende de lunes a viernes, de 1
 La *Oficina Virtual* permite a los propietarios de parcelas consultar de forma privada sus datos, sus facturas y las comunicaciones de la Comunidad.
 
 ** Cómo registrarse
+:PROPERTIES:
+:CUSTOM_ID: registro
+:END:
 
 #+HTML: <section class="row-section">
 #+HTML: <div class="row-img">
