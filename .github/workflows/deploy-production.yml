@@ -1,32 +1,86 @@
-name: Deploy to production (FTP)
+name: Deploy to production (SFTP)
+
+# Despliegue MANUAL a la web oficial (Arsys). Nunca se ejecuta solo.
+# Por defecto solo COMPRUEBA el acceso (lista la carpeta remota, no sube nada).
+# Para publicar de verdad: modo = publicar y confirmar = PUBLICAR.
+# Nada debe publicarse hasta que la Junta dé el visto bueno.
 
 on:
   workflow_dispatch:
+    inputs:
+      modo:
+        description: "comprobar = solo listar la carpeta remota; publicar = subir la web"
+        type: choice
+        default: comprobar
+        options: [comprobar, publicar]
+      confirmar:
+        description: "Escriba PUBLICAR para autorizar la subida (solo en modo publicar)"
+        type: string
+        default: ""
+
+concurrency:
+  group: production
+  cancel-in-progress: false
 
 jobs:
-  ftp-deploy:
+  sftp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Emacs
+      - name: Comprobar la confirmación
+        if: inputs.modo == 'publicar' && inputs.confirmar != 'PUBLICAR'
+        run: |
+          echo "::error::Modo publicar sin la confirmación PUBLICAR. No se hace nada."
+          exit 1
+
+      - name: Instalar Emacs y lftp
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends emacs-nox
+          sudo apt-get install -y --no-install-recommends emacs-nox lftp
 
-      - name: Build site (produccion)
+      - name: Construir el sitio (producción, URLs sin prefijo)
         env:
           CSD_BASE_URL: ""
         run: make build
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server:            ${{ secrets.SFTP_HOST }}
-          username:          ${{ secrets.SFTP_USER }}
-          password:          ${{ secrets.SFTP_PASSWORD }}
-          local-dir:         ./public/
-          server-dir:        ${{ secrets.SFTP_REMOTE_PATH }}
-          protocol:          ftp
-          port:              21
+      - name: Registrar la clave SSH del servidor
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 22 -t ed25519,rsa "$SFTP_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          test -s ~/.ssh/known_hosts
+
+      - name: Comprobar acceso SFTP (solo lectura)
+        if: inputs.modo == 'comprobar'
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+        run: |
+          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
+            set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+            set net:max-retries 2
+            set net:timeout 30
+            cls -l "$SFTP_REMOTE_PATH"
+          LFTP
+          echo "Acceso correcto. No se ha subido nada."
+
+      - name: Publicar por SFTP
+        if: inputs.modo == 'publicar' && inputs.confirmar == 'PUBLICAR'
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+        run: |
+          lftp -u "$SFTP_USER","$SFTP_PASSWORD" sftp://"$SFTP_HOST" <<LFTP
+            set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes"
+            set net:max-retries 3
+            set net:timeout 60
+            mirror --reverse --delete --verbose ./public/ "$SFTP_REMOTE_PATH"
+          LFTP
+          echo "Despliegue completado."

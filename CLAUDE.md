@@ -143,18 +143,33 @@ stay as plain files in `docs/`.
    URLs — no prefix).
 3. Build for GitHub Pages: `make build CSD_BASE_URL=/csd-preview`. Push.
    The `preview.yml` workflow rebuilds and deploys automatically.
-4. Build for production hosting: `make build` (empty prefix). The
-   `deploy.yml` workflow (when activated via the `ENABLE_FTP_DEPLOY=true`
-   repo variable and FTP secrets) does this on each push.
+4. Production hosting: only when the Junta has approved, and only by hand.
+   See "Deployment" below (`make deploy` or the manual GitHub workflow).
 
-## Deployment (GitHub Actions)
+## Deployment
 
 - `.github/workflows/preview.yml` — runs on every push to `main`. Builds
-  with `CSD_BASE_URL=/csd-preview` and deploys to GitHub Pages.
-- `.github/workflows/deploy.yml` — same trigger but conditional on the
-  repo Variable `ENABLE_FTP_DEPLOY=true`. Builds with empty `BASE_URL`
-  and uploads `public/` via FTP using these Secrets:
-  `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_REMOTE_PATH`.
+  with `CSD_BASE_URL=/csd-preview` and deploys to GitHub Pages
+  (https://mbujosab.github.io/csd-preview/). This is the ONLY automatic
+  deployment.
+- **Production (ciudadsantodomingo.org, Arsys hosting) is never deployed
+  automatically.** Nothing goes to production until the Junta approves the
+  revised texts. Two manual paths are prepared:
+  - Local: `make deploy-check` (read-only: lists the remote folder) and
+    `make deploy` (build without prefix + SFTP mirror with delete). Both call
+    `deploy.sh`, which reads the SFTP credentials from `~/.authinfo.gpg`
+    (`machine ciudadsantodomingo.org login csd@csdomingo.com ...`) and asks
+    for the GPG passphrase, so it must be run interactively.
+  - GitHub: `.github/workflows/deploy-production.yml`, `workflow_dispatch`
+    only. Input `modo=comprobar` (default) just lists the remote folder;
+    `modo=publicar` plus `confirmar=PUBLICAR` uploads. Uses the repo secrets
+    `SFTP_HOST`, `SFTP_USER`, `SFTP_PASSWORD`, `SFTP_REMOTE_PATH` and SFTP on
+    port 22 via lftp. Untested from GitHub since June 2026: earlier attempts
+    over plain FTP (port 21) failed with "530 Login incorrect" and timeouts,
+    and the SFTP attempt hung on the host-key prompt (now handled with
+    ssh-keyscan). If it still fails, use the local path.
+- Credentials for Arsys/SFTP live in `notas.org` (git-ignored). Never copy
+  them anywhere else.
 
 ## Gotchas
 

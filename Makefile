@@ -12,7 +12,7 @@ export CSD_BASE_URL
 
 PUBLIC := public
 
-.PHONY: build html assets clean serve pdf pdf-docs pdf-clean
+.PHONY: build html assets clean serve pdf pdf-docs pdf-clean deploy deploy-check
 
 build: html assets
 
@@ -63,3 +63,15 @@ pdf-docs: pdf
 
 pdf-clean:
 	rm -rf $(PDF_BUILD)
+
+# ------------------------------------------------------------- DEPLOY
+# Despliegue a la web oficial (Arsys) por SFTP desde este equipo. Lee las
+# credenciales de ~/.authinfo.gpg (pide la frase de paso de GPG).
+#   make deploy-check   # solo comprueba credenciales y lista la carpeta remota
+#   make deploy         # make build (sin prefijo) + subida con borrado remoto
+# NADA se sube a producción hasta que la Junta dé el visto bueno.
+deploy-check:
+	./deploy.sh --check
+
+deploy:
+	./deploy.sh
