@@ -5,10 +5,14 @@ name: Deploy to production (SFTP)
 # Para publicar de verdad: modo = publicar y confirmar = PUBLICAR.
 # Nada debe publicarse hasta que la Junta dé el visto bueno.
 #
-# Estado (23-09-2026): con las credenciales correctas (verificadas por huella
+# Estado (24-09-2026): con las credenciales correctas (verificadas por huella
 # frente a ~/.authinfo.gpg, que funciona desde casa) Arsys responde
 # «Permission denied» a las máquinas de GitHub. Todo apunta a una restricción
-# geográfica o por IP del acceso SFTP en Arsys. Pendiente de su soporte.
+# geográfica o por IP del acceso SFTP en Arsys. Su soporte pide la IP exacta,
+# la fecha y la hora de un intento: el modo comprobar las imprime.
+#
+# El modo comprobar NO compila nada (solo instala lftp/sshpass y prueba el
+# acceso); la compilación de PDF y web se hace solo en modo publicar.
 
 on:
   workflow_dispatch:
@@ -45,18 +49,47 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends emacs-nox lftp sshpass
 
+      - name: Registrar la clave SSH del servidor
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 22 -t ed25519,rsa "$SFTP_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          test -s ~/.ssh/known_hosts
+
+      - name: Comprobar acceso SFTP (solo lectura)
+        if: inputs.modo == 'comprobar'
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+        run: |
+          echo "Longitudes (no se imprimen valores): host ${#SFTP_HOST}, usuario ${#SFTP_USER}, contraseña ${#SSHPASS}, ruta ${#SFTP_REMOTE_PATH}"
+          # Datos que pide el soporte de Arsys para localizar el intento en sus registros.
+          IP=$(curl -fsS --max-time 10 https://api.ipify.org || curl -fsS --max-time 10 https://ifconfig.me/ip || echo "desconocida")
+          echo "== Datos del intento para Arsys =="
+          echo "IP pública del runner : $IP"
+          echo "Servidor destino      : $SFTP_HOST ($(getent hosts "$SFTP_HOST" | awk '{print $1}' | head -1)) puerto 22"
+          echo "Fecha y hora (UTC)    : $(date -u '+%Y-%m-%d %H:%M:%S')"
+          echo "Fecha y hora (Madrid) : $(TZ=Europe/Madrid date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "== Prueba: sftp de OpenSSH con sshpass =="
+          printf 'ls -l %s\n' "$SFTP_REMOTE_PATH" | sshpass -e sftp -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -b - "$SFTP_USER@$SFTP_HOST"
+          echo "Acceso correcto a las $(TZ=Europe/Madrid date '+%H:%M:%S %Z'). No se ha subido nada."
+
       # TeX Live mínimo sin acciones de terceros (setup-texlive-action fallaba
       # con «Repository access blocked»): instalador oficial + tlmgr con solo
       # los paquetes necesarios, cacheado entre ejecuciones.
       - name: Caché de TeX Live
         id: texlive-cache
+        if: inputs.modo == 'publicar'
         uses: actions/cache@v4
         with:
           path: ~/texlive
           key: texlive-2025-${{ hashFiles('.github/texlive-packages.txt') }}
 
       - name: Instalar TeX Live mínimo
-        if: steps.texlive-cache.outputs.cache-hit != 'true'
+        if: inputs.modo == 'publicar' && steps.texlive-cache.outputs.cache-hit != 'true'
         run: |
           set -euo pipefail
           cd "$(mktemp -d)"
@@ -80,9 +113,11 @@ jobs:
           tlmgr install $(grep -v '^#' "$GITHUB_WORKSPACE/.github/texlive-packages.txt" | tr '\n' ' ')
 
       - name: Añadir TeX Live al PATH
+        if: inputs.modo == 'publicar'
         run: echo "$HOME/texlive/bin/x86_64-linux" >> "$GITHUB_PATH"
 
       - name: Compilar los dosieres PDF
+        if: inputs.modo == 'publicar'
         run: |
           if ! make pdf-docs; then
             echo "::group::Errores de LaTeX"
@@ -95,37 +130,10 @@ jobs:
           fi
 
       - name: Construir el sitio (producción, URLs sin prefijo)
+        if: inputs.modo == 'publicar'
         env:
           CSD_BASE_URL: ""
         run: make build
-
-      - name: Registrar la clave SSH del servidor
-        env:
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p 22 -t ed25519,rsa "$SFTP_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          test -s ~/.ssh/known_hosts
-
-      - name: Comprobar acceso SFTP (solo lectura)
-        if: inputs.modo == 'comprobar'
-        env:
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
-          SFTP_REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
-        run: |
-          echo "Longitudes (no se imprimen valores): host ${#SFTP_HOST}, usuario ${#SFTP_USER}, contraseña ${#SSHPASS}, ruta ${#SFTP_REMOTE_PATH}"
-          echo "== Prueba 1: sftp de OpenSSH con sshpass =="
-          printf 'ls -l %s\n' "$SFTP_REMOTE_PATH" | sshpass -e sftp -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -b - "$SFTP_USER@$SFTP_HOST"
-          echo "== Prueba 2: lftp con sshpass como programa de conexión =="
-          lftp -u "$SFTP_USER",x sftp://"$SFTP_HOST" <<LFTP
-            set sftp:connect-program "sshpass -e ssh -a -x -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no"
-            set net:max-retries 2
-            set net:timeout 30
-            cls -l "$SFTP_REMOTE_PATH"
-          LFTP
-          echo "Acceso correcto. No se ha subido nada."
 
       - name: Publicar por SFTP
         if: inputs.modo == 'publicar' && inputs.confirmar == 'PUBLICAR'
