@@ -170,12 +170,12 @@ files in `docs/`.
     only. Input `modo=comprobar` (default) just lists the remote folder;
     `modo=publicar` plus `confirmar=PUBLICAR` uploads. Uses the repo secrets
     `SFTP_HOST`, `SFTP_USER`, `SFTP_PASSWORD`, `SFTP_REMOTE_PATH` and SFTP on
-    port 22 via lftp + sshpass. As of 2026-09-25 it does NOT work: with the
-    same user and password that work from home (verified by hash), Arsys
-    answers "Permission denied" to GitHub runners; Arsys support says the
-    runner IP is not blocked on their network, still under investigation
-    with them (`modo=comprobar` prints IP, time and the ssh auth dialogue).
-    Until then, production is deployed with the local path.
+    port 22 via lftp + sshpass. Verified working on 2026-09-25
+    (`modo=comprobar` listed the remote folder from a GitHub runner). The
+    September "Permission denied" errors were caused by the wrong SFTP user
+    (`csd@csdomingo.com` instead of `ciudadsantodomingo.org`) and by
+    `sftp -b`, which enables BatchMode and skips password authentication;
+    there was no IP restriction at Arsys.
 - Credentials for Arsys/SFTP live in `notas.org` (git-ignored). Never copy
   them anywhere else.
 

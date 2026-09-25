@@ -5,9 +5,12 @@ name: Deploy to production (SFTP)
 # Para publicar de verdad: modo = publicar y confirmar = PUBLICAR.
 # Nada debe publicarse hasta que la Junta dé el visto bueno.
 #
-# Estado (25-09-2026): usuario SFTP = ciudadsantodomingo.org (el que da
-# Arsys; csd@csdomingo.com no vale para SFTP). El modo comprobar imprime la
-# IP del runner y la hora del intento por si hay que dárselas a Arsys.
+# Estado (25-09-2026): FUNCIONA. El modo comprobar listó /html/ desde un
+# runner de GitHub. Usuario SFTP = ciudadsantodomingo.org (csd@csdomingo.com
+# es solo el usuario del área de cliente y el servidor lo rechaza). No había
+# ningún bloqueo de IP: los «Permission denied» de septiembre venían del
+# usuario equivocado y de «sftp -b», que activa BatchMode y no prueba la
+# contraseña. El modo comprobar sigue imprimiendo IP y hora del intento.
 #
 # El modo comprobar NO compila nada (solo instala lftp/sshpass y prueba el
 # acceso); la compilación de PDF y web se hace solo en modo publicar.
