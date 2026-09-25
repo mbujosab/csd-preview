@@ -52,8 +52,12 @@ jobs:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -p 22 -t ed25519,rsa "$SFTP_HOST" >> ~/.ssh/known_hosts 2>/dev/null
-          test -s ~/.ssh/known_hosts
+          for i in 1 2 3 4 5; do
+            ssh-keyscan -T 15 -p 22 -t ed25519,rsa "$SFTP_HOST" >> ~/.ssh/known_hosts 2>/dev/null && break
+            echo "ssh-keyscan sin respuesta (intento $i); reintentando en 10 s"
+            sleep 10
+          done
+          test -s ~/.ssh/known_hosts || { echo "::error::No se pudo obtener la clave SSH de $SFTP_HOST"; exit 1; }
 
       - name: Comprobar acceso SFTP (solo lectura)
         if: inputs.modo == 'comprobar'
