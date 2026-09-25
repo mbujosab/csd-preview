@@ -11,7 +11,11 @@
 # o desde ~/.authinfo (en texto plano, menos seguro).
 #
 # Formato de la entrada en ~/.authinfo o ~/.authinfo.gpg:
-#   machine ciudadsantodomingo.org login csd@csdomingo.com port 22 password TU_PASSWORD
+#   machine ciudadsantodomingo.org login ciudadsantodomingo.org port 22 password TU_PASSWORD
+#
+# El usuario SFTP del hosting es "ciudadsantodomingo.org" (confirmado por Arsys
+# el 25-09-2026); "csd@csdomingo.com" es solo el usuario del área de cliente
+# y el servidor lo rechaza con "Login incorrect".
 #
 # Para cifrar ~/.authinfo con GPG:
 #   gpg --symmetric --cipher-algo AES256 ~/.authinfo

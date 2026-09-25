@@ -162,17 +162,20 @@ files in `docs/`.
   - Local: `make deploy-check` (read-only: lists the remote folder) and
     `make deploy` (build without prefix + SFTP mirror with delete). Both call
     `deploy.sh`, which reads the SFTP credentials from `~/.authinfo.gpg`
-    (`machine ciudadsantodomingo.org login csd@csdomingo.com ...`) and asks
-    for the GPG passphrase, so it must be run interactively.
+    (`machine ciudadsantodomingo.org login ciudadsantodomingo.org ...`) and
+    asks for the GPG passphrase, so it must be run interactively. The SFTP
+    user is `ciudadsantodomingo.org`; the client-area login
+    `csd@csdomingo.com` is rejected by the SFTP server.
   - GitHub: `.github/workflows/deploy-production.yml`, `workflow_dispatch`
     only. Input `modo=comprobar` (default) just lists the remote folder;
     `modo=publicar` plus `confirmar=PUBLICAR` uploads. Uses the repo secrets
     `SFTP_HOST`, `SFTP_USER`, `SFTP_PASSWORD`, `SFTP_REMOTE_PATH` and SFTP on
-    port 22 via lftp + sshpass. As of 2026-09-23 it does NOT work: with the
-    same credentials that work from home (verified by hash), Arsys answers
-    "Permission denied" to GitHub runners, which points to a geographic/IP
-    restriction on the SFTP account. Waiting for Arsys support. Until then,
-    production is deployed with the local path.
+    port 22 via lftp + sshpass. As of 2026-09-25 it does NOT work: with the
+    same user and password that work from home (verified by hash), Arsys
+    answers "Permission denied" to GitHub runners; Arsys support says the
+    runner IP is not blocked on their network, still under investigation
+    with them (`modo=comprobar` prints IP, time and the ssh auth dialogue).
+    Until then, production is deployed with the local path.
 - Credentials for Arsys/SFTP live in `notas.org` (git-ignored). Never copy
   them anywhere else.
 
