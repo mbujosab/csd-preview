@@ -6,12 +6,8 @@ name: Deploy to production (SFTP)
 # Nada debe publicarse hasta que la Junta dé el visto bueno.
 #
 # Estado (25-09-2026): usuario SFTP = ciudadsantodomingo.org (el que da
-# Arsys; csd@csdomingo.com ya no entra ni desde casa). Con ese usuario y la
-# misma contraseña que funciona desde casa (huella verificada), Arsys sigue
-# respondiendo «Permission denied» a las máquinas de GitHub, aunque su
-# soporte dice que la IP no está bloqueada. El modo comprobar imprime IP,
-# fecha y hora del intento y el diálogo de autenticación (-v) para
-# enviárselo.
+# Arsys; csd@csdomingo.com no vale para SFTP). El modo comprobar imprime la
+# IP del runner y la hora del intento por si hay que dárselas a Arsys.
 #
 # El modo comprobar NO compila nada (solo instala lftp/sshpass y prueba el
 # acceso); la compilación de PDF y web se hace solo en modo publicar.
@@ -76,8 +72,16 @@ jobs:
           echo "Servidor destino      : $SFTP_HOST ($(getent hosts "$SFTP_HOST" | awk '{print $1}' | head -1)) puerto 22"
           echo "Fecha y hora (UTC)    : $(date -u '+%Y-%m-%d %H:%M:%S')"
           echo "Fecha y hora (Madrid) : $(TZ=Europe/Madrid date '+%Y-%m-%d %H:%M:%S %Z')"
-          echo "== Prueba: sftp de OpenSSH con sshpass =="
-          printf 'ls -l %s\n' "$SFTP_REMOTE_PATH" | sshpass -e sftp -v -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no -b - "$SFTP_USER@$SFTP_HOST" 2>&1 | grep -v -E 'debug1: (Reading|Connecting|Connection established|identity file|Local version|Remote protocol|compat|Authenticating|SSH2_MSG|kex|expecting|rekey|Host .* is known|Found key|Will attempt|Server host key|load_hostkeys|hostkeys|Sending|Entering|pledge|client_input|Remote: |Requesting|Sending subsystem|channel|Exit status)'
+          # Misma conexión que el paso de publicar: lftp con sshpass como programa
+          # de conexión. (sftp -b activa BatchMode y con él OpenSSH no intenta la
+          # autenticación por contraseña: eso explicaba los «Permission denied».)
+          echo "== Prueba: lftp + sshpass =="
+          lftp -u "$SFTP_USER",x sftp://"$SFTP_HOST" <<LFTP
+            set sftp:connect-program "sshpass -e ssh -a -x -o StrictHostKeyChecking=yes -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+            set net:max-retries 2
+            set net:timeout 30
+            cls -l "$SFTP_REMOTE_PATH"
+          LFTP
           echo "Acceso correcto a las $(TZ=Europe/Madrid date '+%H:%M:%S %Z'). No se ha subido nada."
 
       # TeX Live mínimo sin acciones de terceros (setup-texlive-action fallaba
